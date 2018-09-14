@@ -5,8 +5,19 @@ import java.io.IOException;
 import java.nio.file.*;
 
 /**
- * This class creates a practice creation
+ * A user can decide to practice saying a name
+ * and compare it to a particular {@link Creation}.
+ *
+ * Their Practice is saved as a .wav in a subfolder of the
+ * corresponding <code>Creation</code>.
+ *
+ * The user can Practice a single <code>Creation</code>
+ * multiple times.
+ *
+ * @author Eric Pedrido
+ * @author Lucy Chen
  */
+
 
 public class Practice {
 
