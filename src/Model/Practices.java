@@ -11,6 +11,7 @@ public class Practices {
     protected LinkedList<Practice> _practices;
 
 
+
     /**
      * constructor that creates the linkedlist for Practices
      */

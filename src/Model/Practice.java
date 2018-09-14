@@ -12,6 +12,7 @@ public class Practice {
 
     private String _fileName;
     private String _name;
+    private File DIRECTORY = new File("Names/" + _name + "/Practice");
 
     /**
      * Constructor for the class
@@ -102,7 +103,7 @@ public class Practice {
      */
     protected void process(String command) {
         ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-c", command);
-        pb.directory();
+        pb.directory(DIRECTORY);
 
         try {
             java.lang.Process process = pb.start();
