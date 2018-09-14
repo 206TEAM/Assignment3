@@ -90,7 +90,7 @@ public class Practice {
     }
 
     /**
-     * @return file name without extension e.g mark
+     * @return file name without extension
      */
     public String getFileName(){
         return _fileName;

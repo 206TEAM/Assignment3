@@ -1,6 +1,8 @@
 package Model;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,7 +11,6 @@ public class Practices {
 
     private String _name;
     protected LinkedList<Practice> _practices;
-
 
 
     /**
@@ -25,21 +26,34 @@ public class Practices {
      *
      * @return
      */
-    public void updateModel(String _name) {
-       // List<String> names = new ArrayList<String>();
+    public void updateModel(String name) {
+//        List<String> names = new ArrayList<>();
+//
+//        File file = new File("Names/" + name + "/Practice");
+//
+//        File[] fileList = file.listFiles();
+//
+//        for (File f : fileList) {
+//            names.add(f.getName()); //adds the file names from directory into the list
+//        }
+//
+//        for (String temp : names) {
+//            temp = temp.substring(0, name.lastIndexOf('.'));
+//            Practice practice = new Practice(temp);
+//            _practices.add(practice);
+//        }
 
-       // File file = new File("Names/" + _name + "/Practice");
+        Path path = Paths.get("Names/" + name + "/Practice");
 
-      //  File[] fileList = file.listFiles();
-       // for (File f : fileList) {
-        //    names.add(f.getName()); //adds the file names from directory into the list
-      //  }
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
 
-       // for (String name : names) {
-            //name = name.substring(0, name.lastIndexOf('.'));
-           // Practice practice = new Practice(name);
-          //  _practices.add(practice);
-        //}
+            for (Path file: stream) {
+                String fileName = file.getFileName().toString();
+                _practices.add(new Practice(fileName.substring(0, fileName.lastIndexOf('.'))));
+            }
+        } catch (IOException | DirectoryIteratorException e) {
+            System.err.println(e);
+        }
     }
 
     /**
@@ -116,6 +130,7 @@ public class Practices {
 
     /**
      * sees if the practice model contains the practice or not
+     *
      * @param name
      * @return
      */
@@ -129,7 +144,7 @@ public class Practices {
         return found;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Practices MasonName = new Practices("mason");
         MasonName.addPracticeString("mason");
     }
