@@ -5,17 +5,9 @@ import java.io.IOException;
 import java.nio.file.*;
 
 /**
- * A user can decide to practice saying a name
- * and compare it to a particular {@link Creation}.
- *
- * Their Practice is saved as a .wav in a subfolder of the
- * corresponding <code>Creation</code>.
- *
- * The user can Practice a single <code>Creation</code>
- * multiple times.
- *
- * @author Eric Pedrido
- * @author Lucy Chen
+ * This class represents a single recording for a particular name.
+ * This file is saved as a .wav in the directory:
+ * Names/<Name>/Practices/<file>.wav
  */
 
 

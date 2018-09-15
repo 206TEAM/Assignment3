@@ -7,11 +7,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * This class represents a list of practices for each Name
+ *
+ */
 public class Practices {
 
     private String _name;
     protected LinkedList<Practice> _practices;
-
 
     /**
      * constructor that creates the linkedlist for Practices
@@ -22,7 +25,7 @@ public class Practices {
     }
 
     /**
-     * ADD YOUR STUFF IN HERE (YOU GET RID OF MY CODE LOL)
+     * goes through each file and sees
      *
      * @return
      */
@@ -42,18 +45,6 @@ public class Practices {
 //            Practice practice = new Practice(temp);
 //            _practices.add(practice);
 //        }
-
-        Path path = Paths.get("Names/" + name + "/Practice");
-
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
-
-            for (Path file: stream) {
-                String fileName = file.getFileName().toString();
-                _practices.add(new Practice(fileName.substring(0, fileName.lastIndexOf('.'))));
-            }
-        } catch (IOException | DirectoryIteratorException e) {
-            System.err.println(e);
-        }
     }
 
     /**
@@ -73,8 +64,7 @@ public class Practices {
      * @param practice
      */
     public void addPractice(Practice practice) {
-        practice.create2();
-        //_practices.add(practice);
+        _practices.add(practice);
     }
 
     /**

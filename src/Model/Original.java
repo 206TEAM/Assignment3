@@ -5,121 +5,59 @@ import java.io.IOException;
 import java.nio.file.*;
 
 /**
- * This class represents an original Recording
- * creates a video from .wav files
- * can be used to store rating of each file.
+ * This class handles the original sound recordings from the Recordings folder.
+ *
+ * On initialisation it creates folders of all the names from the Recordings folder. (probably in constructor)
+ * It then creates subfolders Original and Practices.
+ * It then adds the correct audio files into their respective subfolders. e.g Mason.wav goes in Name/Mason/Original
+ *
+ * It also stores each original file in a List (probably a field)
+ *
+ * If specified the name of the original file, there are methods which retrieve the full path of the file
+ * giving it in the format of e.g "Names/Mason/Originals/mason.wav (note the .wav extension)
  */
 public class Original {
 
-    private String _fileName;
-    private String _name;
-    private File DIRECTORY = new File("Names/" + _name + "/Original");
+    //i would probably have an update method, a getFullPath(name) method etc
+    //ive also added your methods below:
+    //i guess keep this class quite separate to Practices (except for creating the folder of course)
+    //also its good practice to check if there already exists folders in the directory
+    //e.g if (folder or file DOESNT exist...add it).
 
     /**
-     * Constructor for the class
-     * @param name
+     * ADD YOUR STUFF IN HERE (YOU GET RID OF MY CODE LOL)
+     *
+     * @return
      */
-    public Original(String name) {
-        _fileName = name;
-        _name = name;
-    }
+    public void updateModel(String name) {
+//        List<String> names = new ArrayList<>();
+//
+//        File file = new File("Names/" + name + "/Practice");
+//
+//        File[] fileList = file.listFiles();
+//
+//        for (File f : fileList) {
+//            names.add(f.getName()); //adds the file names from directory into the list
+//        }
+//
+//        for (String temp : names) {
+//            temp = temp.substring(0, name.lastIndexOf('.'));
+//            Practice practice = new Practice(temp);
+//            _practices.add(practice);
+//        }
 
-    /**
-     * creates a creaton
-     */
+        Path path = Paths.get("Names/" + name + "/Practice");
 
-    public void create() {
-        justVideo();
-        justAudio();
-        combine();
-        deleteAudioVideo();
-    }
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
 
-    /**
-     * this deletes a creation
-     */
-    public void delete() {
-        deleteFile(_fileName + ".mp4");
-    }
-
-    /**
-     * this creates the video component for the creation
-     */
-    public void justVideo() {
-        String command = "ffmpeg -f lavfi -i " + "color=c=black:s=320x240:d=5 -vf "
-                + "\"drawtext=fontfile=/path/to/font.ttf:fontsize=30:"
-                + " fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2:text='" + _fileName + "'\" "
-                + "\"output.mp4\"";
-        process(command);
-    }
-
-    /**
-     * this creates the audio component of the creation
-     */
-    public void justAudio() {
-        String command = "ffmpeg -f pulse -loglevel quiet -i default -t 5 \"output\".mp3";
-        process(command);
-    }
-
-    /**
-     * this combines the audio and video components of the creation
-     */
-    public void combine() {
-        String command = "ffmpeg -i \"output\".mp4 -loglevel quiet -i \"output\".mp3 -c:v copy -c:a aac -strict experimental \"" + _fileName + "\".mp4";
-        process(command);
-    }
-
-    /**
-     * this removes the audio and video components of the creation (unnecessary files)
-     */
-    public void deleteAudioVideo(){
-        deleteFile("output.mp3");
-        deleteFile("output.mp4");
-    }
-
-    /**
-     *deletes a file specified by param
-     * @param filePath must of the format filename.mp3 filename.mp4 etc
-     */
-    public void deleteFile(String filePath) {
-        Path path = Paths.get(_name + "Originals/" + filePath);
-        try {
-            Files.delete(path);
-        } catch (NoSuchFileException x) {
-            System.err.format("%s: no such" + " file", path);
-        } catch (DirectoryNotEmptyException x) {
-            System.err.format("%s not empty%n", path);
-        } catch (IOException x) {
-            System.err.println(x);
+            for (Path file: stream) {
+                String fileName = file.getFileName().toString();
+               // _practices.add(new Practice(fileName.substring(0, fileName.lastIndexOf('.'))));
+            }
+        } catch (IOException | DirectoryIteratorException e) {
+            System.err.println(e);
         }
     }
 
-    /**
-     * method processes a bash command
-     */
-    protected void process(String command) {
-        ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-c", command);
-        pb.directory(DIRECTORY);
 
-        try {
-            java.lang.Process process = pb.start();
-            process.waitFor();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * @return file name without extension e.g mark
-     */
-    public String getFileName(){
-        return _fileName;
-    }
-
-    /**
-     * Return the final .mp4 file
-     */
-    public File mp4File() {
-        return new File(_name + "Originals/" + System.getProperty("file.separator") +_fileName + ".mp4");
-    }
 }
