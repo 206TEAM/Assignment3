@@ -15,6 +15,7 @@ import java.nio.file.*;
  *
  * If specified the name of the original file, there are methods which retrieve the full path of the file
  * giving it in the format of e.g "Names/Mason/Originals/mason.wav (note the .wav extension)
+ *
  */
 public class Original {
 
