@@ -22,27 +22,13 @@ public class Practices {
     }
 
     /**
-     * ADD YOUR STUFF IN HERE (YOU GET RID OF MY CODE LOL)
+     * If any changes occur to an <code>Original</code> creation's
+     * <code>Practices</code>, the model is updated through
+     * this method.
      *
-     * @return
+     * @param name The name of the Creation to update
      */
     public void updateModel(String name) {
-//        List<String> names = new ArrayList<>();
-//
-//        File file = new File("Names/" + name + "/Practice");
-//
-//        File[] fileList = file.listFiles();
-//
-//        for (File f : fileList) {
-//            names.add(f.getName()); //adds the file names from directory into the list
-//        }
-//
-//        for (String temp : names) {
-//            temp = temp.substring(0, name.lastIndexOf('.'));
-//            Practice practice = new Practice(temp);
-//            _practices.add(practice);
-//        }
-
         Path path = Paths.get("Names/" + name + "/Practice");
 
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
@@ -60,7 +46,7 @@ public class Practices {
      * returns a list of the NAMES of the practices
      */
     public List<String> listPractices() {
-        List<String> practiceList = new ArrayList<String>();
+        List<String> practiceList = new ArrayList<>();
         for (Practice practice : _practices) {
             practiceList.add(practice.getFileName());
         }
@@ -73,7 +59,7 @@ public class Practices {
      * @param practice
      */
     public void addPractice(Practice practice) {
-        practice.create2();
+        practice.create();
         //_practices.add(practice);
     }
 

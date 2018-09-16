@@ -3,6 +3,10 @@ package Model;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * This class represents an original Recording
@@ -17,11 +21,51 @@ public class Original {
 
     /**
      * Constructor for the class
+     *
      * @param name
      */
     public Original(String name) {
         _fileName = name;
         _name = name;
+    }
+
+    /**
+     * Reads all existing <code>Original</code> creations provided in
+     * <dir>Recordings</dir> and populates <dir>Names</dir>.
+     * <p>
+     * Each creation of unique name gets its own subfolder where the recording
+     * and practices are stored.
+     * <p>
+     * Should there be multiple creations of the same name, then
+     * multiple recordings will be stored in the same directory.
+     *
+     * @author Eric Pedrido
+     */
+    private static void populateFolders() {
+        Path path = Paths.get("/Recordings");
+
+        List<String> creations = new ArrayList<>();
+
+        // Glob makes sure it only fetches valid creations
+        try(DirectoryStream<Path> stream = Files.newDirectoryStream(path, "se206_*.wav")) {
+            for (Path creation : stream) {
+                // List all valid creations
+                creations.add(creation.getFileName().toString());
+            }
+
+            // Get only the name from the file names
+            List<String> names = new ArrayList<>();
+            for (String fileName : creations) {
+                Pattern pattern = Pattern.compile("");
+                Matcher matcher = pattern.matcher(fileName);
+                if (matcher.find()) {
+                    names.add(matcher.group(1));
+                }
+            }
+
+        } catch (IOException | DirectoryIteratorException e) {
+            System.err.println(e);
+        }
     }
 
     /**
@@ -72,13 +116,14 @@ public class Original {
     /**
      * this removes the audio and video components of the creation (unnecessary files)
      */
-    public void deleteAudioVideo(){
+    public void deleteAudioVideo() {
         deleteFile("output.mp3");
         deleteFile("output.mp4");
     }
 
     /**
-     *deletes a file specified by param
+     * deletes a file specified by param
+     *
      * @param filePath must of the format filename.mp3 filename.mp4 etc
      */
     public void deleteFile(String filePath) {
@@ -112,7 +157,7 @@ public class Original {
     /**
      * @return file name without extension e.g mark
      */
-    public String getFileName(){
+    public String getFileName() {
         return _fileName;
     }
 
@@ -120,6 +165,6 @@ public class Original {
      * Return the final .mp4 file
      */
     public File mp4File() {
-        return new File(_name + "Originals/" + System.getProperty("file.separator") +_fileName + ".mp4");
+        return new File(_name + "Originals/" + System.getProperty("file.separator") + _fileName + ".mp4");
     }
 }
