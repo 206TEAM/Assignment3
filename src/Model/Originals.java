@@ -1,19 +1,21 @@
 package Model;
 
+import javax.naming.InvalidNameException;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class represents a collection of {@link Original} creations.
+ * This class represents a collection of {@link Original} objects.
  * It is responsible for handling their behaviour as a group, not
  * as individual files.
  *
  * <p> This class can only be instantiated once because it denies
- * the possibility for multiple lists of Originals to be used.
+ * the possibility for multiple lists of {@code Originals} to be used.
  * The one list generated from scanning the contents of <dir>Recordings</dir>
- * is in essence, the only true list of Originals. </p>
+ * is in essence, the only true list of {@code Originals}.</p>
  *
  * @author Eric Pedrido
  */
@@ -24,8 +26,8 @@ public class Originals {
 
     /**
      * Upon construction, all folders will be populated with each
-     * Original having its own respective sub-folder. This must only
-     * happen once.
+     * {@code Original} having its own respective sub-folder.
+     * This must only happen on start-up of program.
      */
     private Originals() {
         updateModel();
@@ -33,17 +35,18 @@ public class Originals {
     }
 
     /**
-     * Reads all existing <code>Original</code> creations provided in
-     * <dir>Recordings</dir> and populates <dir>Names</dir>.
+     * Reads all existing {@code Original} objects provided in <dir>Recordings</dir>
+     * and creates <dir>Names/(name)</dir> if such folders do not already exist.
      *
-     * <p> Each creation of unique name gets its own sub-folders where the recording
-     * and practices are stored. </p>
+     * <p> Each {@code Original} of unique name gets its own sub-folders where
+     * the {@code Original} and {@code Practice} are stored.</p>
      *
-     * <p> Should there be multiple creations of the same name, then
-     * multiple recordings will be stored in the same directory,
+     * <p> Should there be multiple {@code Original} files of the same name (not file name),
+     * then multiple recordings will be stored in the same directory,
      * but will have a number at the end indicating which
-     * version it is. For example, <code>John Smith.wav, John Smith2.wav</code>
-     * Note that the first version will keep its name. </p>
+     * version it is. For example
+     * <dir>John Smith1.wav</dir>
+     * <dir>John Smith2.wav</dir>.</p>
      */
     private void populateFolders() {
         try {
@@ -62,24 +65,20 @@ public class Originals {
             for (int i = 0; i < fileNames.size(); i++) {
                 String creation = fileNames.get(i);
                 String name = names.get(i);
+                String finalName = creation;
+                // Insert an int n for the nth version of that Original.
+                if (names.lastIndexOf(name) != names.indexOf(name)) {
+                    // The path will never be null, as the directory is always created above should it not exist.
+                    int version = new File ("Names/" + name + "/Original").listFiles().length + 1;
+                    StringBuilder tempName = new StringBuilder(creation);
+                    tempName.insert(tempName.length() - 4, version);
 
-                if (Files.notExists(Paths.get("Names/" + name + "/Original/" + creation))) {
-                    Files.copy(Paths.get("Recordings/" + creation),
-                            Paths.get("Names/" + name + "/Original/" + creation),
-                            StandardCopyOption.COPY_ATTRIBUTES);
-                } else if (name.equals(names.get(i - 1))) {
-                    int j = 2;
-                    StringBuilder tempName = new StringBuilder(fileNames.get(i).substring(0, '.'));
-
-                    // Append an integer n at the end for the nth duplicate of the name
-                    while (Files.exists(Paths.get("Names/" + name + "/Original/" + creation))) {
-                        j++;
-                    }
-                    tempName.append(j);
-                    Files.copy(Paths.get("Recordings/" + creation),
-                            Paths.get("Names/" + name + "/Original/" + tempName + ".wav"),
-                            StandardCopyOption.COPY_ATTRIBUTES);
+                    finalName = tempName.toString();
                 }
+                if (Files.notExists(Paths.get("Names/" + name + "/Original/" + creation)))
+                Files.copy(Paths.get("Recordings/" + creation),
+                        Paths.get("Names/" + name + "/Original/" + finalName),
+                        StandardCopyOption.COPY_ATTRIBUTES);
             }
         } catch (IOException | DirectoryIteratorException e) {
             System.err.println(e); // todo: replace with an error message in GUI
@@ -87,13 +86,13 @@ public class Originals {
     }
 
     /**
-     * Checks <dir>Recordings</dir> to build a <code>List<String></code>
-     * containing the file name of every Original creation.
+     * Checks <dir>Recordings</dir> to build a {@code List<String>}
+     * containing the file name of every {@code Original}.
      *
-     * <p> Note that a valid Original creation is any file that has
-     * the file extension <code>.wav</code>. </p>
+     * <p> Note that a valid {@code Original} is any file that has
+     * the file extension <q>.wav</q>.</p>
      *
-     * @return a List of all existing original creations.
+     * @return a list of the file names of all existing {@code Original} files.
      * @throws IOException                if an I/O error occurs.
      * @throws DirectoryIteratorException if an error occurs while iterating through
      *                                    the directory.
@@ -109,28 +108,34 @@ public class Originals {
     }
 
     /**
-     * Takes the list of Originals and extracts just
-     * the name of the creation, ignoring any other details in
+     * Takes {@link #_originals} and extracts just
+     * the name of the {@code Original}, ignoring any other details in
      * the file name.
      *
-     * @return a List containing just the names.
+     * @return a list containing the names of all existing {@code Original} files.
      */
     public List<String> listNames() {
         List<String> names = new ArrayList<>();
-        for (Original creation : _originals) {
-            names.add(creation.getName());
+        try {
+            for (Original creation : _originals) {
+                names.add(creation.getName());
+            }
+        } catch (InvalidNameException e) {
+            // todo GUI popup saying that an Original in Recordings doesn't have correct name format
+            System.err.println(e);
         }
 
         return names;
     }
 
     /**
-     * Sets the values of {@link Originals#_originals} to be correct given the current
+     * Sets the values of {@link #_originals} to be correct given the current
      * contents of <dir>Recordings</dir>.
      *
-     * <p> If an {@code IOException} or {@code DirectoryIteratorException}
-     * is thrown, then this method informs the View to display an error
-     * pop-up. </p>
+     * <p> If an {@code IOException}, {@code DirectoryIteratorException} or
+     * {@code InvalidNameException} is thrown, then this method informs
+     * the (todo insert class here)
+     * to display an error pop-up.</p>
      */
     public void updateModel() {
         try {
@@ -140,7 +145,9 @@ public class Originals {
                 _originals.add(new Original(fileName));
             }
         } catch (IOException | DirectoryIteratorException e) {
-            System.err.println(e); // todo GUI popup
+            System.err.println(e); // todo GUI popup saying an unexpected error occured
+        } catch (InvalidNameException e) {
+            System.err.println(e); // todo Different GUI popup
         }
     }
 
@@ -149,10 +156,10 @@ public class Originals {
     }
 
     /**
-     * Ensures that only one object of <code>Originals</code>
+     * Ensures that only one object of {@code Originals}
      * can be instantiated.
      *
-     * @return the singleton <code>Originals</code> object
+     * @return the singleton {@code Originals} object.
      */
     public static Originals getInstance() {
         return _SINGLETON;

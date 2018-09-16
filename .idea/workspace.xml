@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added Originals class and methods. &#10;Added constructor for Original class.&#10;Added some comments on other classes.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updated and added methods in Originals and Original.&#10;&#10;Super minor javadoc fix in Practice class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Original.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Original.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Originals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Originals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Practice.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,24 +69,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="11528" />
-          <entry key="txt" value="343" />
+          <entry key="java" value="14208" />
+          <entry key="txt" value="447" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11528" />
-          <entry key="PLAIN_TEXT" value="343" />
+          <entry key="JAVA" value="14208" />
+          <entry key="PLAIN_TEXT" value="447" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="32" />
+          <entry key="java" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="32" />
+          <entry key="JAVA" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -131,32 +130,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1185">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="1025">
+              <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2530#2531#0" expanded="true" />
-                <element signature="e#2562#2563#0" expanded="true" />
+                <element signature="e#2629#2630#0" expanded="true" />
+                <element signature="e#2661#2662#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Originals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="165">
+              <caret line="161" column="54" selection-start-line="161" selection-start-column="54" selection-end-line="161" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5609#5610#0" expanded="true" />
-                <element signature="e#5641#5642#0" expanded="true" />
-                <element signature="e#5852#5853#0" expanded="true" />
-                <element signature="e#5885#5886#0" expanded="true" />
+                <element signature="e#5974#5975#0" expanded="true" />
+                <element signature="e#6007#6008#0" expanded="true" />
+                <element signature="e#6224#6225#0" expanded="true" />
+                <element signature="e#6257#6258#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/AbstractStringBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="1029" column="33" selection-start-line="1029" selection-start-column="33" selection-end-line="1029" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -215,8 +223,8 @@
         <option value="$PROJECT_DIR$/src/Practice.java" />
         <option value="$PROJECT_DIR$/src/Model/Practices.java" />
         <option value="$PROJECT_DIR$/src/Model/Practice.java" />
-        <option value="$PROJECT_DIR$/src/Model/Original.java" />
         <option value="$PROJECT_DIR$/src/Model/Originals.java" />
+        <option value="$PROJECT_DIR$/src/Model/Original.java" />
       </list>
     </option>
   </component>
@@ -243,6 +251,11 @@
               <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
+              <item name="Recordings" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -260,7 +273,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537091218279" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537099336301" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -423,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537079709994</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated and added methods in Originals and Original.&#10;&#10;Super minor javadoc fix in Practice class.">
+      <created>1537091565246</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1537091565246</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -472,43 +492,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="first commit" />
     <MESSAGE value="Changed header javadoc" />
     <MESSAGE value="Implemented the updateModel(name) method." />
     <MESSAGE value="Implemented the populateModel() method." />
     <MESSAGE value="Added Originals class and methods. &#10;Added constructor for Original class.&#10;Added some comments on other classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Originals class and methods. &#10;Added constructor for Original class.&#10;Added some comments on other classes." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Model/Originals.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Model/Originals.java</url>
-          <line>107</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Model/Originals.java</url>
-          <line>141</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Model/Originals.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Updated and added methods in Originals and Original.&#10;&#10;Super minor javadoc fix in Practice class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated and added methods in Originals and Original.&#10;&#10;Super minor javadoc fix in Practice class." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -560,13 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/StringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="254" column="5" lean-forward="true" selection-start-line="254" selection-start-column="5" selection-end-line="254" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/io/FileNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-152">
@@ -588,34 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/util/regex/Matcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="533" column="18" selection-start-line="533" selection-start-column="18" selection-end-line="533" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="1957" column="18" selection-start-line="1957" selection-start-column="18" selection-end-line="1957" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Practices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
-          <folding>
-            <element signature="e#2214#2222#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -637,10 +600,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Practices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
+          <folding>
+            <element signature="e#2214#2222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="1949" column="43" lean-forward="true" selection-start-line="1949" selection-start-column="43" selection-end-line="1949" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="640" column="8" selection-start-line="640" selection-start-column="8" selection-end-line="640" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/nio/file/Files.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34425">
-          <caret line="2381" column="26" selection-start-line="2381" selection-start-column="26" selection-end-line="2381" selection-end-column="26" />
+        <state relative-caret-position="285">
+          <caret line="2330" column="23" selection-start-line="2330" selection-start-column="23" selection-end-line="2330" selection-end-column="23" />
           <folding>
             <element signature="e#2577#2578#0" expanded="true" />
             <element signature="e#2631#2632#0" expanded="true" />
@@ -648,28 +635,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/AbstractStringBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2530#2531#0" expanded="true" />
-            <element signature="e#2562#2563#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="1029" column="33" selection-start-line="1029" selection-start-column="33" selection-end-line="1029" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/util/regex/Matcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="621" column="19" selection-start-line="621" selection-start-column="19" selection-end-line="621" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/javax/naming/InvalidNameException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Originals.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="165">
+          <caret line="161" column="54" selection-start-line="161" selection-start-column="54" selection-end-line="161" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5609#5610#0" expanded="true" />
-            <element signature="e#5641#5642#0" expanded="true" />
-            <element signature="e#5852#5853#0" expanded="true" />
-            <element signature="e#5885#5886#0" expanded="true" />
+            <element signature="e#5974#5975#0" expanded="true" />
+            <element signature="e#6007#6008#0" expanded="true" />
+            <element signature="e#6224#6225#0" expanded="true" />
+            <element signature="e#6257#6258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2629#2630#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
           </folding>
         </state>
       </provider>
