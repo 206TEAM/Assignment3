@@ -90,6 +90,7 @@ public class Practice {
      * @param nameKey
      * @return
      */
+    // todo: find a better way
     private String generateFileName(String nameKey){
         List<String> names = new ArrayList<String>();
 

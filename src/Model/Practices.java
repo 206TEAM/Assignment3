@@ -13,7 +13,7 @@ import java.util.Map.Entry;
  * This class represents a list of practices for each Name
  * _practices is a hashmap that contains the Name as the key value, and practice list for each name as the value.
  *
- * @Author: Lucy Chen
+ * @author Lucy Chen
  */
 public class Practices {
 
