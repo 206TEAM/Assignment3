@@ -3,66 +3,61 @@ package Model;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * A user can decide to practice saying a name
- * and compare it to a particular {@link Creation}.
+ * This class represents a single recording for a particular name.
+ * This file is saved as a .wav in the directory:
+ * Names/<_nameKey>/Practices/<fileName>.wav
  *
- * Their Practice is saved as a .wav in a subfolder of the
- * corresponding <code>Creation</code>.
- *
- * The user can Practice a single <code>Creation</code>
- * multiple times.
- *
- * @author Eric Pedrido
- * @author Lucy Chen
+ * @author: Lucy Chen
  */
 
 
 public class Practice {
 
     private String _fileName;
-    private String _name;
-    private File DIRECTORY = new File("Names/" + _name + "/Practice");
+    private String _nameKey;
+    private File DIRECTORY = new File("Names/" + _nameKey + "/Practice");
 
     /**
      * Constructor for the class
-     * @param name
+     * @param nameKey
      */
-    public Practice(String name) {
-        _fileName = name;
-        _name = name;
+    public Practice(String nameKey) {
+        _nameKey = nameKey;
+        _fileName = generateFileName(nameKey);
     }
 
     /**
-     * creates a creaton
+     * creates a practice
      */
-
     public void create() {
         justAudio();
     }
 
     /**
-     * this deletes a creation
+     * this deletes a practice
      */
     public void delete() {
         deleteFile(_fileName + ".mp4");
     }
 
     /**
-     * this creates the audio component of the creation
+     * this creates the audio component of the practice
      */
     public void justAudio() {
-        String command = "ffmpeg -f pulse -loglevel quiet -i default -t 5 \"output\".mp3";
+        String command = "ffmpeg -f pulse -loglevel quiet -i default -t 5 \""+ _fileName + "\".mp3";
         process(command);
     }
 
       /**
-     *deletes a file specified by param
-     * @param filePath must of the format filename.mp3 filename.mp4 etc
+     *deletes a file specified by the fileName
+     * @param fileName must of the format filename.mp3 filename.mp4 etc
      */
-    public void deleteFile(String filePath) {
-        Path path = Paths.get(_name + "Practices/" + filePath);
+    public void deleteFile(String fileName) {
+        Path path = Paths.get("Names/" + _nameKey + "Practices/" + fileName);
         try {
             Files.delete(path);
         } catch (NoSuchFileException x) {
@@ -90,16 +85,36 @@ public class Practice {
     }
 
     /**
-     * @return file name without extension
+     * generates file name based on other recordings...
+     * !!!!!!!!!bad method, find a better way
+     * @param nameKey
+     * @return
+     */
+    private String generateFileName(String nameKey){
+        List<String> names = new ArrayList<String>();
+
+        File file = new File("Names/" + nameKey + "/Practice");
+        File[] fileList = file.listFiles();
+
+        for (File f : fileList) {
+           names.add(f.getName()); //adds the file names from directory into the list
+        }
+
+        return nameKey + "Practices" + Integer.toString(names.size());
+        
+    }
+
+    /**
+     * @return fileName without extension
      */
     public String getFileName(){
         return _fileName;
     }
 
     /**
-     * Return the final .mp4 file
+     * Return the final .wav filepath
      */
-    public File mp4File() {
-        return new File(_name + "Practices/" + System.getProperty("file.separator") +_fileName + ".mp4");
+    public File filePath() {
+        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".mp4");
     }
 }

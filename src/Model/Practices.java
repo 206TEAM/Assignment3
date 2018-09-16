@@ -1,140 +1,138 @@
 package Model;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 
+/**
+ * This class represents a list of practices for each Name
+ * _practices is a hashmap that contains the Name as the key value, and practice list for each name as the value.
+ *
+ * @Author: Lucy Chen
+ */
 public class Practices {
 
-    private String _name;
-    protected LinkedList<Practice> _practices;
-
+    protected HashMap<String, ArrayList<Practice>> _practices;
 
     /**
-     * constructor that creates the linkedlist for Practices
-     */
-    public Practices(String name) {
-        _name = name;
-        updateModel(name);
-    }
-
-    /**
-     * If any changes occur to an <code>Original</code> creation's
-     * <code>Practices</code>, the model is updated through
-     * this method.
-     *
-     * @param name The name of the Creation to update
-     */
-    public void updateModel(String name) {
-        Path path = Paths.get("Names/" + name + "/Practice");
-
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
-
-            for (Path file: stream) {
-                String fileName = file.getFileName().toString();
-                _practices.add(new Practice(fileName.substring(0, fileName.lastIndexOf('.'))));
-            }
-        } catch (IOException | DirectoryIteratorException e) {
-            System.err.println(e);
-        }
-    }
-
-    /**
-     * returns a list of the NAMES of the practices
-     */
-    public List<String> listPractices() {
-        List<String> practiceList = new ArrayList<>();
-        for (Practice practice : _practices) {
-            practiceList.add(practice.getFileName());
-        }
-        return practiceList;
-    }
-
-    /**
-     * adds the practice to the model
-     *
+     * This method adds a practice recording into the practice list
+     * @param nameKey
      * @param practice
      */
-    public void addPractice(Practice practice) {
-        practice.create();
-        //_practices.add(practice);
+    public void addPractice(String nameKey, Practice practice) {
+        ArrayList<Practice> practiceList = _practices.get(nameKey);
+
+        // if list does not exist create it
+        if(practiceList == null) {
+            practiceList = new ArrayList<Practice>();
+            practiceList.add(practice);
+            _practices.put(nameKey, practiceList);
+        } else {
+            // add if item is not already in list
+            if(!practiceList.contains(practice)) {
+                practiceList.add(practice);
+            }
+        }
     }
 
     /**
-     * returns the file of the practice name
+     * Populates the _practices with existing recording files in each folder.
+     * iterates through the names list from Original.java
+     * goes into each folder and adds to the list
+     */
+    public void updateModel() {
+//        List<String> names = new ArrayList<>();
+//
+//        File file = new File("Names/" + name + "/Practice");
+//
+//        File[] fileList = file.listFiles();
+//
+//        for (File f : fileList) {
+//            names.add(f.getName()); //adds the file names from directory into the list
+//        }
+//
+//        for (String temp : names) {
+//            temp = temp.substring(0, name.lastIndexOf('.'));
+//            Practice practice = new Practice(temp);
+//            _practices.add(practice);
+//        }
+    }
+
+    /**
+     * returns a list of the fileNames of the practices given the nameKey
+     */
+    public List<String> listPractices(String nameKey) {
+        ArrayList<Practice> practiceList = _practices.get(nameKey);
+        List<String> practiceNames = new ArrayList<String>();
+
+        for (Practice practice : practiceList) {
+            practiceNames.add(practice.getFileName());
+        }
+        return practiceNames;
+    }
+
+    /**
+     * returns the file of the practice, based on the fileName and nameKey
      *
-     * @param name
+     * @param fileName
      * @return
      */
-    public File getFile(String name) {
-        Practice practice = getPractice(name);
-        return practice.mp4File();
+    public File getFile(String nameKey, String fileName) {
+        Practice practice = getPractice(nameKey, fileName);
+        return practice.filePath();
     }
 
     /**
-     * adds a practice via the name of the practice
-     *
-     * @param name
+     * deletes the practice from directory AND the practices list
+     * @param nameKey
+     * @param fileName
      */
-    public void addPracticeString(String name) {
-        // Create a new practice with the given title.
-        Practice practice = new Practice(name);
-        addPractice(practice);
-    }
-
-    /**
-     * deletes the practice from directory AND the list
-     *
-     * @param name
-     */
-    public void deletePractice(String name) {
-        Practice practiceDelete = getPractice(name);
+    public void deletePractice(String nameKey, String fileName) {
+        Practice practiceDelete = getPractice(nameKey, fileName);
         practiceDelete.delete(); // delete the practice
-        _practices.remove(practiceDelete);
+
+        _practices.get(nameKey).remove(practiceDelete); //not sure if this works yet (needs testing)
     }
 
 
     /**
-     * returns the practice from the name of the practice
+     * gets the practice from the filename of practice and the nameKey
      *
-     * @param name
+     * @param fileName
      * @return
      */
-    protected Practice getPractice(String name) {
+    protected Practice getPractice(String nameKey, String fileName) {
+        ArrayList<Practice> practiceList = _practices.get(nameKey);
+
         int index = 0;
-        for (int i = 0; i < _practices.size(); i++) {
-            if (_practices.get(i).getFileName().equals(name)) {
+        for (int i = 0; i < practiceList.size(); i++) {
+            if (practiceList.get(i).getFileName().equals(fileName)) {
                 index = i;
                 break;
             }
         }
-        return _practices.get(index);
+        return practiceList.get(index);
     }
 
     /**
-     * sees if the practice model contains the practice or not
-     *
-     * @param name
+     * this method generates a new recording based on the nameKey
+     * it then adds it to the _practices list
+     * @param nameKey
      * @return
      */
-    public boolean containsPractice(String name) {
-        boolean found = false;
-        for (Practice practice : _practices) {
-            if (name.equals(practice.getFileName())) {
-                found = true;
-            }
-        }
-        return found;
+    public void addNewPractice(String nameKey){
+        // Create a new practice of the given name
+        Practice practice = new Practice(nameKey);
+        addPractice(nameKey, practice);
     }
 
     public static void main(String[] args) {
-        Practices MasonName = new Practices("mason");
-        MasonName.addPracticeString("mason");
     }
-
 
 }
 
