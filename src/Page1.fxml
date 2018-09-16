@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.181" fx:controller="Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -26,6 +25,11 @@
                <children>
                   <Button layoutX="492.0" layoutY="22.0" mnemonicParsing="false" text="Mic Test" />
                   <Label alignment="CENTER" layoutX="220.0" layoutY="18.0" prefHeight="35.0" prefWidth="161.0" text="NameSayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="230.0" layoutY="28.0" prefHeight="35.0" prefWidth="161.0" text="NameSayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
