@@ -1,57 +1,80 @@
 package Model;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * This class handles the original sound recordings from the Recordings folder.
+ * This class handles the individual sound recordings from <dir>Recordings</dir>.
+ * A sound recording in that directory is referred to as an <code>Original</code>.
  *
- * On initialisation it creates folders of all the names from the Recordings folder.
- * It then creates subfolders Original and Practices.
- * It then adds the correct audio files into their respective subfolders.
+ * <p> Originals cannot be altered, deleted, or created from within the program.
+ * Any interaction other than playing the sound recording must be done externally
+ * by altering files in <dir>Recordings</dir>. </p>
  *
- * It also stores each original file in a List (probably a field)
+ * <p> An Original is identified by its file name exactly as it is written.
+ * However, the user friendly name can be retrieved from {@link Original#getName()}
+ * and is stored in {@link Original#_name}. </p>
  *
- * If specified the name of the original file, there are methods which retrieve the full path of the file
- * giving it in the format of e.g "Names/Mason/Originals/mason.wav (note the .wav extension)
+ * <p> Behaviour of all the <code>Original</code> in a group is different.
+ * This behaviour is inplemented in {@link Originals}</p>
  *
  * @author Eric Pedrido
  */
 public class Original {
 
-    //i would probably have an update method, a getFullPath(name) method etc
-    //ive also added your methods below:
-    //i guess keep this class quite separate to Practices (except for creating the folder of course)
-    //also its good practice to check if there already exists folders in the directory
-    //e.g if (folder or file DOESNT exist...add it).
-
     private String _name;
     private String _fileName;
 
     /**
-     * An Original creation is provided by <dir>Recordings</dir> and so
-     * this constructor doesn't construct an Original creation.
+     * The Originals are provided by <dir>Recordings</dir> and so
+     * this constructor does not construct an Original creation.
      * Instead, it creates a reference to the corresponding file.
      *
-     * @param fileName
-     *        Name of the original creation to reference.
-     *
-     * @throws FileNotFoundException
-     *         If the requested file doesn't exist.
+     * @param fileName Name of the Original to reference.
+     * @throws FileNotFoundException If the requested file doesn't exist.
      */
     public Original(String fileName) throws FileNotFoundException {
-        // Find the file with the enterred filename
+        // Find the file with the entered filename
         if (Files.exists(Paths.get("Recordings/" + fileName))) {
             _fileName = fileName;
-
+            _name = getName();
         } else {
             throw new FileNotFoundException();
         }
     }
 
+    /**
+     * Plays the audio from the sound file that this <code>Original</code>
+     * object is referencing.
+     * <p>
+     * todo implement this method.
+     */
+    public void play() {
+
+    }
+
+    /**
+     * Extracts a name that is user-friendly from the filename
+     * of an Original.
+     *
+     * <p> The naming convention for an Original creation is
+     * <code>(user code)_(date)_(xx-yy-zz)_(name).wav</code> where
+     * x, y and z are numbers. This method extracts just the name
+     * without any file extensions. </p>
+     *
+     * @return just the name with no file extensions.
+     */
+    public String getName() {
+        Pattern pattern = Pattern.compile("[ a-zA-Z]+.wav"); //todo REGEX FOR SOME REASON NOT WORKING
+        Matcher matcher = pattern.matcher(_fileName);
+
+        return matcher.group(0).substring(0, '.');
+    }
+
+    public String getFileName() {
+        return _fileName;
+    }
 }

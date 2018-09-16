@@ -86,11 +86,11 @@ public class Practice {
 
     /**
      * generates file name based on other recordings...
-     * !!!!!!!!!bad method, find a better way
+     * todo bad method, find a better way
+     *
      * @param nameKey
      * @return
      */
-    // todo: find a better way
     private String generateFileName(String nameKey){
         List<String> names = new ArrayList<String>();
 
