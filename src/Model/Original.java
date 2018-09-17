@@ -34,15 +34,10 @@ public class Original {
      * and so this constructor does not construct an {@code Original} directly.
      * Instead, it creates a reference to the corresponding file.
      *
-     * @param fileName
-     *        Name of the {@code Original} to reference.
-     *
-     * @throws FileNotFoundException
-     *         if the requested file doesn't exist.
-     * @throws InvalidNameException
-     *         if the fileName has a user-friendly name that contains
-     *         characters that are not alphabet letters or spaces.
-     *
+     * @param fileName Name of the {@code Original} to reference.
+     * @throws FileNotFoundException if the requested file doesn't exist.
+     * @throws InvalidNameException  if the fileName has a user-friendly name that contains
+     *                               characters that are not alphabet letters or spaces.
      * @see #getName()
      */
     public Original(String fileName) throws FileNotFoundException, InvalidNameException {
@@ -74,14 +69,12 @@ public class Original {
      * without any file extensions.</p>
      *
      * @return just the name with no file extensions.
-     *         It is impossible for a match to be not found
-     *         because the {@code Original }file must
-     *         exist in order for the instantiation to be
-     *         successful.
-     *
-     * @throws InvalidNameException
-     *         if the name contains characters that are not
-     *         alphabet letters or spaces.
+     * It is impossible for a match to be not found
+     * because the {@code Original }file must
+     * exist in order for the instantiation to be
+     * successful.
+     * @throws InvalidNameException if the name contains characters that are not
+     *                              alphabet letters or spaces.
      */
     public String getName() throws InvalidNameException {
         StringBuilder name = new StringBuilder();
