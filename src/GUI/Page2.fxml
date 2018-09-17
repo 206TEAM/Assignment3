@@ -18,7 +18,7 @@
             <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #003180;">
                <children>
                   <Button layoutX="492.0" layoutY="19.0" mnemonicParsing="false" text="Mic Test" />
-                  <Label alignment="CENTER" layoutX="220.0" layoutY="18.0" prefHeight="35.0" prefWidth="161.0" text="NameSayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Label alignment="CENTER" layoutX="220.0" layoutY="18.0" prefHeight="35.0" prefWidth="161.0" text="Name Sayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
