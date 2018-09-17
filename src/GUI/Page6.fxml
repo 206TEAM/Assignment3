@@ -74,12 +74,14 @@
                                  <children>
                                     <Label layoutX="9.0" layoutY="2.0" text="Originals" />
                                     <ListView layoutX="-5.0" layoutY="22.0" prefHeight="106.0" prefWidth="168.0" />
+                                    <ScrollBar layoutX="142.0" layoutY="19.0" orientation="VERTICAL" prefHeight="106.0" prefWidth="17.0" />
                                  </children>
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="202.0">
                                  <children>
                                     <Label layoutX="9.0" text="Practices" />
                                     <ListView layoutX="-10.0" layoutY="22.0" prefHeight="106.0" prefWidth="168.0" />
+                                    <ScrollBar layoutX="141.0" layoutY="19.0" orientation="VERTICAL" prefHeight="106.0" prefWidth="17.0" />
                                  </children>
                               </AnchorPane>
                           </items>
