@@ -58,10 +58,14 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
                      <children>
-                        <Button fx:id="practiceButton_3" layoutX="150.0" layoutY="263.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice!" textFill="WHITE">
+                        <Button fx:id="practiceButton_3" layoutX="150.0" layoutY="263.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font></Button>
+                         <Button fx:id="playButton_3" layoutX="150.0" layoutY="210.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
+                             <font>
+                                 <Font size="20.0" />
+                             </font></Button>
                         <Pane prefHeight="75.0" prefWidth="416.0" style="-fx-background-color: #486faf;">
                            <children>
                               <Label fx:id="nameLabel_3" layoutX="14.0" layoutY="22.0" prefHeight="31.0" prefWidth="87.0" text="Name" textAlignment="CENTER" textFill="WHITE">
@@ -75,7 +79,7 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <Slider fx:id="slider_3" blockIncrement="5.0" layoutX="86.0" layoutY="162.0" prefHeight="16.0" prefWidth="246.0">
+                        <Slider fx:id="originalSlider_3" blockIncrement="5.0" layoutX="86.0" layoutY="162.0" prefHeight="16.0" prefWidth="246.0">
                            <effect>
                               <ColorAdjust brightness="-0.44" contrast="-0.25" hue="-0.8" saturation="1.0" />
                            </effect>
