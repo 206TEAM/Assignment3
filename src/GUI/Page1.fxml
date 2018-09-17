@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -24,31 +24,31 @@
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;">
          <children>
-            <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #008080;">
+            <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #003180;">
                <children>
-                  <Button layoutX="492.0" layoutY="22.0" mnemonicParsing="false" text="Mic Test" />
-                  <Label alignment="CENTER" layoutX="203.0" layoutY="18.0" prefHeight="35.0" prefWidth="193.0" text="NameSayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button fx:id="micTestButton_1" layoutX="492.0" layoutY="22.0" mnemonicParsing="false" text="Mic Test" />
+                  <Label alignment="CENTER" layoutX="204.0" layoutY="15.0" prefHeight="35.0" prefWidth="193.0" text="Name Sayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="30.0" layoutY="21.0" mnemonicParsing="false" text="Home" />
+                  <Button fx:id="homeButton_1" layoutX="30.0" layoutY="21.0" mnemonicParsing="false" text="Home" />
                </children>
             </Pane>
-            <SplitPane prefHeight="340.0" prefWidth="600.0" style="-fx-background-color: #E0FFFF;">
+            <SplitPane prefHeight="340.0" prefWidth="600.0" style="-fx-background-color: #d3dbe8;">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <Label layoutX="140.0" layoutY="145.0" prefHeight="35.0" prefWidth="143.0" text="Practice" textFill="#426a75">
+                        <Label fx:id="practiceLabel_1" layoutX="140.0" layoutY="145.0" prefHeight="35.0" prefWidth="143.0" text="Practice" textFill="#00235b">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font></Label>
-                        <Label layoutX="346.0" layoutY="146.0" prefHeight="35.0" prefWidth="143.0" text="Listen" textFill="#426a75">
+                        <Label fx:id="listenLabel_1" layoutX="346.0" layoutY="146.0" prefHeight="35.0" prefWidth="143.0" text="Listen" textFill="#00235b">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DARKCYAN" height="120.0" layoutX="302.0" layoutY="103.0" stroke="DARKCYAN" strokeMiterLimit="5.0" strokeType="INSIDE" width="3.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00235b" height="120.0" layoutX="302.0" layoutY="103.0" width="3.0" />
                      </children>
                   </AnchorPane>
               </items>

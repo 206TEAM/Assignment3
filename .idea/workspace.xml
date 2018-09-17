@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updated and added methods in Originals and Original.&#10;&#10;Super minor javadoc fix in Practice class.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Page 4 and 5 colour change and sliders.&#10;&#10;Added sliders to page 5&#10;Added progress circle to page 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Original.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Original.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Originals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Originals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Page1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Page2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Page3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page3.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Page4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page4.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Page5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page5.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Page6.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page6.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,27 +73,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="fxml" value="324" />
           <entry key="java" value="14208" />
-          <entry key="txt" value="447" />
+          <entry key="txt" value="992" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="14208" />
-          <entry key="PLAIN_TEXT" value="447" />
+          <entry key="PLAIN_TEXT" value="992" />
+          <entry key="XML" value="324" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="41" />
+          <entry key="fxml" value="11" />
+          <entry key="java" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="41" />
+          <entry key="JAVA" value="42" />
+          <entry key="XML" value="11" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
+          <entry key="git.branch.rebase" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FavoritesManager">
@@ -98,96 +111,61 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/src/GUI/Page5.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="44" column="126" selection-start-line="44" selection-start-column="126" selection-end-line="44" selection-end-column="126" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="25" selection-start-column="25" selection-end-column="25" />
+        <entry file="file://$PROJECT_DIR$/src/GUI/Page6.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="87" column="176" selection-start-line="87" selection-start-column="170" selection-end-line="87" selection-end-column="176" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Practices.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Page4.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-840">
-              <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
-              <folding>
-                <element signature="e#2214#2222#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="428">
+              <caret line="43" column="126" selection-start-line="43" selection-start-column="126" selection-end-line="43" selection-end-column="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Page3.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="44" column="126" selection-start-line="44" selection-start-column="126" selection-end-line="44" selection-end-column="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Page2.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="43" column="126" selection-start-line="43" selection-start-column="126" selection-end-line="43" selection-end-column="126" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1025">
-              <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2629#2630#0" expanded="true" />
-                <element signature="e#2661#2662#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Originals.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="161" column="54" selection-start-line="161" selection-start-column="54" selection-end-line="161" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5974#5975#0" expanded="true" />
-                <element signature="e#6007#6008#0" expanded="true" />
-                <element signature="e#6224#6225#0" expanded="true" />
-                <element signature="e#6257#6258#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/AbstractStringBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="1029" column="33" selection-start-line="1029" selection-start-column="33" selection-end-line="1029" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Practice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
-              <folding>
-                <element signature="e#755#756#0" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample.fxml">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Page1.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="435">
+              <caret line="50" column="140" lean-forward="true" selection-start-line="50" selection-start-column="140" selection-end-line="50" selection-end-column="140" />
             </state>
           </provider>
         </entry>
@@ -213,6 +191,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -225,6 +208,13 @@
         <option value="$PROJECT_DIR$/src/Model/Practice.java" />
         <option value="$PROJECT_DIR$/src/Model/Originals.java" />
         <option value="$PROJECT_DIR$/src/Model/Original.java" />
+        <option value="$PROJECT_DIR$/src/Control/Controller.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Page5.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/Page6.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/Page4.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/Page3.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/Page2.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/Page1.fxml" />
       </list>
     </option>
   </component>
@@ -254,7 +244,19 @@
             <path>
               <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
-              <item name="Recordings" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -273,7 +275,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537099336301" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537179409297" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -443,7 +445,49 @@
       <option name="project" value="LOCAL" />
       <updated>1537091565246</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed bugs in populateFolders(). Works perfectly now.&#10;Corrected inconsistencies in JavaDocs for some methods.">
+      <created>1537100360475</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1537100360475</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Reformatted Javadocs.">
+      <created>1537185191382</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1537185191382</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Page 1 and 2 re-colouring">
+      <created>1537187157522</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1537187157522</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Page 3-6 added space to &quot;Name Sayer&quot;">
+      <created>1537187279172</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1537187279172</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Centred &quot;Name Sayer&quot; and changes to Page 3&#10;&#10;Added slider to Page 3 to represent audio duration.&#10;Added &quot;Add to list&quot; label next to add button">
+      <created>1537189686515</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1537189686515</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Page 4 and 5 colour change and sliders.&#10;&#10;Added sliders to page 5&#10;Added progress circle to page 4">
+      <created>1537191733315</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1537191733315</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -453,7 +497,7 @@
     <frame x="0" y="27" width="1366" height="694" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.26136363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14242424" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -463,7 +507,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32807016" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -487,6 +531,32 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -501,8 +571,13 @@
     <MESSAGE value="Implemented the populateModel() method." />
     <MESSAGE value="Added Originals class and methods. &#10;Added constructor for Original class.&#10;Added some comments on other classes." />
     <MESSAGE value="Updated and added methods in Originals and Original.&#10;&#10;Super minor javadoc fix in Practice class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated and added methods in Originals and Original.&#10;&#10;Super minor javadoc fix in Practice class." />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Fixed bugs in populateFolders(). Works perfectly now.&#10;Corrected inconsistencies in JavaDocs for some methods." />
+    <MESSAGE value="Reformatted Javadocs." />
+    <MESSAGE value="Page 1 and 2 re-colouring" />
+    <MESSAGE value="Page 3-6 added space to &quot;Name Sayer&quot;" />
+    <MESSAGE value="Centred &quot;Name Sayer&quot; and changes to Page 3&#10;&#10;Added slider to Page 3 to represent audio duration.&#10;Added &quot;Add to list&quot; label next to add button" />
+    <MESSAGE value="Page 4 and 5 colour change and sliders.&#10;&#10;Added sliders to page 5&#10;Added progress circle to page 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page 4 and 5 colour change and sliders.&#10;&#10;Added sliders to page 5&#10;Added progress circle to page 4" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -663,10 +738,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="82" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2629#2630#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Originals.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="161" column="54" selection-start-line="161" selection-start-column="54" selection-end-line="161" selection-end-column="54" />
+        <state>
+          <caret line="149" column="6" lean-forward="true" selection-start-line="149" selection-start-column="6" selection-end-line="149" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5974#5975#0" expanded="true" />
@@ -677,15 +764,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
+    <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2629#2630#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Page5.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="44" column="126" selection-start-line="44" selection-start-column="126" selection-end-line="44" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Page6.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="87" column="176" selection-start-line="87" selection-start-column="170" selection-end-line="87" selection-end-column="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Page4.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="43" column="126" selection-start-line="43" selection-start-column="126" selection-end-line="43" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Page3.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="44" column="126" selection-start-line="44" selection-start-column="126" selection-end-line="44" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Page2.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="43" column="126" selection-start-line="43" selection-start-column="126" selection-end-line="43" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Page1.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="50" column="140" lean-forward="true" selection-start-line="50" selection-start-column="140" selection-end-line="50" selection-end-column="140" />
         </state>
       </provider>
     </entry>

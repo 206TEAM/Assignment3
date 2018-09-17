@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -25,44 +26,52 @@
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;">
          <children>
-            <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #008080;">
+            <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #003180;">
                <children>
-                  <Button layoutX="492.0" layoutY="19.0" mnemonicParsing="false" text="Mic Test" />
-                  <Label alignment="CENTER" layoutX="220.0" layoutY="18.0" prefHeight="35.0" prefWidth="161.0" text="NameSayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button fx:id="micTestButton_4" layoutX="492.0" layoutY="19.0" mnemonicParsing="false" text="Mic Test" />
+                  <Label alignment="CENTER" layoutX="220.0" layoutY="15.0" prefHeight="35.0" prefWidth="161.0" text="Name Sayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Button layoutX="30.0" layoutY="18.0" mnemonicParsing="false" text="Home" />
+                  <Button fx:id="homeButton_4" layoutX="30.0" layoutY="18.0" mnemonicParsing="false" text="Home" />
                </children>
             </Pane>
             <SplitPane dividerPositions="0.29797979797979796" prefHeight="351.0" prefWidth="600.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #20B2AA;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #003180;">
                      <children>
-                        <ListView prefHeight="300.0" prefWidth="174.0" style="-fx-background-color: #20B2AA;" />
+                        <ListView fx:id="listView_4" prefHeight="300.0" prefWidth="174.0" style="-fx-background-color: #efefef;" />
                         <ScrollBar layoutX="157.0" layoutY="1.0" orientation="VERTICAL" prefHeight="300.0" prefWidth="17.0" />
-                        <Button layoutX="133.0" layoutY="304.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="31.0" text="+">
+                        <Button fx:id="addButton_4" layoutX="133.0" layoutY="304.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="31.0" text="+">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Button>
+                        <Label layoutX="61.0" layoutY="313.0" prefHeight="16.0" prefWidth="72.0" text="Add to list" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #E0FFFF;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
                      <children>
-                        <Button layoutX="140.0" layoutY="263.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #20B2AA;" text="Record" textFill="WHITE">
+                        <Button fx:id="recordButton_4" layoutX="140.0" layoutY="263.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Record" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
-                           </font></Button>
-                        <Pane prefHeight="75.0" prefWidth="416.0" style="-fx-background-color: #AFEEEE;">
+                           </font>
+                        </Button>
+                        <Pane prefHeight="75.0" prefWidth="416.0" style="-fx-background-color: #486faf;">
                            <children>
-                              <Label layoutX="21.0" layoutY="22.0" prefHeight="31.0" prefWidth="234.0" text="Name" textFill="WHITE">
+                              <Label fx:id="nameLabel_4" layoutX="14.0" layoutY="22.0" prefHeight="31.0" prefWidth="234.0" text="Name" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="26.0" />
-                                 </font></Label>
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
+                        <ProgressIndicator fx:id="recordProgress_4" layoutX="136.0" layoutY="98.0" prefHeight="143.0" prefWidth="126.0" progress="0.0" />
                      </children>
                   </AnchorPane>
               </items>
