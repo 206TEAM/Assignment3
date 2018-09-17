@@ -48,7 +48,7 @@
                               <Font name="System Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1650ad" height="120.0" layoutX="302.0" layoutY="103.0" stroke="#00235b" strokeMiterLimit="5.0" strokeType="INSIDE" width="3.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00235b" height="120.0" layoutX="302.0" layoutY="103.0" width="3.0" />
                      </children>
                   </AnchorPane>
               </items>
