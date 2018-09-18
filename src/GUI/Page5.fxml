@@ -21,7 +21,7 @@
             <Button fx:id="playOriginalButton_5" layoutX="139.0" layoutY="129.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Original" textFill="WHITE" />
             <Pane prefHeight="75.0" prefWidth="387.0" style="-fx-background-color: #486faf;">
                <children>
-                  <Label fx:id="nameLabel_5" layoutX="14.0" layoutY="22.0" prefHeight="31.0" prefWidth="234.0" textFill="WHITE">
+                  <Label fx:id="nameLabel_5" layoutX="14.0" layoutY="22.0" prefHeight="31.0" prefWidth="354.0" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="26.0" />
                      </font>
