@@ -21,7 +21,7 @@ public class ListController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> practiceNames = FXCollections.observableArrayList(Originals._SINGLETON.listNames());
+        ObservableList<String> practiceNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
         listView_2.setItems(practiceNames);
         listView_2.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }

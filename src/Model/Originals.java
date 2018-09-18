@@ -22,7 +22,7 @@ import java.util.List;
 public class Originals {
 
     private List<Original> _originals = new ArrayList<>();
-    public static final Originals _SINGLETON = new Originals();
+    private static final Originals _SINGLETON = new Originals();
 
     /**
      * Upon construction, all folders will be populated with each
