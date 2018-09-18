@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Singletons should be private static final.&#10;To access them, please use the getInstance() method.">
-      <change afterPath="$PROJECT_DIR$/src/GUI/Main.fxml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Created Main.fxml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Page2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page2.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,16 +69,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="fxml" value="324" />
+          <entry key="fxml" value="331" />
           <entry key="java" value="14218" />
-          <entry key="txt" value="1120" />
+          <entry key="txt" value="1152" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="14218" />
-          <entry key="PLAIN_TEXT" value="1120" />
-          <entry key="XML" value="324" />
+          <entry key="PLAIN_TEXT" value="1152" />
+          <entry key="XML" value="331" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -152,6 +153,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Main.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="151" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/Page1.fxml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -161,21 +172,11 @@
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/Page2.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="54" column="16" lean-forward="true" selection-end-line="58" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Main.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+            <state relative-caret-position="135">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
@@ -254,12 +255,12 @@
         <option value="$PROJECT_DIR$/src/GUI/Page6.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/Page4.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/Page3.fxml" />
-        <option value="$PROJECT_DIR$/src/GUI/Page2.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/Page1.fxml" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Model/Originals.java" />
         <option value="$PROJECT_DIR$/src/Control/ListController.java" />
         <option value="$PROJECT_DIR$/src/GUI/Main.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/Page2.fxml" />
       </list>
     </option>
   </component>
@@ -320,7 +321,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537309754367" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537309884335" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -539,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537309272645</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Created Main.fxml">
+      <created>1537309906686</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1537309906686</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -630,7 +638,8 @@
     <MESSAGE value="Centred &quot;Name Sayer&quot; and changes to Page 3&#10;&#10;Added slider to Page 3 to represent audio duration.&#10;Added &quot;Add to list&quot; label next to add button" />
     <MESSAGE value="Page 4 and 5 colour change and sliders.&#10;&#10;Added sliders to page 5&#10;Added progress circle to page 4" />
     <MESSAGE value="Singletons should be private static final.&#10;To access them, please use the getInstance() method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Singletons should be private static final.&#10;To access them, please use the getInstance() method." />
+    <MESSAGE value="Created Main.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Main.fxml" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -845,18 +854,18 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Page2.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="54" column="16" lean-forward="true" selection-end-line="58" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/Main.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="151" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Main.fxml">
+    <entry file="file://$PROJECT_DIR$/src/GUI/Page2.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
