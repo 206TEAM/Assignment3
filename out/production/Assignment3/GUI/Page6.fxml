@@ -1,42 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<VBox prefHeight="264.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
    <children>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
            <children>
-               <Button fx:id="playButton_6" layoutX="136.0" layoutY="215.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
+               <Button fx:id="practiceButton_3" layoutX="135.0" layoutY="187.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>
                </Button>
-               <Pane prefHeight="75.0" prefWidth="387.0" style="-fx-background-color: #486faf;">
-                   <children>
-                       <Label fx:id="nameLabel_6" layoutX="16.0" layoutY="14.0" prefHeight="31.0" prefWidth="356.0" text="Select a name" textFill="WHITE">
-                           <font>
-                               <Font name="System Bold Italic" size="26.0" />
-                           </font>
-                       </Label>
-                  <Label layoutX="14.0" layoutY="45.0" text="Rating: " textFill="#003063">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </Label>
-                   </children>
-               </Pane>
-               <Button fx:id="deleteButton_6" layoutX="135.0" layoutY="269.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Delete" textFill="WHITE">
+               <Button fx:id="playButton_3" layoutX="135.0" layoutY="135.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
                    <font>
-                       <Font size="20.0" /></font>
+                       <Font size="20.0" />
+                   </font>
                </Button>
-               <Slider fx:id="playSlider_6" blockIncrement="5.0" layoutX="71.0" layoutY="162.0" prefHeight="16.0" prefWidth="246.0">
+               <Slider fx:id="originalSlider_3" blockIncrement="5.0" layoutX="71.0" layoutY="83.0" prefHeight="16.0" prefWidth="246.0">
                    <effect>
                        <ColorAdjust brightness="-0.44" contrast="-0.25" hue="-0.8" saturation="1.0" />
                    </effect>

@@ -12,6 +12,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * This class controls
+ * @author: Eric Pedrido
+ */
 public class RootController {
 
 
@@ -36,7 +40,7 @@ public class RootController {
 
 	private void switchToMain() {
 		try {
-			URL url = new File("src/GUI/Main.fxml").toURL();
+			URL url = new File("src/GUI/SelectPractices.fxml").toURL();
 			VBox root = FXMLLoader.load(url);
 			rootVBox.getChildren().setAll(root);
 		} catch (IOException e) {

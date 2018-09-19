@@ -12,12 +12,65 @@ import java.util.Map.Entry;
 /**
  * This class represents a list of practices for each Name
  * _practices is a hashmap that contains the Name as the key value, and practice list for each name as the value.
+ * _practiceNames is a list of the names that the user is currently practicing (originally selected)
+ * _currentName is the name that the user is currently working on
  *
  * @author Lucy Chen
  */
 public class Practices {
 
     protected HashMap<String, ArrayList<Practice>> _practices;
+    protected List<String> _practiceNames;
+    protected String _currentName;
+    protected final static Practices instance = new Practices();
+
+    /**
+     * @return the hashmap of practices
+     */
+    public HashMap<String, ArrayList<Practice>> getPracticesMap(){
+        return _practices;
+    }
+
+    /**
+     * gets the current name that is being worked on or selected
+     * @return
+     */
+    public String getCurrentName(){
+        return _currentName;
+    }
+
+    /**
+     * sets the current name being worked on
+     * @param name
+     */
+    public void setCurrentName(String name){
+        _currentName = name;
+    }
+
+    /**
+     * returns the Practice instance
+     * @return
+     */
+    public static Practices getInstance(){
+        return instance;
+    }
+
+    /**
+     * creates a currently practicing names list
+     * @param names
+     */
+    public void addNames(List<String> names){
+        _practiceNames = names;
+
+    }
+
+    /**
+     * returns practice names list
+     * @return
+     */
+    public List<String> getPracticeNames(){
+        return _practiceNames;
+    }
 
     /**
      * This method adds a practice recording into the practice list
