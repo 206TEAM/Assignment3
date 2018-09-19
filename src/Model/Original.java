@@ -1,6 +1,7 @@
 package Model;
 
 import javax.naming.InvalidNameException;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,7 +17,7 @@ import java.util.regex.Pattern;
  * by altering files in <dir>Recordings</dir>.</p>
  *
  * <p> An {@code Original} is identified by its file name exactly as it is written.
- * However, a user friendly name can be retrieved from {@link #getName()}
+ * However, a user friendly name can be retrieved from {@link #extractName()}
  * and is stored in {@link #_name}.</p>
  *
  * <p> Behaviour of all the {@code Original} objects in a group is different.
@@ -38,13 +39,13 @@ public class Original {
      * @throws FileNotFoundException if the requested file doesn't exist.
      * @throws InvalidNameException  if the fileName has a user-friendly name that contains
      *                               characters that are not alphabet letters or spaces.
-     * @see #getName()
+     * @see #extractName()
      */
     public Original(String fileName) throws FileNotFoundException, InvalidNameException {
         // Find the file with the entered filename
         if (Files.exists(Paths.get("Recordings/" + fileName))) {
             _fileName = fileName;
-            _name = getName();
+            _name = extractName();
         } else {
             throw new FileNotFoundException();
         }
@@ -90,6 +91,10 @@ public class Original {
             throw new InvalidNameException("Name must consist only of letters and spaces.");
         }
 
+    }
+
+    public File getDirectory() {
+    	return new File("Names/" + _name + "/Original");
     }
 
     public String getName() {

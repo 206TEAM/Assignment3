@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * This class represents a single recording for a particular name.
  * This file is saved as a .wav in the directory:
- * Names/<_nameKey>/Practices/<fileName>.wav
+ * Names/(_nameKey)/Practices/(fileName).wav
  *
  * @author: Lucy Chen
  */
@@ -19,7 +19,6 @@ public class Practice {
 
     private String _fileName;
     private String _nameKey;
-    private File DIRECTORY = new File("Names/" + _nameKey + "/Practice");
 
     /**
      * Constructor for the class
@@ -41,15 +40,16 @@ public class Practice {
      * this deletes a practice
      */
     public void delete() {
-        deleteFile(_fileName + ".mp4");
+        deleteFile(_fileName + ".wav");
     }
 
     /**
      * this creates the audio component of the practice
      */
     public void justAudio() {
-        String command = "ffmpeg -f pulse -loglevel quiet -i default -t 5 \""+ _fileName + "\".mp3";
-        process(command);
+        String command = "ffmpeg -f pulse -loglevel quiet -i default -t 5 \""+ _fileName + "\".wav";
+        File directory = new File("Names/" + _nameKey + "/Practice");
+        Media.process(command, directory);
     }
 
       /**
@@ -69,20 +69,6 @@ public class Practice {
         }
     }
 
-    /**
-     * method processes a bash command
-     */
-    protected void process(String command) {
-        ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-c", command);
-        pb.directory(DIRECTORY);
-
-        try {
-            java.lang.Process process = pb.start();
-            process.waitFor();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * generates file name based on other recordings...
@@ -112,10 +98,12 @@ public class Practice {
         return _fileName;
     }
 
+    public File getDirectory() { return new File("Names/" + _nameKey + "/Practice"); }
+
     /**
      * Return the final .wav filepath
      */
     public File filePath() {
-        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".mp4");
+        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".wav");
     }
 }
