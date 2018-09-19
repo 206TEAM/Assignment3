@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.MainController">
    <children>
       <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #003180;">
          <children>

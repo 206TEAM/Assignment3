@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<VBox fx:id="rootVBox" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.RootController">
    <children>
       <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #003180;">
          <children>
@@ -27,7 +27,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="practiceLabel_1" layoutX="140.0" layoutY="145.0" prefHeight="35.0" prefWidth="143.0" text="Practice" textFill="#00235b">
+                  <Label fx:id="practiceLabel_1" layoutX="140.0" layoutY="145.0" prefHeight="35.0" prefWidth="143.0" text="Practice" textFill="#00235b" onMouseClicked="#practice1">
                      <font>
                         <Font name="System Bold" size="28.0" />
                      </font>
