@@ -32,7 +32,7 @@
                         <Font name="System Bold" size="28.0" />
                      </font>
                   </Label>
-                  <Label fx:id="listenLabel_1" layoutX="346.0" layoutY="146.0" prefHeight="35.0" prefWidth="143.0" text="Listen" textFill="#00235b">
+                  <Label fx:id="listenLabel_1" layoutX="346.0" layoutY="146.0" prefHeight="35.0" prefWidth="143.0" text="Listen" textFill="#00235b" onMouseClicked="#listen1">
                      <font>
                         <Font name="System Bold" size="28.0" />
                      </font>

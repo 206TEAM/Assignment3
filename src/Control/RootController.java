@@ -1,5 +1,6 @@
 package Control;
 
+import Model.Mediator;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -13,6 +14,8 @@ import java.net.URL;
 
 public class RootController {
 
+
+
 	@FXML public VBox rootVBox;
 	@FXML public Button micTestButton_1;
 	@FXML public Button homeButton_1;
@@ -21,6 +24,17 @@ public class RootController {
 
 	@FXML
 	public void practice1(MouseEvent mouseEvent) {
+		Mediator.getInstance().setPage("Page2");
+		switchToMain();
+	}
+
+
+	public void listen1(MouseEvent mouseEvent) {
+		Mediator.getInstance().setPage("Page6");
+		switchToMain();
+	}
+
+	private void switchToMain() {
 		try {
 			URL url = new File("src/GUI/Main.fxml").toURL();
 			VBox root = FXMLLoader.load(url);
