@@ -118,7 +118,7 @@ public class Originals {
         List<String> names = new ArrayList<>();
         try {
             for (Original creation : _originals) {
-                names.add(creation.getName());
+                names.add(creation.extractName());
             }
         } catch (InvalidNameException e) {
             // todo GUI popup saying that an Original in Recordings doesn't have correct name format
@@ -150,6 +150,25 @@ public class Originals {
             System.err.println(e); // todo Different GUI popup
         }
     }
+
+	/**
+	 * Given the name of an existing {@code Original}, finds the
+	 * corresponding {@code Original}, specifically,
+	 * its {@link Original#_fileName}.
+	 *
+	 * @param name user-friendly name of the {@code Original}
+	 * @return the corresponding file name if there exists an
+	 *         {@code Original} with that name. Otherwise, return
+	 *         {@code null}.
+	 */
+	public String getFileName(String name) {
+		for (Original original : _originals) {
+			if (original.getName().equals(name)) {
+				return original.getFileName();
+			}
+		}
+		return null;
+	}
 
     public List<Original> getOriginals() {
         return _originals;

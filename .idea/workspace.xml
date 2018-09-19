@@ -1,403 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixed bugs with loadPane()">
-      <change afterPath="$PROJECT_DIR$/Names/Ahn/Original/se206_18-5-2018_12-13-0_Ahn.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Antony/Original/se206_21-5-2018_14-9-29_Antony.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Ardern/Original/se206_27-4-2018_16-8-10_Ardern.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Beena/Original/se206_21-5-2018_14-8-47_Beena.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Bruce/Original/se206_23-8-2018_21-11-36_Bruce.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Catherine/Original/se206_27-4-2018_16-2-23_Catherine.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Chamara/Original/se206_18-5-2018_12-57-27_Chamara.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Chen/Original/se206_16-5-2018_23-37-41_Chen.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Deepika/Original/se206_21-5-2018_14-9-57_Deepika.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Dylan/Original/se206_18-5-2018_13-0-46_Dylan.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Eleanor/Original/se206_27-4-2018_15-56-37_Eleanor.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Eng/Original/se206_30-4-2018_9-52-26_Eng.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Francis/Original/se206_27-4-2018_16-18-3_Francis.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Hall/Original/se206_18-5-2018_13-1-14_Hall.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Hanyu/Original/se206_17-5-2018_14-29-11_Hanyu.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Ian/Original/se206_17-5-2018_17-15-48_Ian.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Isabella/Original/se206_18-5-2018_12-8-46_Isabella.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Izzy/Original/se206_18-5-2018_12-9-17_Izzy.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Jacinda/Original/se206_27-4-2018_16-7-40_Jacinda.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/James/Original/se206_18-5-2018_16-8-4_James.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Jesin/Original/se206_18-5-2018_16-7-33_Jesin.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Jiaqiu/Original/se206_17-5-2018_14-13-49_Jiaqiu.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Jonathan/Original/se206_2-5-2018_15-47-27_Jonathan.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Junyan/Original/se206_16-5-2018_23-34-53_Junyan.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Kachun/Original/se206_17-5-2018_14-43-7_Kachun.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Kalana/Original/se206_18-5-2018_12-58-21_Kalana.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Kun/Original/se206_17-5-2018_14-30-38_Kun.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lam/Original/se206_17-5-2018_14-43-55_Lam.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee11.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee13.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee15.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee17.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee19.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee21.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee23.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee25.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee27.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee29.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee31.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee33.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee35.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee37.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee39.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee41.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee43.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee45.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee47.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee49.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee51.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee53.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee7.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_18-5-2018_11-8-55_Lee9.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee10.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee12.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee14.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee16.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee18.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee20.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee22.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee24.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee26.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee28.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee30.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee32.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee34.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee36.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee38.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee40.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee42.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee44.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee46.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee48.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee50.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee52.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee54.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lee/Original/se206_23-8-2018_20-42-12_Lee8.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li10.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li13.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li16.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li19.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li22.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li25.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li28.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li31.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li34.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li37.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li40.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li43.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li46.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li49.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li52.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li55.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li58.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li61.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li64.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li67.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li7.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li70.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li73.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li76.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-3-36_Li79.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li12.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li15.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li18.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li21.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li24.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li27.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li30.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li33.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li36.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li39.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li42.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li45.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li48.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li51.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li54.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li57.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li60.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li63.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li66.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li69.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li72.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li75.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li78.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li81.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-5-59_Li9.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li11.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li14.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li17.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li20.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li23.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li26.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li29.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li32.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li35.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li38.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li41.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li44.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li47.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li50.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li53.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li56.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li59.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li62.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li65.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li68.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li71.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li74.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li77.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li8.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Li/Original/se206_17-5-2018_12-7-35_Li80.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Lin/Original/se206_17-5-2018_14-33-23_Lin.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Louis/Original/se206_17-5-2018_18-57-48_Louis.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Ma/Original/se206_17-5-2018_14-27-14_Ma.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/MacDonald/Original/se206_23-8-2018_21-13-35_MacDonald.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Mason/Original/se206_2-5-2018_15-23-50_Mason.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Melvin/Original/se206_18-5-2018_16-8-39_Melvin.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Ngo/Original/se206_18-5-2018_11-7-31_Ngo.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Nicholas/Original/se206_30-4-2018_9-42-4_Nicholas.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Patricia/Original/se206_17-5-2018_17-20-26_Patricia.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Paul/Original/se206_18-5-2018_16-9-14_Paul.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Rajagopal/Original/se206_21-5-2018_14-10-29_Rajagopal.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Ratnayake/Original/se206_18-5-2018_12-59-6_Ratnayake.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Ruozi/Original/se206_17-5-2018_14-28-6_Ruozi.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Saereem/Original/se206_18-5-2018_12-12-37_Saereem.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Shen/Original/se206_17-5-2018_14-23-8_Shen.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Shi/Original/se206_2-5-2018_15-31-49_Shi.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Shields/Original/se206_18-5-2018_12-10-9_Shields.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Sueyeon/Original/se206_18-5-2018_11-8-6_Sueyeon.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe10.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe12.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe14.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe16.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe18.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe20.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe22.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe24.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe26.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe28.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe30.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe32.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe34.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe36.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe38.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe40.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe42.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe44.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe46.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe48.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe50.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe52.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe54.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_15-52-6_Thorpe8.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe11.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe13.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe15.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe17.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe19.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe21.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe23.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe25.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe27.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe29.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe31.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe33.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe35.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe37.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe39.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe41.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe43.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe45.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe47.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe49.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe51.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe53.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe7.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Thorpe/Original/se206_27-4-2018_16-4-11_Thorpe9.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Tina/Original/se206_17-5-2018_14-34-30_Tina.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Wang/Original/se206_17-5-2018_14-31-7_Wang.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Watson/Original/se206_27-4-2018_15-54-26_Watson.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William11.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William13.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William15.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William17.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William19.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William21.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William23.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William25.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William27.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William29.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William31.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William33.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William35.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William37.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William39.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William41.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William43.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William45.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William47.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William49.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William51.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William53.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William7.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_23-8-2018_20-38-49_William9.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William10.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William12.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William14.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William16.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William18.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William20.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William22.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William24.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William26.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William28.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William30.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William32.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William34.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William36.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William38.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William40.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William42.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William44.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William46.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William48.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William50.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William52.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William54.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/William/Original/se206_27-4-2018_16-5-35_William8.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Xiaoran/Original/se206_17-5-2018_14-26-41_Xiaoran.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Xuyun/Original/se206_4-5-2018_15-56-40_Xuyun.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Yenting/Original/se206_17-5-2018_14-32-54_Yenting.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Yeting/Original/se206_17-5-2018_14-25-5_Yeting.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Ying/Original/se206_17-5-2018_14-29-56_Ying.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhan/Original/se206_17-5-2018_14-24-2_Zhan.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang10.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang12.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang14.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang16.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang18.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang20.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang22.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang24.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang26.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang28.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang30.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang32.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang34.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang36.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang38.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang40.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang42.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang44.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang46.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang48.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang50.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang52.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang54.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_17-5-2018_14-28-39_Zhang8.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang11.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang13.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang15.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang17.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang19.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang21.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang23.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang25.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang27.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang29.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang31.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang33.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang35.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang37.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang39.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang41.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang43.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang45.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang47.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang49.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang51.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang53.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang7.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhang/Original/se206_4-5-2018_16-1-13_Zhang9.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhao/Original/se206_17-5-2018_14-15-7_Zhao.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/Zhu/Original/se206_17-5-2018_14-25-56_Zhu.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/chen/Original/se206_30-4-2018_11-21-35_chen.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/eric/Original/se206_30-4-2018_11-23-36_eric.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/george/Original/se206_17-5-2018_18-57-1_george.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/hywel/Original/se206_27-4-2018_20-3-38_hywel.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/jonathan/Original/zkon584_2-5-2018_15-26-44_jonathan.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/maggie/Original/se206_18-5-2018_11-6-43_maggie.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/sean/Original/se206_23-8-2018_20-13-44_sean.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/stoakes/Original/se206_27-4-2018_20-7-45_stoakes.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/tang/Original/se206_30-4-2018_11-20-3_tang.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/wei/Original/se206_30-4-2018_11-22-50_wei.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/word/Original/se206_8-6-2018_1-58-21_word.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Names/yichen/Original/se206_30-4-2018_11-20-46_yichen.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/MainController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/PracticeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/RootController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/SelectPractices.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/SideList.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Assignment3/Model/Mediator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Control/PracticeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/SelectPractices.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/ListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/ListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page1.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page2.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page3.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page4.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page5.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page6.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page6.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Model/Practices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Model/Practices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/RootController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/RootController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Page1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Root.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Page2.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Page3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page3.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Page4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page4.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Page5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page5.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Page6.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Page6.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Practices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Practices.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Git wants me to commit for some reason">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Model/Mediator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Model/Mediator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Original.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Original.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Originals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Originals.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -465,26 +73,26 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="612" />
-          <entry key="java" value="16752" />
-          <entry key="txt" value="1444" />
+          <entry key="java" value="17463" />
+          <entry key="txt" value="1492" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="16752" />
-          <entry key="PLAIN_TEXT" value="1444" />
+          <entry key="JAVA" value="17463" />
+          <entry key="PLAIN_TEXT" value="1492" />
           <entry key="XML" value="612" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="48" />
-          <entry key="java" value="80" />
+          <entry key="java" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="80" />
+          <entry key="JAVA" value="82" />
           <entry key="XML" value="48" />
         </counts>
       </usages-collector>
@@ -513,20 +121,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+            <state relative-caret-position="398">
+              <caret line="100" column="5" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+              <folding>
+                <element signature="e#3477#3478#0" expanded="true" />
+                <element signature="e#3495#3496#0" expanded="true" />
+                <element signature="e#3477#3478#0" expanded="true" />
+                <element signature="e#3509#3510#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Originals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+            <state relative-caret-position="353">
+              <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+              <folding>
+                <element signature="e#6113#6114#0" expanded="true" />
+                <element signature="e#6146#6147#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -588,16 +206,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Page4.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/Page6.fxml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="480">
@@ -627,6 +235,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>equals</find>
+    </findStrings>
+  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
@@ -654,7 +267,6 @@
         <option value="$PROJECT_DIR$/src/Practice.java" />
         <option value="$PROJECT_DIR$/src/Model/Practices.java" />
         <option value="$PROJECT_DIR$/src/Model/Practice.java" />
-        <option value="$PROJECT_DIR$/src/Model/Original.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Control/ListController.java" />
         <option value="$PROJECT_DIR$/src/GUI/Page2.fxml" />
@@ -671,6 +283,7 @@
         <option value="$PROJECT_DIR$/src/Control/RootController.java" />
         <option value="$PROJECT_DIR$/src/GUI/Main.fxml" />
         <option value="$PROJECT_DIR$/src/Control/MainController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Original.java" />
         <option value="$PROJECT_DIR$/src/Model/Originals.java" />
       </list>
     </option>
@@ -738,10 +351,10 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537349418613" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537353087980" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1038,7 +651,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537329605457</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Git wants me to commit for some reason">
+      <created>1537352423303</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1537352423303</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1138,7 +758,8 @@
     <MESSAGE value="Created the skeleton for changing pages" />
     <MESSAGE value="Working barebones for switching scenes" />
     <MESSAGE value="Fixed bugs with loadPane()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs with loadPane()" />
+    <MESSAGE value="Git wants me to commit for some reason" />
+    <option name="LAST_COMMIT_MESSAGE" value="Git wants me to commit for some reason" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1269,13 +890,6 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/javafx-src.zip!/javafx/collections/FXCollections.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1449,17 +1063,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Originals.java">
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+        <state relative-caret-position="405">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="149" selection-end-column="5" />
+          <folding>
+            <element signature="e#5748#5749#0" expanded="true" />
+            <element signature="e#5784#5785#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Original.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+        <state relative-caret-position="398">
+          <caret line="100" column="5" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+          <folding>
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3495#3496#0" expanded="true" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Originals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="e#6113#6114#0" expanded="true" />
+            <element signature="e#6146#6147#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -76,7 +76,7 @@ public class Original {
      * @throws InvalidNameException if the name contains characters that are not
      *                              alphabet letters or spaces.
      */
-    public String getName() throws InvalidNameException {
+    public String extractName() throws InvalidNameException {
         StringBuilder name = new StringBuilder();
 
         Pattern pattern = Pattern.compile("[ a-zA-Z]+.wav");
@@ -90,6 +90,10 @@ public class Original {
             throw new InvalidNameException("Name must consist only of letters and spaces.");
         }
 
+    }
+
+    public String getName() {
+    	return _name;
     }
 
     public String getFileName() {
