@@ -7,21 +7,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="264.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.PracticeController">
+<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.PracticeController">
    <children>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
            <children>
-               <Button fx:id="practiceButton_3" layoutX="135.0" layoutY="187.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
+               <Button fx:id="practiceButton_3" layoutX="148.0" layoutY="160.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>
                </Button>
-               <Button fx:id="playButton_3" layoutX="135.0" layoutY="135.0" mnemonicParsing="false" onAction="#playOriginal" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
+               <Button fx:id="playButton_3" layoutX="148.0" layoutY="108.0" mnemonicParsing="false" onAction="#playOriginal" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>
                </Button>
-               <Slider fx:id="originalSlider_3" blockIncrement="5.0" layoutX="71.0" layoutY="82.0" prefHeight="16.0" prefWidth="246.0">
+               <Slider fx:id="originalSlider_3" blockIncrement="5.0" layoutX="84.0" layoutY="55.0" prefHeight="16.0" prefWidth="246.0">
                    <effect>
                        <ColorAdjust brightness="-0.44" contrast="-0.25" hue="-0.8" saturation="1.0" />
                    </effect>

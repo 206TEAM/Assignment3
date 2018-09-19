@@ -45,26 +45,11 @@ public class ListController implements Initializable {
      * @param location
      * @param resources
      */
-    @Override
+    @FXML
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> practiceNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
         selectListView.setItems(practiceNames);
         selectListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    }
-
-    /**
-     * goes to home (Root.fxml)
-     * @param actionEvent
-     */
-    @FXML
-    public void home(ActionEvent actionEvent) {
-        try {
-            URL url = new File("src/GUI/Root.fxml").toURL();
-            VBox root = FXMLLoader.load(url);
-            rootVBox.getChildren().setAll(root);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     /**

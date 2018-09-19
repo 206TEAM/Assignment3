@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="264.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
          <children>
-            <Button fx:id="recordButton_4" layoutX="135.0" layoutY="200.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Record" textFill="WHITE">
+            <Button fx:id="recordButton_4" layoutX="148.0" layoutY="184.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Record" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <ProgressIndicator fx:id="recordProgress_4" layoutX="131.0" layoutY="35.0" prefHeight="143.0" prefWidth="126.0" progress="0.0" />
+            <ProgressIndicator fx:id="recordProgress_4" layoutX="144.0" layoutY="19.0" prefHeight="143.0" prefWidth="126.0" progress="0.0" />
          </children>
       </AnchorPane>
    </children>
