@@ -1,5 +1,12 @@
 package Model;
 
+import Control.MainController;
+
+/**
+ * Mediates which scene to switch to in {@link MainController#loadPane()}.
+ *
+ * @author Eric Pedrido
+ */
 public class Mediator {
 
 	private String _page;
