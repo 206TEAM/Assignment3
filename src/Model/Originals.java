@@ -128,6 +128,18 @@ public class Originals {
         return names;
     }
 
+
+
+    private List<String> listFileNames(String dir) throws IOException, DirectoryIteratorException {
+        List<String> fileNames = new ArrayList<>();
+        DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(dir), "*.wav");
+
+        for (Path creation : stream) {
+            fileNames.add(creation.getFileName().toString());
+        }
+        return fileNames;
+    }
+
     /**
      * Sets the values of {@link #_originals} to be correct given the current
      * contents of <dir>Recordings</dir>.
@@ -161,14 +173,36 @@ public class Originals {
 	 *         {@code Original} with that name. Otherwise, return
 	 *         {@code null}.
 	 */
-	public String getFileName(String name) {
-		for (Original original : _originals) {
-			if (original.getName().equals(name)) {
-				return original.getFileName();
-			}
-		}
-		return null;
-	}
+    public List<String> getFileName(String name) {
+        List<String> fileNames = new ArrayList<>();
+        for (Original original : _originals) {
+            if (original.getName().equals(name)) {
+                try {
+                    fileNames = listFileNamesDir("Names/" + name + "/Original");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return fileNames;
+    }
+
+
+
+///new method
+    private List<String> listFileNamesDir(String dir) throws IOException, DirectoryIteratorException {
+        List<String> fileNames = new ArrayList<>();
+        DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(dir), "*.wav");
+
+        for (Path creation : stream) {
+            fileNames.add(creation.getFileName().toString());
+        }
+        return fileNames;
+    }
+
+
+
+
 
     public List<Original> getOriginals() {
         return _originals;
