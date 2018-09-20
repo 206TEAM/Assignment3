@@ -52,15 +52,6 @@ public class Original {
     }
 
     /**
-     * Plays the audio from the sound file that this {@code Original}
-     * object is referencing.
-     * todo implement this method.
-     */
-    public void play() {
-
-    }
-
-    /**
      * Extracts a name that is user-friendly from the file name
      * of an {@code Original}.
      *

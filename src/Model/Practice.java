@@ -42,7 +42,7 @@ public class Practice {
      * this deletes a practice
      */
     public void delete() {
-        deleteFile(_fileName + ".wav");
+        deleteFile(getDirectory() +System.getProperty("file.separator")+ _fileName + ".mp3");
     }
 
     /**
@@ -82,9 +82,6 @@ public class Practice {
     private String generateFileName(String nameKey){
         List<String> names = new ArrayList<String>();
         String name;
-        //File file = _directory;
-
-       // if (file.isDirectory() && file.list().length > 0){ //todo not empty
         File directory = getDirectory();
             for (File f : directory.listFiles()) {
                 System.out.println("it ok");
@@ -95,15 +92,11 @@ public class Practice {
             if (names.size()==0) {
                 name = nameKey + "Practices1";
             } else {
-                name = nameKey + "Practices" + Integer.toString(names.size());
+                name = nameKey + "Practices" + Integer.toString(names.size() + 1);
 
             }
 
         System.out.println(name);
-       // } else {
-            //name = nameKey + "Practices1";
-      //  }
-
         return name;
     }
 
@@ -118,7 +111,7 @@ public class Practice {
      * Return the final .wav filepath
      */
     public File filePath() {
-        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".wav");
+        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".mp3");
     }
 
     public File getDirectory(){

@@ -1,4 +1,6 @@
 import Model.Mediator;
+import Model.Original;
+import Model.Originals;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +15,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
+	    Originals.getInstance().populateFolders();
 	    Mediator.getInstance().setPage("Root");
         try {
             VBox root = (VBox) FXMLLoader.load(getClass().getResource("GUI/Header.fxml"));
