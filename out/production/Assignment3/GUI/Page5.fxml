@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.CompareController">
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
          <children>
-            <Button fx:id="doneButton_5" layoutX="149.0" layoutY="180.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Done" textFill="WHITE">
+            <Button fx:id="doneButton_5" layoutX="149.0" layoutY="180.0" mnemonicParsing="false" onAction="#done" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Done" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="playOriginalButton_5" layoutX="152.0" layoutY="42.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Original" textFill="WHITE" />
+            <Button fx:id="playOriginalButton_5" layoutX="152.0" layoutY="42.0" mnemonicParsing="false" onAction="#playOriginal" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Original" textFill="WHITE" />
             <Slider fx:id="originalSlider_5" blockIncrement="5.0" layoutX="84.0" layoutY="24.0" prefHeight="16.0" prefWidth="246.0">
                <effect>
                   <ColorAdjust brightness="-0.44" contrast="-0.25" hue="-0.8" saturation="1.0" />

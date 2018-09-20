@@ -267,19 +267,13 @@ public class Originals {
 		return -1;
     }
 
-	/**
-	 * Find the {@code Original} with the corresponding name.
-	 *
-	 * @param name the corresponding name of the desire {@code Original}.
-	 * @return the {@code Original} from the corresponding name.
-	 */
-	public Original getOriginal(String name) {
+    public void playOriginal(String name) {
 	    for (Original original : _originals) {
 		    if (original.getName().equals(name)) {
-			    return original;
+			    Model.Media media = new Model.Media(original);
+			    media.play();
 		    }
 	    }
-	    return null;
     }
 
     /**
