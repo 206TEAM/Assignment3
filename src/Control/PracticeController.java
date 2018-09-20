@@ -23,11 +23,6 @@ public class PracticeController {
     public Button playButton_3;
 
     /**
-     * fields
-     */
-    String _fileName;
-
-    /**
      * Plays the original .wav file when selecting a name, and pressing the play button
      */
     public void playOriginal(ActionEvent event){
@@ -153,7 +148,11 @@ public class PracticeController {
      * gets rid of creation when user chooses to rerecord the audio.
      */
     public void removeAudio() {
-        Practices.getInstance().deletePractice(Practices.getInstance().getCurrentName(), Practices.getInstance().getFileName());
+        String name = Practices.getInstance().getCurrentName();
+        String fileName = Practices.getInstance().getFileName();
+        System.out.println(name);
+        System.out.println("file to delete"+ fileName);
+        Practices.getInstance().deletePractice(name, fileName);
     }
 
 }
