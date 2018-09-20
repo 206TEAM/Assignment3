@@ -29,6 +29,7 @@ public class Original {
 
     private String _name;
     private String _fileName;
+    private int _rating;
 
     /**
      * The {@code Original} files are provided by <dir>Recordings</dir>
@@ -51,13 +52,12 @@ public class Original {
         }
     }
 
-    /**
-     * Plays the audio from the sound file that this {@code Original}
-     * object is referencing.
-     * todo implement this method.
-     */
-    public void play() {
+    public void setRating(int rating) {
+        _rating = rating;
+    }
 
+    public int getRating() {
+        return _rating;
     }
 
     /**
