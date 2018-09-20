@@ -2,6 +2,7 @@ package Control;
 
 import Model.Mediator;
 import Model.Originals;
+import Model.Practice;
 import Model.Practices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
