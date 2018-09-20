@@ -10,16 +10,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ListenController">
    <children>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;">
            <children>
-               <Button fx:id="practiceButton_3" layoutX="213.0" layoutY="81.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
+               <Button fx:id="practiceButton_3" layoutX="213.0" layoutY="81.0" mnemonicParsing="false" onAction="#deleteFile" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Delete" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>
                </Button>
-               <Button fx:id="playButton_3" layoutX="84.0" layoutY="81.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
+               <Button fx:id="playButton_3" layoutX="84.0" layoutY="81.0" mnemonicParsing="false" onAction="#play" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>
@@ -34,13 +34,13 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #004187">
                       <children>
                           <Label layoutX="72.0" text="Originals" textFill="WHITE" />
-                          <ListView fx:id="originalListView" layoutY="18.0" prefHeight="79.0" prefWidth="202.0" style="-fx-background-color: #efefef" />
+                          <ListView fx:id="originalListView" layoutY="18.0" onMouseClicked="#selectNameOriginal" prefHeight="79.0" prefWidth="202.0" style="-fx-background-color: #efefef" />
                       </children>
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #004187">
                       <children>
                           <Label layoutX="72.0" layoutY="1.0" text="Practices" textFill="WHITE" />
-                          <ListView fx:id="practiceListView" layoutY="17.0" prefHeight="79.0" prefWidth="202.0" style="-fx-background-color: #efefef" />
+                          <ListView fx:id="practiceListView" layoutY="17.0" onMouseClicked="#selectNamePractice" prefHeight="79.0" prefWidth="202.0" style="-fx-background-color: #efefef" />
                       </children>
                   </AnchorPane>
               </items>

@@ -34,6 +34,13 @@ public class Media {
 		_directory = original.getDirectory();
 	}
 
+	public Media(String filename, File directory){
+		_fileName = filename;
+		_originalName = null;
+		_directory = directory;
+
+	}
+
 	/**
 	 * Plays the {@code Practice} or {@code Original}
 	 * depending on which constructor is called.

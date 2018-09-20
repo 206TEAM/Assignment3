@@ -24,6 +24,7 @@ public class Practices {
     protected String _currentName;
     protected final static Practices instance = new Practices();
     protected String _currentFileName;
+    protected String _currentFileNameSelect;
 
     private Practices(){
        _practices = new HashMap<String, ArrayList<Practice>>();
@@ -34,6 +35,24 @@ public class Practices {
      */
     public HashMap<String, ArrayList<Practice>> getPracticesMap() {
         return _practices;
+    }
+
+    /**
+     * gets the current name that is being worked on or selected
+     *
+     * @return
+     */
+    public String getSelectFile() {
+        return _currentFileNameSelect;
+    }
+
+    /**
+     * sets the current name being worked on
+     *
+     * @param name
+     */
+    public void setSelectFile(String name) {
+        _currentFileNameSelect = name;
     }
 
     /**
@@ -199,7 +218,7 @@ public class Practices {
          * @param fileName
          * @return
          */
-        protected Practice getPractice (String nameKey, String fileName){
+        public Practice getPractice (String nameKey, String fileName){
             ArrayList<Practice> practiceList = _practices.get(nameKey);
 
             int index = 0;
