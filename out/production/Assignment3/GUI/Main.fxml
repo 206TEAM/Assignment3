@@ -6,12 +6,12 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.control.ToggleGroup?>
 
 <VBox fx:id="rootVBox" prefHeight="320.0" prefWidth="598.0" style="-fx-background-color: #48D1CC;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.MainController">
     <fx:define>
@@ -29,7 +29,7 @@
                                 <Font name="System Italic" size="13.0" />
                             </font>
                         </Label>
-                  <Button fx:id="addName" layoutX="144.0" layoutY="293.0" mnemonicParsing="false" text="+">
+                  <Button fx:id="addName" layoutX="144.0" layoutY="293.0" mnemonicParsing="false" onAction="#addName" text="+">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -53,10 +53,13 @@
                                           <Font size="14.0" />
                                       </font>
                                   </Label>
-                                  <RadioButton fx:id="rb1" layoutX="70.0" layoutY="48.0" mnemonicParsing="false" text="1" textFill="RED" toggleGroup="$ratingGroup">
+                                  <RadioButton fx:id="rb1" layoutX="70.0" layoutY="48.0" mnemonicParsing="false" text="1" textFill="RED">
                                       <effect>
                                           <ColorAdjust brightness="-0.05" contrast="0.24" hue="0.32" saturation="1.0" />
-                                      </effect></RadioButton>
+                                      </effect>
+                                    <toggleGroup>
+                                       <ToggleGroup fx:id="ratingGroup" />
+                                    </toggleGroup></RadioButton>
                                   <RadioButton fx:id="rb2" layoutX="105.0" layoutY="48.0" mnemonicParsing="false" text="2" textFill="RED" toggleGroup="$ratingGroup">
                                       <effect>
                                           <ColorAdjust brightness="-0.05" contrast="0.24" hue="0.32" saturation="1.0" />

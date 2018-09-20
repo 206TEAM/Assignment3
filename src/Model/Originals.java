@@ -1,11 +1,12 @@
 package Model;
 
 import javax.naming.InvalidNameException;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * This class represents a collection of {@link Original} objects.
@@ -22,16 +23,24 @@ import java.util.List;
 public class Originals {
 
     private List<Original> _originals = new ArrayList<>();
+
     private static final Originals _SINGLETON = new Originals();
 
     /**
-     * Upon construction, all folders will be populated with each
-     * {@code Original} having its own respective sub-folder.
-     * This must only happen on start-up of program.
+     * Upon construction, <dir>Recordings</dir> will be scanned
+     * to populate {@link #_originals} and <dir>Ratings.txt</dir>
+     * is created if it does not already exist.
      */
     private Originals() {
         updateModel();
-        populateFolders();
+        try {
+            File ratings = new File ("Ratings.txt");
+            if (Files.notExists(ratings.toPath())) {
+                Files.createFile(ratings.toPath());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -48,10 +57,10 @@ public class Originals {
      * <dir>John Smith1.wav</dir>
      * <dir>John Smith2.wav</dir>.</p>
      */
-    private void populateFolders() {
+    public void populateFolders() {
         try {
             List<String> names = listNames();
-            List<String> fileNames = listFileNames();
+            List<String> fileNames = listFileNames("Recordings");
 
             // Make a folder for each creation containing sub-folders
             for (String name : names) {
@@ -61,6 +70,8 @@ public class Originals {
                 }
             }
 
+            HashMap<String, Integer> duplicateNames = new HashMap<>();
+
             // Put the respective creations in their folders
             for (int i = 0; i < fileNames.size(); i++) {
                 String creation = fileNames.get(i);
@@ -68,20 +79,24 @@ public class Originals {
                 String finalName = creation;
                 // Insert an int n for the nth version of that Original.
                 if (names.lastIndexOf(name) != names.indexOf(name)) {
-                    // The path will never be null, as the directory is always created above should it not exist.
-                    int version = new File ("Names/" + name + "/Original").listFiles().length + 1;
+                    Integer version = 0;
+                    if (duplicateNames.containsKey(name)) {
+                        version = duplicateNames.get(name);
+                    }
+                    duplicateNames.put(name, version + 1);
+
                     StringBuilder tempName = new StringBuilder(creation);
-                    tempName.insert(tempName.length() - 4, version);
+                    tempName.insert(tempName.length() - 4, duplicateNames.get(name));
 
                     finalName = tempName.toString();
                 }
-                if (Files.notExists(Paths.get("Names/" + name + "/Original/" + creation)))
-                Files.copy(Paths.get("Recordings/" + creation),
-                        Paths.get("Names/" + name + "/Original/" + finalName),
-                        StandardCopyOption.COPY_ATTRIBUTES);
+                if (Files.notExists(Paths.get("Names/" + name + "/Original/" + finalName)))
+                    Files.copy(Paths.get("Recordings/" + creation),
+                            Paths.get("Names/" + name + "/Original/" + finalName),
+                            StandardCopyOption.COPY_ATTRIBUTES);
             }
         } catch (IOException | DirectoryIteratorException e) {
-            System.err.println(e); // todo: replace with an error message in GUI
+            System.err.println(e);
         }
     }
 
@@ -97,9 +112,9 @@ public class Originals {
      * @throws DirectoryIteratorException if an error occurs while iterating through
      *                                    the directory.
      */
-    public List<String> listFileNames() throws IOException, DirectoryIteratorException {
+    private List<String> listFileNames(String dir) throws IOException, DirectoryIteratorException {
         List<String> fileNames = new ArrayList<>();
-        DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get("Recordings"), "*.wav");
+        DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(dir), "*.wav");
 
         for (Path creation : stream) {
             fileNames.add(creation.getFileName().toString());
@@ -121,64 +136,44 @@ public class Originals {
                 names.add(creation.extractName());
             }
         } catch (InvalidNameException e) {
-            // todo GUI popup saying that an Original in Recordings doesn't have correct name format
             System.err.println(e);
         }
 
         return names;
     }
 
-
-
-    private List<String> listFileNames(String dir) throws IOException, DirectoryIteratorException {
-        List<String> fileNames = new ArrayList<>();
-        DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(dir), "*.wav");
-
-        for (Path creation : stream) {
-            fileNames.add(creation.getFileName().toString());
-        }
-        return fileNames;
-    }
-
     /**
      * Sets the values of {@link #_originals} to be correct given the current
      * contents of <dir>Recordings</dir>.
-     *
-     * <p> If an {@code IOException}, {@code DirectoryIteratorException} or
-     * {@code InvalidNameException} is thrown, then this method informs
-     * the (todo insert class here)
-     * to display an error pop-up.</p>
      */
     public void updateModel() {
         try {
-            List<String> fileNames = listFileNames();
+            List<String> fileNames = listFileNames("Recordings");
 
             for (String fileName : fileNames) {
                 _originals.add(new Original(fileName));
             }
-        } catch (IOException | DirectoryIteratorException e) {
-            System.err.println(e); // todo GUI popup saying an unexpected error occured
-        } catch (InvalidNameException e) {
-            System.err.println(e); // todo Different GUI popup
+        } catch (IOException | DirectoryIteratorException | InvalidNameException e) {
+            System.err.println(e);
         }
     }
 
-	/**
-	 * Given the name of an existing {@code Original}, finds the
-	 * corresponding {@code Original}, specifically,
-	 * its {@link Original#_fileName}.
-	 *
-	 * @param name user-friendly name of the {@code Original}
-	 * @return the corresponding file name if there exists an
-	 *         {@code Original} with that name. Otherwise, return
-	 *         {@code null}.
-	 */
+    /**
+     * Given the name of an existing {@code Original}, finds the
+     * corresponding {@code Original}, specifically,
+     * its {@link Original#_fileName}.
+     *
+     * @param name user-friendly name of the {@code Original}
+     * @return the corresponding file name if there exists an
+     *         {@code Original} with that name. Otherwise, return
+     *         {@code null}.
+     */
     public List<String> getFileName(String name) {
         List<String> fileNames = new ArrayList<>();
         for (Original original : _originals) {
             if (original.getName().equals(name)) {
                 try {
-                    fileNames = listFileNamesDir("Names/" + name + "/Original");
+                    fileNames = listFileNames("Names/" + name + "/Original");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -187,25 +182,98 @@ public class Originals {
         return fileNames;
     }
 
-
-
-///new method
-    private List<String> listFileNamesDir(String dir) throws IOException, DirectoryIteratorException {
-        List<String> fileNames = new ArrayList<>();
-        DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(dir), "*.wav");
-
-        for (Path creation : stream) {
-            fileNames.add(creation.getFileName().toString());
+    /**
+     * Sets the rating of an {@code Original} by writing
+     * it into <dir>Rating.txt</dir> in the format
+     * <q>Name: x</q> for any integer x.
+     *
+     * @param name name of the {@code Original}.
+     * @param rating rating to set.
+     */
+    public void setRating(String name, int rating) {
+        String text = name + ": " + rating + "\n";
+        try {
+            int lineNumber = getLineNumber(name);
+            List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get("Ratings.txt")));
+            if (lineNumber == -1) {
+                // Adds a new line if the name is rated for the first time
+                Files.write(Paths.get("Ratings.txt"), text.getBytes(), StandardOpenOption.APPEND);
+            } else {
+                // Rewrites entire file, replacing existing line.
+                fileContents.set(lineNumber, text);
+                Files.write(Paths.get("Ratings.txt"), fileContents, StandardCharsets.UTF_8);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return fileNames;
     }
 
+    /**
+     * Reads the contents of <dir>Ratings.txt</dir> and
+     * extracts just the rating for the given name should
+     * there be a rating.
+     *
+     * <p> The default rating for any {@code Original} is 0
+     * which indicates that no rating has been set. </p>
+     *
+     * @param name the name of the {@code Original} to find.
+     * @return the corresponding rating as set in <dir>Ratings.txt</dir>.
+     *         If no rating is specified for the given name, then
+     *         returns 0.
+     */
+    public int getRating(String name) {
+        int output = 0;
+        if (name != null) {
+            try {
+                int counter = -1;
+                boolean found = false;
+                BufferedReader br = new BufferedReader(new FileReader("Ratings.txt"));
+                String line;
 
+                while ((line = br.readLine()) != null) {
+                    counter++;
+                    if (counter == getLineNumber(name)) {
+                        found = true;
+                        break;
+                    }
+                }
 
+                if (found) {
+                    Pattern pattern = Pattern.compile("[0-9]+");
+                    Matcher matcher = pattern.matcher(line);
+                    if (matcher.find()) {
+                        output = Integer.parseInt(matcher.group(0));
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return output;
+    }
 
+    private int getLineNumber(String name) {
+        try {
+            List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get("Ratings.txt")));
 
-    public List<Original> getOriginals() {
-        return _originals;
+            for (int i = 0; i < fileContents.size(); i++) {
+                if(fileContents.get(i).startsWith(name)) {
+                    return i;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public void playOriginal(String name) {
+        for (Original original : _originals) {
+            if (original.getName().equals(name)) {
+                Model.Media media = new Model.Media(original);
+                media.play();
+            }
+        }
     }
 
     /**
@@ -223,7 +291,5 @@ public class Originals {
         Practice practice = new Practice("Mason");
         practice.create();
         System.out.println(practice.getFileName());
-
-
     }
 }
