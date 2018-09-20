@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.PracticeController">
+<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.PracticeController">
    <children>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
            <children>
-               <Button fx:id="practiceButton_3" layoutX="148.0" layoutY="160.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
+               <Button fx:id="practiceButton_3" layoutX="148.0" layoutY="160.0" mnemonicParsing="false" onAction="#practiceName" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>

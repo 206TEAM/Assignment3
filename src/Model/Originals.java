@@ -186,5 +186,10 @@ public class Originals {
 
     // JUST FOR TESTING PURPOSES
     public static void main(String[] args) {
+        Practice practice = new Practice("Mason");
+        practice.create();
+        System.out.println(practice.getFileName());
+
+
     }
 }
