@@ -36,6 +36,7 @@ public class HeaderController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		Mediator.getInstance().setHeader(this);
 		loadPane();
 	}
 
@@ -70,7 +71,7 @@ public class HeaderController implements Initializable {
 	 * the Header for the GUI stays the same throughout
 	 * the program.
 	 */
-	private void loadPane() {
+	public void loadPane() {
 		VBox vBox = null;
 		try {
 			URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();

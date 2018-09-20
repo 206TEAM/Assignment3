@@ -1,22 +1,16 @@
 package Control;
 
 import Model.Mediator;
-import Model.Original;
 import Model.Originals;
 import Model.Practices;
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.Slider;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 import javax.sound.sampled.AudioFormat;
@@ -49,21 +43,7 @@ public class PracticeController {
 		});
 		thread.setDaemon(true);
 		thread.start();
-		showProgress();
-//        MediaPlayer mediaPlayer = new MediaPlayer(createMedia(name));
-//        mediaPlayer.play();
-
-	}
-
-	/**
-	 * creates a video from the .mp3 fileName
-	 * ISSUE: doesnt work... something wrong with .wav files???
-	 */
-	public Media createMedia(String name) {
-		File file = new File("Names/Ahn/Original/se206_18-5-2018_12-13-0_Ahn.wav"); //todo: add more methods in Originals
-		String URL = file.toURI().toString();
-		Media media = new Media(URL);
-		return media;
+		Mediator.getInstance().showProgress(progressBar, "Original");
 	}
 
 	/**
@@ -73,29 +53,6 @@ public class PracticeController {
 	 */
 	public void practiceName(ActionEvent event) {
 		Mediator.getInstance().setPage("Page4");
-		Mediator.getInstance().loadPane();
-	}
-
-	private void showProgress() {
-		double duration = 0;
-		try {
-			String name = Practices.getInstance().getCurrentName();
-			String fileName = Originals.getInstance().getFileName(name).get(0);
-			File file = new File("Names/" + name + "/Original/" + fileName);
-			AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-			AudioFormat format = ais.getFormat();
-
-			long frames = ais.getFrameLength();
-			duration = (frames+0.0) / format.getFrameRate();
-		} catch (UnsupportedAudioFileException | IOException e) {
-			e.printStackTrace();
-		}
-
-		Timeline timeLine = new Timeline(
-				new KeyFrame(Duration.ZERO, new KeyValue(progressBar.progressProperty(), 0)),
-				new KeyFrame(Duration.seconds(duration), Event::consume,
-						new KeyValue(progressBar.progressProperty(), 1)));
-		timeLine.setCycleCount(1);
-		timeLine.play();
+		Mediator.getInstance().loadMainPane();
 	}
 }
