@@ -18,7 +18,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -33,9 +32,6 @@ public class ListController implements Initializable {
     /**
      * Components of SelectPractices.fxml
      */
-    @FXML public Pane mainTitlePane;
-    @FXML public Button mainMicTestButton;
-    @FXML public Button mainHomeButton;
     @FXML public ListView selectListView;
     @FXML public VBox rootVBox;
 
