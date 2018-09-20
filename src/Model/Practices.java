@@ -23,15 +23,11 @@ public class Practices {
     protected List<String> _practiceNames;
     protected String _currentName;
     protected final static Practices instance = new Practices();
-    protected String _currentfileName;
+    protected String _currentFileName;
 
-    //private Practices(){
-    //   List<String> names = Originals.getInstance().listNames();
-    //   for (String name : names){
-    //     _practices.put(name,null);
-    //}
-
-    //}
+    private Practices(){
+       _practices = new HashMap<String, ArrayList<Practice>>();
+    }
 
     /**
      * @return the hashmap of practices
@@ -55,7 +51,7 @@ public class Practices {
      * @param name
      */
     public void setFileName(String name) {
-        _currentfileName = name;
+        _currentFileName = name;
     }
 
     /**
@@ -64,7 +60,7 @@ public class Practices {
      * @return
      */
     public String getFileName() {
-        return _currentfileName;
+        return _currentFileName;
     }
 
     /**
@@ -112,8 +108,9 @@ public class Practices {
      */
     public String addPractice(String nameKey, Practice practice) {
         ArrayList<Practice> practiceList = new ArrayList<Practice>();
+        System.out.println("success1?");
 
-        if (_practices.containsKey(nameKey)) {
+        if (_practices.containsKey(nameKey)) { //if key already exists
             practiceList = _practices.get(nameKey); //todo add thing already.
 
             // if list does not exist create it
@@ -123,18 +120,17 @@ public class Practices {
                 _practices.put(nameKey, practiceList);
             } else {
                 // add if item is not already in list
-                if (!practiceList.contains(practice)) {
+               // if (!practiceList.contains(practice)) {
                     practiceList.add(practice);
-                }
+             //   }
             }
         } else {
-            practiceList = new ArrayList<Practice>();
             practiceList.add(practice);
             _practices.put(nameKey, practiceList);
         }
 
+        System.out.println("success?");
         return practice.getFileName();
-
         }
 
         /**
@@ -224,8 +220,11 @@ public class Practices {
          */
         public String addNewPractice (String nameKey){
             // Create a new practice of the given name
+            System.out.println("success1?");
             Practice practice = new Practice(nameKey);
+            System.out.println("success2?");
             practice.create();
+            System.out.println("success3?");
             addPractice(nameKey, practice);
             return practice.getFileName();
         }
