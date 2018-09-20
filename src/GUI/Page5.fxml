@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -16,18 +16,18 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="playOriginalButton_5" layoutX="152.0" layoutY="42.0" mnemonicParsing="false" onAction="#playOriginal" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Original" textFill="WHITE" />
-            <Slider fx:id="originalSlider_5" blockIncrement="5.0" layoutX="84.0" layoutY="24.0" prefHeight="16.0" prefWidth="246.0">
-               <effect>
-                  <ColorAdjust brightness="-0.44" contrast="-0.25" hue="-0.8" saturation="1.0" />
-               </effect>
-            </Slider>
-            <Slider fx:id="practiceSlider_5" blockIncrement="5.0" layoutX="84.0" layoutY="95.0" prefHeight="16.0" prefWidth="246.0">
-               <effect>
-                  <ColorAdjust brightness="-0.44" contrast="-0.25" hue="-0.8" saturation="1.0" />
-               </effect>
-            </Slider>
-            <Button fx:id="playPracticeButton_5" layoutX="152.0" layoutY="113.0" mnemonicParsing="false" onAction="#playPractice" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Practice" textFill="WHITE" />
+            <Button fx:id="playOriginalButton_5" layoutX="152.0" layoutY="50.0" mnemonicParsing="false" onAction="#playOriginal" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Original" textFill="WHITE" />
+             <ProgressBar fx:id="originalProgressBar" layoutX="85.0" layoutY="21.0" prefHeight="20.0" prefWidth="239.0" progress="0.0">
+                 <effect>
+                     <ColorAdjust brightness="0.61" contrast="1.0" hue="-0.37" />
+                 </effect>
+             </ProgressBar>
+             <ProgressBar fx:id="practiceProgressBar" layoutX="85.0" layoutY="92.0" prefHeight="20.0" prefWidth="239.0" progress="0.0">
+                 <effect>
+                     <ColorAdjust brightness="0.61" contrast="1.0" hue="-0.37" />
+                 </effect>
+             </ProgressBar>
+            <Button fx:id="playPracticeButton_5" layoutX="152.0" layoutY="122.0" mnemonicParsing="false" onAction="#playPractice" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Practice" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

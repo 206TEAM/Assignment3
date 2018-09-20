@@ -49,7 +49,7 @@ public class Practice {
      * this creates the audio component of the practice
      */
     public void justAudio() {
-        String command = "ffmpeg -f pulse -loglevel quiet -i default -t 5 \"" + _fileName + "\".mp3";
+        String command = "ffmpeg -f alsa -i default -t 5 \"" + _fileName + "\".wav";
         File directory = getDirectory();
         Media.process(command, directory);
     }

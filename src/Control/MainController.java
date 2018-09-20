@@ -8,6 +8,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -147,4 +148,10 @@ public class MainController implements Initializable {
         Practices.getInstance().setCurrentName(name);
         //loadRatings(name);
     }
+
+	public void addName(ActionEvent actionEvent) {
+    	Mediator.getInstance().setPage("SelectPractices");
+    	Mediator.getInstance().setPracticeList(Practices.getInstance().getPracticeNames());
+    	Mediator.getInstance().loadHeaderPane();
+	}
 }
