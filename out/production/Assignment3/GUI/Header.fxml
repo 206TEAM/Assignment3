@@ -16,7 +16,7 @@
                <children>
                     <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #003180;">
                         <children>
-                            <Button fx:id="micTestButton" layoutX="514.0" layoutY="22.0" mnemonicParsing="false" onAction="#popUp" text="Test Mic" />
+                            <Button fx:id="micTestButton" layoutX="514.0" layoutY="22.0" mnemonicParsing="false" onMousePressed="#testMic" text="Test Mic" />
                             <Label alignment="CENTER" layoutX="220.0" layoutY="15.0" prefHeight="35.0" prefWidth="161.0" text="Name Sayer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                 <font>
                                     <Font name="System Bold" size="21.0" />

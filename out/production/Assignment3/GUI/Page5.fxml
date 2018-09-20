@@ -27,7 +27,7 @@
                   <ColorAdjust brightness="-0.44" contrast="-0.25" hue="-0.8" saturation="1.0" />
                </effect>
             </Slider>
-            <Button fx:id="playPracticeButton_5" layoutX="152.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Practice" textFill="WHITE" />
+            <Button fx:id="playPracticeButton_5" layoutX="152.0" layoutY="113.0" mnemonicParsing="false" onAction="#playPractice" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Practice" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

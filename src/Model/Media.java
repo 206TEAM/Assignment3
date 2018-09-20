@@ -1,5 +1,8 @@
 package Model;
 
+import Control.HeaderController;
+import javafx.concurrent.Task;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -67,13 +70,9 @@ public class Media {
 	 * @see #playbackMicTest()
 	 */
 	public static void recordMicTest() {
-		try {
-			String file = Files.createTempFile("temp", ".wav").toString();
-			String record = "ffmpeg -f alsa -i default -t 3 " + file;
-			process(record, CURRENT_DIRECTORY);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		String record = "ffmpeg -f alsa -i default -t 3 temp.wav";
+		process(record, CURRENT_DIRECTORY);
+		playbackMicTest();
 	}
 
 	/**
@@ -84,9 +83,10 @@ public class Media {
 	 *
 	 * @see #finishMicTest()
 	 */
-	public static void playbackMicTest() {
+	private static void playbackMicTest() {
 			String record = "ffplay -autoexit -nodisp -i temp.wav";
 			process(record, CURRENT_DIRECTORY);
+			finishMicTest();
 	}
 
 	/**
@@ -118,5 +118,4 @@ public class Media {
 			e.printStackTrace();
 		}
 	}
-
 }
