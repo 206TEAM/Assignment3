@@ -57,5 +57,8 @@ public class HeaderController implements Initializable {
 		}
 	}
 
+	@FXML
+	public void popUp(ActionEvent actionEvent) {
 
+	}
 }

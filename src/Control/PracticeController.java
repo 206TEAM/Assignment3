@@ -1,39 +1,27 @@
 package Control;
 
 import Model.Mediator;
-import Model.Practice;
+import Model.Original;
+import Model.Originals;
 import Model.Practices;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Optional;
 
 /**
  * This class controls Page3 where the user can choose to play and/or practice a name
- * @author: Lucy Chen
+ * @author Lucy Chen
  */
 public class PracticeController {
 
-    @FXML
-    public Button playButton_3;
-
-    @FXML
-    public AnchorPane mainPane;
-
-    @FXML
-    public VBox rootVBox;
+    @FXML public Button playButton_3;
+    @FXML public Button practiceButton_3;
+    @FXML public Slider originalSlider_3;
 
     /**
      * Plays the original .wav file when selecting a name, and pressing the play button
@@ -41,8 +29,12 @@ public class PracticeController {
     public void playOriginal(ActionEvent event){
         System.out.println("played");
         String name = Practices.getInstance().getCurrentName();
-        MediaPlayer mediaPlayer = new MediaPlayer(createMedia(name));
-        mediaPlayer.play();
+	    Original original = Originals.getInstance().getOriginal(name);
+//        String name = Practices.getInstance().getCurrentName();
+//        MediaPlayer mediaPlayer = new MediaPlayer(createMedia(name));
+//        mediaPlayer.play();
+	    Model.Media media = new Model.Media(original);
+	    media.play();
     }
 
     /**
@@ -63,19 +55,6 @@ public class PracticeController {
      */
     public void practiceName(ActionEvent event){
         Mediator.getInstance().setPage("Page4");
-        switchTo("Main");
-
+        Mediator.getInstance().loadPane();
     }
-
-    private void switchTo(String scene) {
-        try {
-            URL url = new File("src/GUI/" + scene + ".fxml").toURL();
-            VBox root = FXMLLoader.load(url);
-            rootVBox.getChildren().setAll(root);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 }

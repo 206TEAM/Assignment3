@@ -29,7 +29,6 @@ public class Original {
 
     private String _name;
     private String _fileName;
-    private int _rating;
 
     /**
      * The {@code Original} files are provided by <dir>Recordings</dir>
@@ -50,14 +49,6 @@ public class Original {
         } else {
             throw new FileNotFoundException();
         }
-    }
-
-    public void setRating(int rating) {
-        _rating = rating;
-    }
-
-    public int getRating() {
-        return _rating;
     }
 
     /**

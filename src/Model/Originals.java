@@ -267,8 +267,19 @@ public class Originals {
 		return -1;
     }
 
-    public List<Original> getOriginals() {
-        return _originals;
+	/**
+	 * Find the {@code Original} with the corresponding name.
+	 *
+	 * @param name the corresponding name of the desire {@code Original}.
+	 * @return the {@code Original} from the corresponding name.
+	 */
+	public Original getOriginal(String name) {
+	    for (Original original : _originals) {
+		    if (original.getName().equals(name)) {
+			    return original;
+		    }
+	    }
+	    return null;
     }
 
     /**
@@ -280,4 +291,11 @@ public class Originals {
     public static Originals getInstance() {
         return _SINGLETON;
     }
+
+	// JUST FOR TESTING PURPOSES
+	public static void main(String[] args) {
+		Practice practice = new Practice("Mason");
+		practice.create();
+		System.out.println(practice.getFileName());
+	}
 }

@@ -62,6 +62,7 @@ public class MainController implements Initializable {
      */
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+    	Mediator.getInstance().setMain(this);
     	loadPane();
     	ratingHandler();
 
