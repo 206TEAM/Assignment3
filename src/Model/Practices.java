@@ -20,7 +20,7 @@ import java.util.Map.Entry;
 public class Practices {
 
     protected HashMap<String, ArrayList<Practice>> _practices;
-    protected List<String> _practiceNames;
+    protected ArrayList<String> _practiceNames;
     protected String _currentName;
     protected final static Practices instance = new Practices();
     protected String _currentFileName;
@@ -106,7 +106,20 @@ public class Practices {
      * @param names
      */
     public void addNames(List<String> names) {
-        _practiceNames = names;
+        if (_practiceNames == null){
+            _practiceNames = new ArrayList();
+            _practiceNames.addAll(names);
+        } else {
+
+            System.out.println("not null");
+            for (String name : names){
+                if (!_practiceNames.contains(name)){
+                    _practiceNames.add(name);
+                }
+
+            }
+        }
+
 
     }
 
