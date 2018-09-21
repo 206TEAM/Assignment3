@@ -1,9 +1,8 @@
 package Control;
 
+import Model.Media;
 import Model.Originals;
 import Model.Practices;
-import Model.Media;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,22 +15,20 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ListenController implements Initializable {
-    @FXML
-    public Button playButton_3;
 
-    @FXML
-    public ListView<String> practiceListView;
+    @FXML public Button playButton_3;
+    @FXML public ListView<String> practiceListView;
+    @FXML public ListView<String> originalListView;
+    @FXML public ListView<String> mainListView;
+    @FXML public Label nameLabel_3;
+	@FXML public ToggleGroup ratingGroup;
+	@FXML public RadioButton rb1;
+	@FXML public RadioButton rb2;
+	@FXML public RadioButton rb3;
+	@FXML public RadioButton rb4;
+	@FXML public RadioButton rb5;
 
-    @FXML
-    public ListView<String> originalListView;
-
-    public ListView<String> mainListView;
-
-    @FXML
-    public Label nameLabel_3;
-
-
-    /**
+	/**
      * fields
      */
     String _selected;
@@ -39,6 +36,11 @@ public class ListenController implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+    	ratingHandler();
+
+        System.out.println("yes");
+        //ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
+        ///ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
         ObservableList<String> allNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
 
         mainListView.setItems(allNames);
@@ -89,7 +91,7 @@ public class ListenController implements Initializable {
      * gets rid of creation when user chooses to rerecord the audio.
      */
     public void deleteFile() {
-        if (_type == "practice") {
+        if (_type.equals("practice")){
             String name = Practices.getInstance().getCurrentName();
             Practices.getInstance().deletePractice(name, _selected);
         } else {
@@ -105,7 +107,7 @@ public class ListenController implements Initializable {
         if (_type.equals("original")) { //if type is original
             Originals.getInstance().playOriginal(name);
 
-        String name = Originals.getInstance().
+        //String name = Originals.getInstance()
 
         } else { //type is practice
             Media media = new Media(Practices.getInstance().getPractice(name, _selected));
@@ -121,5 +123,34 @@ public class ListenController implements Initializable {
     public void removeAudio() {
         Practices.getInstance().deletePractice(Practices.getInstance().getCurrentName(), Practices.getInstance().getFileName());
     }
+
+
+	/**
+	 * Writes to <dir>Ratings.txt</dir> the desired rating of the user.
+	 *
+	 * <p> Puts all the buttons into a group so that only one can
+	 * be selected at a time.</p>
+	 */
+	private void ratingHandler() {
+		ratingGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+			String fileName = originalListView.getSelectionModel().getSelectedItem();
+			if (fileName != null) {
+				String name = Originals.getInstance().getName(fileName);
+				if (newValue == rb1) {
+					Originals.getInstance().setRating(name, 1);
+				} else if (newValue == rb2) {
+					Originals.getInstance().setRating(name, 2);
+				} else if (newValue == rb3) {
+					Originals.getInstance().setRating(name, 3);
+				} else if (newValue == rb4) {
+					Originals.getInstance().setRating(name, 4);
+				} else if (newValue == rb5) {
+					Originals.getInstance().setRating(name, 5);
+				}
+			}
+		});
+	}
+
+
 
 }

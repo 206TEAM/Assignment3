@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vBox_4" prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.RecordController">
+<VBox prefHeight="245.0" prefWidth="414.0" style="-fx-background-color: #d3dbe8;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.RecordController">
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
          <children>
@@ -15,7 +15,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <ProgressIndicator fx:id="recordProgress_4" layoutX="144.0" layoutY="19.0" prefHeight="143.0" prefWidth="126.0" progress="0.0" />
+            <ProgressIndicator fx:id="recordProgress" layoutX="144.0" layoutY="19.0" prefHeight="143.0" prefWidth="126.0" progress="0.0" />
          </children>
       </AnchorPane>
    </children>

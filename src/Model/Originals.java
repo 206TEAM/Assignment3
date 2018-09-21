@@ -182,6 +182,15 @@ public class Originals {
         return fileNames;
     }
 
+    public String getName(String fileName) {
+        for (Original original : _originals) {
+            if (original.getFileName().equals(fileName)) {
+                return original.getName();
+            }
+        }
+        return null;
+    }
+
     /**
      * Sets the rating of an {@code Original} by writing
      * it into <dir>Rating.txt</dir> in the format
@@ -286,10 +295,4 @@ public class Originals {
         return _SINGLETON;
     }
 
-    // JUST FOR TESTING PURPOSES
-    public static void main(String[] args) {
-        Practice practice = new Practice("Mason");
-        practice.create();
-        System.out.println(practice.getFileName());
-    }
 }
