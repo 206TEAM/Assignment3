@@ -12,6 +12,10 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * this class control Page6.fxml
+ * @author: Lucy Chen
+ */
 public class ListenController implements Initializable {
 
     @FXML public Button playButton_3;
@@ -120,7 +124,9 @@ public class ListenController implements Initializable {
             System.out.println("not null");
             ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
             practiceListView.setItems(practices);
-        }
+        } else {
+        	practiceListView.getItems().clear(); //clears if no practices
+		}
     }
 
     /**
