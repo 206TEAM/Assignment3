@@ -1,6 +1,7 @@
 package Control;
 
 import Model.Media;
+import Model.Original;
 import Model.Originals;
 import Model.Practices;
 import javafx.collections.FXCollections;
@@ -27,6 +28,8 @@ public class ListenController implements Initializable {
 	@FXML public RadioButton rb3;
 	@FXML public RadioButton rb4;
 	@FXML public RadioButton rb5;
+	@FXML public ProgressBar progressBar;
+	@FXML public Label ratingLabel;
 
 	/**
      * fields
@@ -65,11 +68,12 @@ public class ListenController implements Initializable {
 
     public void selectNameOriginal(MouseEvent event) {
         System.out.println("selecting original name");
-        String name = originalListView.getSelectionModel().getSelectedItem();
+        String fileName = originalListView.getSelectionModel().getSelectedItem();
         //nameLabel_3.setText(name);
-        _selected = name;
-        System.out.println(name);
+        _selected = fileName;
+        System.out.println(fileName);
         _type = "original";
+        loadRating(Originals.getInstance().getOriginal(fileName));
     }
 
     public void populateSubLists() {
@@ -104,13 +108,13 @@ public class ListenController implements Initializable {
      */
     public void play(ActionEvent event) {
         String name = Practices.getInstance().getCurrentName(); //getting the name
-        if (_type.equals("original")) { //if type is original
-            Originals.getInstance().playOriginal(name);
-
-        //String name = Originals.getInstance()
-
+	    Media media;
+	    if (_type.equals("original")) { //if type is original
+            String fileName = originalListView.getSelectionModel().getSelectedItem();
+            Original original = Originals.getInstance().getOriginal(fileName);
+            Originals.getInstance().playOriginal(original);
         } else { //type is practice
-            Media media = new Media(Practices.getInstance().getPractice(name, _selected));
+	    	media = new Media(Practices.getInstance().getPractice(name, _selected));
             media.play();
         }
         System.out.println("played");
@@ -135,22 +139,24 @@ public class ListenController implements Initializable {
 		ratingGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
 			String fileName = originalListView.getSelectionModel().getSelectedItem();
 			if (fileName != null) {
-				String name = Originals.getInstance().getName(fileName);
+				Original original = Originals.getInstance().getOriginal(fileName);
 				if (newValue == rb1) {
-					Originals.getInstance().setRating(name, 1);
+					Originals.getInstance().setRating(original, 1);
 				} else if (newValue == rb2) {
-					Originals.getInstance().setRating(name, 2);
+					Originals.getInstance().setRating(original, 2);
 				} else if (newValue == rb3) {
-					Originals.getInstance().setRating(name, 3);
+					Originals.getInstance().setRating(original, 3);
 				} else if (newValue == rb4) {
-					Originals.getInstance().setRating(name, 4);
+					Originals.getInstance().setRating(original, 4);
 				} else if (newValue == rb5) {
-					Originals.getInstance().setRating(name, 5);
+					Originals.getInstance().setRating(original, 5);
 				}
 			}
 		});
 	}
 
-
+	private void loadRating(Original original) {
+		ratingLabel.setText("" + Originals.getInstance().getRating(original));
+	}
 
 }

@@ -29,6 +29,7 @@ public class Original {
 
     private String _name;
     private String _fileName;
+    private String _version = "";
 
     /**
      * The {@code Original} files are provided by <dir>Recordings</dir>
@@ -82,6 +83,14 @@ public class Original {
             throw new InvalidNameException("Name must consist only of letters and spaces.");
         }
 
+    }
+
+    public void setVersion(String version) {
+        _version = version;
+    }
+
+    public String getVersion() {
+        return _version;
     }
 
     public File getDirectory() {

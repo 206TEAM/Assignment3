@@ -85,6 +85,8 @@ public class Originals {
                     }
                     duplicateNames.put(name, version + 1);
 
+                    _SINGLETON.getOriginal(creation).setVersion("" + (version + 1));
+
                     StringBuilder tempName = new StringBuilder(creation);
                     tempName.insert(tempName.length() - 4, duplicateNames.get(name));
 
@@ -182,6 +184,15 @@ public class Originals {
         return fileNames;
     }
 
+    public Original getOriginal(String fileName) {
+    	for (Original original : _originals) {
+    		if (original.getFileName().equals(fileName)) {
+    			return original;
+		    }
+	    }
+	    return null;
+    }
+
     public String getName(String fileName) {
         for (Original original : _originals) {
             if (original.getFileName().equals(fileName)) {
@@ -196,16 +207,18 @@ public class Originals {
      * it into <dir>Rating.txt</dir> in the format
      * <q>Name: x</q> for any integer x.
      *
-     * @param name name of the {@code Original}.
+     * @param original name of the {@code Original}.
      * @param rating rating to set.
      */
-    public void setRating(String name, int rating) {
-        String text = name + ": " + rating + "\n";
+    public void setRating(Original original, int rating) {
+    	String name = original.getName() + original.getVersion();
+        String text = name + ": " + rating;
         try {
             int lineNumber = getLineNumber(name);
             List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get("Ratings.txt")));
             if (lineNumber == -1) {
                 // Adds a new line if the name is rated for the first time
+	            text = "\n" + text;
                 Files.write(Paths.get("Ratings.txt"), text.getBytes(), StandardOpenOption.APPEND);
             } else {
                 // Rewrites entire file, replacing existing line.
@@ -225,14 +238,14 @@ public class Originals {
      * <p> The default rating for any {@code Original} is 0
      * which indicates that no rating has been set. </p>
      *
-     * @param name the name of the {@code Original} to find.
+     * @param original the name of the {@code Original} to find.
      * @return the corresponding rating as set in <dir>Ratings.txt</dir>.
      *         If no rating is specified for the given name, then
      *         returns 0.
      */
-    public int getRating(String name) {
+    public int getRating(Original original) {
         int output = 0;
-        if (name != null) {
+        if (original != null) {
             try {
                 int counter = -1;
                 boolean found = false;
@@ -241,14 +254,14 @@ public class Originals {
 
                 while ((line = br.readLine()) != null) {
                     counter++;
-                    if (counter == getLineNumber(name)) {
+                    if (counter == getLineNumber(original.getName())) {
                         found = true;
                         break;
                     }
                 }
 
                 if (found) {
-                    Pattern pattern = Pattern.compile("[0-9]+");
+                    Pattern pattern = Pattern.compile("[0-9]+$");
                     Matcher matcher = pattern.matcher(line);
                     if (matcher.find()) {
                         output = Integer.parseInt(matcher.group(0));
@@ -283,6 +296,10 @@ public class Originals {
                 media.play();
             }
         }
+    }
+
+    public void playOriginal(Original original) {
+
     }
 
     /**

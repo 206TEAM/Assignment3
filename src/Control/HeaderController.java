@@ -75,9 +75,9 @@ public class HeaderController implements Initializable {
 		try {
 			URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();
 			vBox = FXMLLoader.load(url);
-			mainPane.getChildren().add(vBox);
+			mainPane.getChildren().addAll(vBox);
 		} catch (IOException e) {
-			e.printStackTrace(); //todo GUI popup
+			e.printStackTrace();
 		}
 	}
 }

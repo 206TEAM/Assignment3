@@ -81,12 +81,12 @@ public class MainController implements Initializable {
         }
     }
 
-    private void loadRatings(String name) {
-	    int rating = Originals.getInstance().getRating(name);
-	    if (rating > 0) {
-	    	ratingLabel.setText("Rating: " + rating);
-	    }
-    }
+//    private void loadRatings(String name) {
+//	    int rating = Originals.getInstance().getRating(name);
+//	    if (rating > 0) {
+//	    	ratingLabel.setText("Rating: " + rating);
+//	    }
+//    }
 
     /**
      * when the user selects on a name they want to practice, it updates the name label
@@ -99,7 +99,7 @@ public class MainController implements Initializable {
         String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
         Practices.getInstance().setCurrentName(name);
-        loadRatings(name);
+        //loadRatings(name);
     }
 
 	public void addName(ActionEvent actionEvent) { //todo
