@@ -1,5 +1,6 @@
 package Control;
 
+import Model.Mediator;
 import Model.Practices;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -84,6 +85,8 @@ public class RecordController {
 
         if (result.get() == done) { //todo
             //list_creations.getItems().add(name);
+            done();
+
             alert.close();
         } else if (result.get() == listen) { //todo
             // listenCreation(name);
@@ -120,4 +123,8 @@ public class RecordController {
         Practices.getInstance().deletePractice(name, fileName);
     }
 
+    public void done() {
+        Mediator.getInstance().setPage("Page6");
+        Mediator.getInstance().loadMainPane();
+    }
 }

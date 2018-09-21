@@ -33,4 +33,8 @@ public class CompareController {
 		media.play();
 		Mediator.getInstance().showProgress(practiceProgressBar, "Practice");
 	}
+
+	public void done() {
+
+	}
 }
