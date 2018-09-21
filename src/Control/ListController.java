@@ -55,8 +55,10 @@ public class ListController implements Initializable {
      *
      */
     public void goAction(ActionEvent event) {
-
-        Practices.getInstance().addNames(selectListView.getSelectionModel().getSelectedItems());
+        List<String> list = selectListView.getSelectionModel().getSelectedItems();
+        System.out.println("got list");
+        Practices.getInstance().addNames(list);
+        System.out.println("sucess");
         Mediator.getInstance().setPage("Page3");
         try {
             URL url = new File("src/GUI/Main.fxml").toURL();

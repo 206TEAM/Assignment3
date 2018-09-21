@@ -45,6 +45,7 @@ public class MainController implements Initializable {
 	@FXML public ListView<String> mainListView;
 	@FXML public Button addName;
 	@FXML public Label ratingLabel;
+	@FXML public ListView<String> originalListView;
 
 	/**
      * Loads the scene that is currently set in {@link Mediator} into
@@ -60,7 +61,6 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     	Mediator.getInstance().setMain(this);
     	loadPane();
-
 	    List<String> practiceNamesList = Practices.getInstance().getPracticeNames();
 	    ObservableList<String> practiceNames = FXCollections.observableArrayList(practiceNamesList);
         mainListView.setItems(practiceNames);
@@ -98,6 +98,12 @@ public class MainController implements Initializable {
     public void selectName(MouseEvent event){
         String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
+
+        //gets filenames of names selected
+        ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
+        originalListView.setItems(originals); //todo
+        originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
         Practices.getInstance().setCurrentName(name);
         //loadRatings(name);
     }

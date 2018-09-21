@@ -30,6 +30,15 @@ public class Practice {
         _fileName = generateFileName(nameKey);
     }
 
+    /**
+     * Constructor for the class
+     * @param nameKey
+     */
+    public Practice(String nameKey, String fileName) {
+        _nameKey = nameKey;
+        _fileName = fileName;
+    }
+
 
     /**
      * creates a practice

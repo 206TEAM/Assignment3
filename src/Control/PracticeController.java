@@ -43,4 +43,9 @@ public class PracticeController {
 		Mediator.getInstance().setPage("Page4");
 		Mediator.getInstance().loadMainPane();
 	}
+
+	public void addName(ActionEvent event){
+		Mediator.getInstance().setPage("SelectPractices");
+		Mediator.getInstance().loadHeaderPane();
+	}
 }
