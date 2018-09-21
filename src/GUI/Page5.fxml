@@ -24,7 +24,7 @@
              </ProgressBar>
              <ProgressBar fx:id="practiceProgressBar" layoutX="85.0" layoutY="92.0" prefHeight="20.0" prefWidth="239.0" progress="0.0">
                  <effect>
-                     <ColorAdjust brightness="0.61" contrast="1.0" hue="-0.37" />
+                     <ColorAdjust brightness="0.61" contrast="1.0" hue="-1.0" />
                  </effect>
              </ProgressBar>
             <Button fx:id="playPracticeButton_5" layoutX="152.0" layoutY="122.0" mnemonicParsing="false" onAction="#playPractice" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #396ba0;" text="Play Practice" textFill="WHITE" />

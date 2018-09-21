@@ -1,5 +1,6 @@
 package Control;
 
+import Model.Mediator;
 import Model.Originals;
 import Model.Practices;
 import Model.Media;
@@ -73,10 +74,7 @@ public class ListenController {
      * Plays the original .wav file when selecting a name, and pressing the play button
      */
     public void play(ActionEvent event){
-        System.out.println("played");
-        String name = Practices.getInstance().getCurrentName();
-        Media media = new Media(Practices.getInstance().getPractice(name, _selected));
-        media.play();
+        Mediator.getInstance().play(_selected);
     }
 
     /**

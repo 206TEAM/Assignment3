@@ -248,7 +248,6 @@ public class Practices {
             return practice.getFileName();
         }
 
-
         public static void main (String[]args){
         }
 

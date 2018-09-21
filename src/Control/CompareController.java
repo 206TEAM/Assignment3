@@ -1,9 +1,6 @@
 package Control;
 
-import Model.Mediator;
-import Model.Originals;
-import Model.Practice;
-import Model.Practices;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -30,6 +27,10 @@ public class CompareController {
 	}
 	@FXML
 	public void playPractice(ActionEvent actionEvent) {
-		//todo Implement a method in Practices that can fetch a Practice object given its name.
+		String name = Practices.getInstance().getCurrentName();
+		String fileName = Practices.getInstance().getSelectFile();
+		Media media = new Media(Practices.getInstance().getPractice(name, fileName));
+		media.play();
+		Mediator.getInstance().showProgress(practiceProgressBar, "Practice");
 	}
 }

@@ -80,6 +80,12 @@ public class Mediator {
 		timeLine.play();
 	}
 
+	public void play(String selected) {
+		String name = Practices.getInstance().getCurrentName();
+		Media media = new Media(Practices.getInstance().getPractice(name, selected));
+		media.play();
+	}
+
 	public static Mediator getInstance() {
 		return MEDIATOR_SINGLETON;
 	}
