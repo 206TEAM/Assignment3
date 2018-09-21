@@ -101,6 +101,10 @@ public class Original {
     	return _name;
     }
 
+    public String getNameWithVersion() {
+    	return _name + _version;
+    }
+
     public String getFileName() {
         return _fileName;
     }

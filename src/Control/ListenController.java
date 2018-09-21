@@ -1,9 +1,6 @@
 package Control;
 
-import Model.Media;
-import Model.Original;
-import Model.Originals;
-import Model.Practices;
+import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -69,11 +66,21 @@ public class ListenController implements Initializable {
     public void selectNameOriginal(MouseEvent event) {
         System.out.println("selecting original name");
         String fileName = originalListView.getSelectionModel().getSelectedItem();
+        String name = mainListView.getSelectionModel().getSelectedItem();
         //nameLabel_3.setText(name);
         _selected = fileName;
         System.out.println(fileName);
         _type = "original";
-        loadRating(Originals.getInstance().getOriginal(fileName));
+
+        clearRatings();
+
+        Original original;
+	    if (Originals.getInstance().getFileName(name).size() > 1) {
+		    original = Originals.getInstance().getOriginalWithVersions(fileName, name);
+	    } else {
+		    original = Originals.getInstance().getOriginal(fileName);
+	    }
+        loadRating(original);
     }
 
     public void populateSubLists() {
@@ -138,8 +145,14 @@ public class ListenController implements Initializable {
 	private void ratingHandler() {
 		ratingGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
 			String fileName = originalListView.getSelectionModel().getSelectedItem();
+			String name = mainListView.getSelectionModel().getSelectedItem();
+			Original original;
 			if (fileName != null) {
-				Original original = Originals.getInstance().getOriginal(fileName);
+				if (Originals.getInstance().getFileName(name).size() > 1) {
+					original = Originals.getInstance().getOriginalWithVersions(fileName, name);
+				} else {
+					original = Originals.getInstance().getOriginal(fileName);
+				}
 				if (newValue == rb1) {
 					Originals.getInstance().setRating(original, 1);
 				} else if (newValue == rb2) {
@@ -151,12 +164,21 @@ public class ListenController implements Initializable {
 				} else if (newValue == rb5) {
 					Originals.getInstance().setRating(original, 5);
 				}
+				loadRating(original);
 			}
 		});
 	}
 
 	private void loadRating(Original original) {
 		ratingLabel.setText("" + Originals.getInstance().getRating(original));
+	}
+
+	private void clearRatings() {
+		rb1.setSelected(false);
+		rb2.setSelected(false);
+		rb3.setSelected(false);
+		rb4.setSelected(false);
+		rb5.setSelected(false);
 	}
 
 }

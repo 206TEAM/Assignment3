@@ -59,7 +59,7 @@ public class Originals {
      */
     public void populateFolders() {
         try {
-            List<String> names = listNames();
+            List<String> names = listAllNames();
             List<String> fileNames = listFileNames("Recordings");
 
             // Make a folder for each creation containing sub-folders
@@ -131,7 +131,7 @@ public class Originals {
      *
      * @return a list containing the names of all existing {@code Original} files.
      */
-    public List<String> listNames() {
+    private List<String> listAllNames() {
         List<String> names = new ArrayList<>();
         try {
             for (Original creation : _originals) {
@@ -140,8 +140,19 @@ public class Originals {
         } catch (InvalidNameException e) {
             System.err.println(e);
         }
-
         return names;
+    }
+
+    public List<String> listNames() {
+	    List<String> names = new ArrayList<>();
+	    try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get("Names"))) {
+		    for (Path name : stream) {
+			    names.add(name.getFileName().toString());
+		    }
+	    } catch (IOException e) {
+		    e.printStackTrace();
+	    }
+	    return names;
     }
 
     /**
@@ -193,14 +204,34 @@ public class Originals {
 	    return null;
     }
 
-    public String getName(String fileName) {
-        for (Original original : _originals) {
-            if (original.getFileName().equals(fileName)) {
-                return original.getName();
-            }
-        }
-        return null;
-    }
+	public Original getOriginal(String name, String version) {
+		for (Original original : _originals) {
+			if (original.getName().equals(name) && original.getVersion().equals(version)) {
+				return original;
+			}
+		}
+		return null;
+	}
+
+	public Original getOriginalWithVersions(String fileName, String name) {
+		String version = extractVersion(fileName);
+		return getOriginal(name, version);
+	}
+
+	public String extractVersion(String fileName) {
+		StringBuilder version = new StringBuilder();
+		String output = null;
+
+		Pattern pattern = Pattern.compile("[0-9]+.wav");
+		Matcher matcher = pattern.matcher(fileName);
+
+		if (matcher.find()) {
+			version.append(matcher.group(0));
+			version.setLength(version.length() - 4);
+			output = version.toString();
+		}
+		return output;
+	}
 
     /**
      * Sets the rating of an {@code Original} by writing
@@ -254,7 +285,7 @@ public class Originals {
 
                 while ((line = br.readLine()) != null) {
                     counter++;
-                    if (counter == getLineNumber(original.getName())) {
+                    if (counter == getLineNumber(original.getNameWithVersion())) {
                         found = true;
                         break;
                     }

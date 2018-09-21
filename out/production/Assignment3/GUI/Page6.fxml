@@ -81,21 +81,6 @@
                                  <Font name="System Bold" size="25.0" />
                               </font>
                            </Label>
-                           <Label layoutX="345.0" layoutY="8.0" prefHeight="21.0" prefWidth="58.0" text="Current" textAlignment="CENTER" textFill="#ffe500">
-                              <font>
-                                 <Font size="14.0" />
-                              </font>
-                           </Label>
-                           <Label layoutX="350.0" layoutY="22.0" prefHeight="21.0" prefWidth="47.0" text="Rating" textAlignment="CENTER" textFill="#ffe500">
-                              <font>
-                                 <Font size="14.0" />
-                              </font>
-                           </Label>
-                           <Label layoutX="367.0" layoutY="39.0" prefHeight="30.0" prefWidth="17.0" text="5" textAlignment="CENTER" textFill="#ffe500">
-                              <font>
-                                 <Font name="System Bold" size="25.0" />
-                              </font>
-                           </Label>
                     </children>
                 </Pane></AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="194.0" prefWidth="416.0" style="-fx-background-color: #d3dbe8;">

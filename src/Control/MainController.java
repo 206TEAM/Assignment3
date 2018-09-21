@@ -25,6 +25,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Controls interactions on the <q>Main</q> scene.
@@ -81,12 +83,12 @@ public class MainController implements Initializable {
         }
     }
 
-//    private void loadRatings(String name) {
-//	    int rating = Originals.getInstance().getRating(name);
-//	    if (rating > 0) {
-//	    	ratingLabel.setText("Rating: " + rating);
-//	    }
-//    }
+    private void loadRatings(Original original) {
+	    int rating = Originals.getInstance().getRating(original);
+	    if (rating > 0) {
+	    	ratingLabel.setText("Rating: " + rating);
+	    }
+    }
 
     /**
      * when the user selects on a name they want to practice, it updates the name label
@@ -98,6 +100,7 @@ public class MainController implements Initializable {
     public void selectName(MouseEvent event){
         String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
+        ratingLabel.setText("Rating: --");
 
         //gets filenames of names selected
         ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
@@ -105,8 +108,24 @@ public class MainController implements Initializable {
         originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         Practices.getInstance().setCurrentName(name);
-        //loadRatings(name);
+
+	    String fileName = originalListView.getSelectionModel().getSelectedItem();
+
+        if (fileName != null) {
+	        String labelName;
+	        Original original;
+        	if (originals.size() > 1) {
+        		labelName = name + Originals.getInstance().extractVersion(fileName);
+		        original = Originals.getInstance().getOriginalWithVersions(fileName, name);
+	        } else {
+		        labelName = name + Originals.getInstance().getOriginal(fileName).getVersion();
+		        original = Originals.getInstance().getOriginal(fileName);
+	        }
+	        nameLabel_3.setText(labelName);
+	        loadRatings(original);
+        }
     }
+
 
 	public void addName(ActionEvent actionEvent) { //todo
     	Mediator.getInstance().setPage("SelectPractices");
