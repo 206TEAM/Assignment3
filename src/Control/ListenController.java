@@ -3,16 +3,18 @@ package Control;
 import Model.Originals;
 import Model.Practices;
 import Model.Media;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ListenController {
+public class ListenController implements Initializable {
     @FXML
     public Button playButton_3;
 
@@ -21,6 +23,8 @@ public class ListenController {
 
     @FXML
     public ListView<String> originalListView;
+
+    public ListView<String> mainListView;
 
 
     /**
@@ -31,15 +35,21 @@ public class ListenController {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("yes");
         String name = Practices.getInstance().getCurrentName();
+
         ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
         ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
-        practiceListView.setItems(practices);
-        originalListView.setItems(practices); //todo
+        ObservableList<String> allNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
 
+        mainListView.setItems(allNames);
+        practiceListView.setItems(practices);
+        originalListView.setItems(originals); //todo
+
+        originalListView.setItems(practices); //todo
+        mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
-
 
 
     public void selectNamePractice(MouseEvent event){

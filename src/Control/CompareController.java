@@ -31,4 +31,8 @@ public class CompareController {
 	public void playPractice(ActionEvent actionEvent) {
 		//todo Implement a method in Practices that can fetch a Practice object given its name.
 	}
+
+	public void done() {
+
+	}
 }
