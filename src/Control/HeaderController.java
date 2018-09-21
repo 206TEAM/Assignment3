@@ -74,6 +74,12 @@ public class HeaderController implements Initializable {
 	 * the program.
 	 */
 	public void loadPane() {
+		if (Mediator.getInstance().getPage().equals("Root")) {
+			homeButton.setDisable(true);
+		} else {
+			homeButton.setDisable(false);
+		}
+
 		VBox vBox = null;
 		try {
 			URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();

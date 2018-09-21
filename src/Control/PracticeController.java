@@ -3,8 +3,12 @@ package Control;
 import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * This class controls Page3 where the user can choose to play and/or practice a name
@@ -12,11 +16,18 @@ import javafx.scene.control.ProgressBar;
  * @author Lucy Chen
  * @author Eric Pedrido
  */
-public class PracticeController {
+public class PracticeController implements SubSceneController {
 
 	@FXML public Button playButton_3;
 	@FXML public Button practiceButton_3;
 	@FXML public ProgressBar progressBar;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		playButton_3.setDisable(true);
+		practiceButton_3.setDisable(true);
+		Mediator.getInstance().addController(this);
+	}
 
 	/**
 	 * Plays the original .wav file when selecting a name, and pressing the play button
@@ -56,5 +67,15 @@ public class PracticeController {
 	public void addName(ActionEvent event){
 		Mediator.getInstance().setPage("SelectPractices");
 		Mediator.getInstance().loadHeaderPane();
+	}
+
+	@Override
+	public void itemSelected() {
+		practiceButton_3.setDisable(false);
+	}
+
+	@Override
+	public void originalSelected() {
+		playButton_3.setDisable(false);
 	}
 }

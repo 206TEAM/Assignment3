@@ -8,15 +8,17 @@ import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 public class RecordController {
 
-    @FXML
-    public Button recordButton_4;
-    public ProgressIndicator recordProgress;
+    @FXML public Button recordButton_4;
+    @FXML public ProgressIndicator recordProgress;
 
     /**
      * User prompted to record audio (generates creation which is added to the model)

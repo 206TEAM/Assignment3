@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 public class ListenController implements Initializable {
 
     @FXML public Button playButton_3;
+	@FXML public Button deleteButton_3;
     @FXML public ListView<String> practiceListView;
     @FXML public ListView<String> originalListView;
     @FXML public ListView<String> mainListView;
@@ -36,6 +37,15 @@ public class ListenController implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+    	rb1.setDisable(true);
+	    rb2.setDisable(true);
+	    rb3.setDisable(true);
+	    rb4.setDisable(true);
+	    rb5.setDisable(true);
+
+	    playButton_3.setDisable(true);
+	    deleteButton_3.setDisable(true);
+
     	ratingHandler();
 
         System.out.println("yes");
@@ -48,6 +58,15 @@ public class ListenController implements Initializable {
     }
 
     public void selectName(MouseEvent event) {
+    	rb1.setDisable(false);
+	    rb2.setDisable(false);
+	    rb3.setDisable(false);
+	    rb4.setDisable(false);
+	    rb5.setDisable(false);
+
+	    playButton_3.setDisable(true);
+	    deleteButton_3.setDisable(true);
+
         String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
         Practices.getInstance().setCurrentName(name);
@@ -57,6 +76,9 @@ public class ListenController implements Initializable {
 
 
     public void selectNamePractice(MouseEvent event) {
+    	playButton_3.setDisable(false);
+    	deleteButton_3.setDisable(false);
+
         String name = practiceListView.getSelectionModel().getSelectedItem();
         //nameLabel_3.setText(name);
         _selected = name;
@@ -64,6 +86,9 @@ public class ListenController implements Initializable {
     }
 
     public void selectNameOriginal(MouseEvent event) {
+    	playButton_3.setDisable(false);
+    	deleteButton_3.setDisable(true);
+
         System.out.println("selecting original name");
         String fileName = originalListView.getSelectionModel().getSelectedItem();
         String name = mainListView.getSelectionModel().getSelectedItem();

@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Controls interactions on the <q>Root</q> scene which is
@@ -33,28 +34,5 @@ public class RootController {
 	public void listen1(MouseEvent mouseEvent) {
 		Mediator.getInstance().setPage("Page6");
 		Mediator.getInstance().loadHeaderPane();
-	}
-
-	/**
-	 * Switches to a different scene depending on the input.
-	 * Since all scenes get displayed in {@link HeaderController#mainPane},
-	 * this switches what scene gets displayed.
-	 *
-	 * <p> The only two options are <q>Main</q> and <q>SelectPractices</q>
-	 * because all other scenes, except for <q>Root</q>, are displayed
-	 * within {@link MainController#mainPane}. </p>
-	 *
-	 * @param scene the name of the scene to switch to
-	 *
-	 * @see HeaderController
-	 */
-	private void switchTo(String scene) {
-		try {
-			URL url = new File("src/GUI/" + scene + ".fxml").toURL();
-			VBox root = FXMLLoader.load(url);
-			rootVBox.getChildren().setAll(root);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 }

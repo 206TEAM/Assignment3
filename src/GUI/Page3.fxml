@@ -11,17 +11,17 @@
    <children>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">
            <children>
-               <Button fx:id="practiceButton_3" layoutX="148.0" layoutY="160.0" mnemonicParsing="false" onAction="#practiceName" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
+               <Button fx:id="practiceButton_3" disable="true" layoutX="148.0" layoutY="160.0" mnemonicParsing="false" onAction="#practiceName" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Practice" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>
                </Button>
-               <Button fx:id="playButton_3" layoutX="148.0" layoutY="108.0" mnemonicParsing="false" onAction="#playOriginal" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
+               <Button fx:id="playButton_3" disable="true" layoutX="148.0" layoutY="108.0" mnemonicParsing="false" onAction="#playOriginal" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Play" textFill="WHITE">
                    <font>
                        <Font size="20.0" />
                    </font>
                </Button>
-            <ProgressBar fx:id="progressBar" layoutX="85.0" layoutY="35.0" prefHeight="20.0" prefWidth="239.0" progress="0.0">
+            <ProgressBar fx:id="progressBar" layoutX="87.0" layoutY="49.0" prefHeight="20.0" prefWidth="239.0" progress="0.0">
                <effect>
                   <ColorAdjust brightness="0.61" contrast="1.0" hue="-0.37" />
                </effect>

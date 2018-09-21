@@ -4,29 +4,25 @@ import Model.Mediator;
 import Model.Original;
 import Model.Originals;
 import Model.Practices;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.input.DragEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import javax.naming.InvalidNameException;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Controls interactions on the <q>Main</q> scene.
@@ -69,7 +65,7 @@ public class MainController implements Initializable {
         mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
-    /**
+	/**
      * Changes what scene is being displayed in the {@code #mainPane}.
      */
     public void loadPane() {
@@ -97,7 +93,8 @@ public class MainController implements Initializable {
      *
      * @param event
      */
-    public void selectName(MouseEvent event){
+    public void selectName(MouseEvent event) {
+    	Mediator.getInstance().fireItemSelected();
         String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
         ratingLabel.setText("Rating: --");
@@ -108,23 +105,27 @@ public class MainController implements Initializable {
         originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         Practices.getInstance().setCurrentName(name);
+    }
 
+    public void selectOriginal(MouseEvent event) {
+    	Mediator.getInstance().fireOriginalSelected();
 	    String fileName = originalListView.getSelectionModel().getSelectedItem();
-		Mediator.getInstance().setSelectedFileName(fileName);
+	    String name = mainListView.getSelectionModel().getSelectedItem();
+	    Mediator.getInstance().setSelectedFileName(fileName);
 
-        if (fileName != null) {
-	        String labelName;
-	        Original original;
-        	if (originals.size() > 1) {
-        		labelName = name + Originals.getInstance().extractVersion(fileName);
-		        original = Originals.getInstance().getOriginalWithVersions(fileName, name);
-	        } else {
-		        labelName = name + Originals.getInstance().getOriginal(fileName).getVersion();
-		        original = Originals.getInstance().getOriginal(fileName);
-	        }
-	        nameLabel_3.setText(labelName);
-	        loadRatings(original);
-        }
+	    if (fileName != null) {
+		    String labelName;
+		    Original original;
+		    if (Originals.getInstance().getFileName(name).size() > 1) {
+			    labelName = name + Originals.getInstance().extractVersion(fileName);
+			    original = Originals.getInstance().getOriginalWithVersions(fileName, name);
+		    } else {
+			    labelName = name + Originals.getInstance().getOriginal(fileName).getVersion();
+			    original = Originals.getInstance().getOriginal(fileName);
+		    }
+		    nameLabel_3.setText(labelName);
+		    loadRatings(original);
+	    }
     }
 
 	public void addName(ActionEvent actionEvent) { //todo

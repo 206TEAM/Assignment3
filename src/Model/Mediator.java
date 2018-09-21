@@ -2,11 +2,11 @@ package Model;
 
 import Control.HeaderController;
 import Control.MainController;
+import Control.SubSceneController;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.event.Event;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.util.Duration;
 
@@ -16,6 +16,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,6 +33,7 @@ public class Mediator {
 	private HeaderController _header;
 	private List<String> _practiceList;
 	private String _selectedFileName;
+	private List<SubSceneController> _controllers = new ArrayList<>();
 
 	public void setPage(String page) {
 		_page = page;
@@ -43,6 +45,10 @@ public class Mediator {
 
 	public void setHeader(HeaderController header) {
 		_header = header;
+	}
+
+	public void addController(SubSceneController controller) {
+		_controllers.add(controller);
 	}
 
 	public String getPage() {
@@ -65,7 +71,9 @@ public class Mediator {
 		_main.loadPane();
 	}
 
-	public void loadHeaderPane() { _header.loadPane(); }
+	public void loadHeaderPane() {
+		_header.loadPane();
+	}
 
 	public void showProgress(ProgressIndicator progress, String dir, String fileName) {
 		double duration = 0;
@@ -93,10 +101,16 @@ public class Mediator {
 		timeLine.play();
 	}
 
-	public void play(String selected) {
-		String name = Practices.getInstance().getCurrentName();
-		Media media = new Media(Practices.getInstance().getPractice(name, selected));
-		media.play();
+	public void fireItemSelected() {
+		for (SubSceneController controller : _controllers) {
+			controller.itemSelected();
+		}
+	}
+
+	public void fireOriginalSelected() {
+		for (SubSceneController controller : _controllers) {
+			controller.originalSelected();
+		}
 	}
 
 	public static Mediator getInstance() {

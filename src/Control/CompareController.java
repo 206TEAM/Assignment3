@@ -6,73 +6,87 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class CompareController {
+public class CompareController implements SubSceneController {
 
-    @FXML
-    public Button doneButton_5;
-    @FXML
-    public Button playOriginalButton_5;
-    @FXML
-    public Button playPracticeButton_5;
-    @FXML
-    public ProgressBar originalProgressBar;
-    @FXML
-    public ProgressBar practiceProgressBar;
+	@FXML public Button doneButton_5;
+	@FXML public Button playOriginalButton_5;
+	@FXML public Button playPracticeButton_5;
+	@FXML public ProgressBar originalProgressBar;
+	@FXML public ProgressBar practiceProgressBar;
 
-    @FXML
-    public void done(ActionEvent actionEvent) {
-	    List<String> currentNames = Practices.getInstance().getPracticeNames();
-	    if (currentNames.size() == 0) { //done
-		    Mediator.getInstance().setPage("Page6");
-		    Mediator.getInstance().loadHeaderPane();
-	    } else {
-	    	//todo remove the currently selected name from the list.
-		    Mediator.getInstance().setPage("Page4");
-		    Mediator.getInstance().loadMainPane();
-	    }
-    }
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		playOriginalButton_5.setDisable(true);
+		Mediator.getInstance().addController(this);
+	}
 
-    @FXML
-    public void playOriginal(ActionEvent actionEvent) {
-        String name = Practices.getInstance().getCurrentName();
-        String fileName = Mediator.getInstance().getSelectedFileName();
-        Thread thread = new Thread(new Runnable() {
-	        @Override
-	        public void run() {
-		        Original original;
-		        Media media;
+	@FXML
+	public void done(ActionEvent actionEvent) {
+		List<String> currentNames = Practices.getInstance().getPracticeNames();
+		if (currentNames.size() == 0) { //done
+			Mediator.getInstance().setPage("Page6");
+			Mediator.getInstance().loadHeaderPane();
+		} else {
+			//todo remove the currently selected name from the list.
+			Mediator.getInstance().setPage("Page4");
+			Mediator.getInstance().loadMainPane();
+		}
+	}
 
-		        if (Originals.getInstance().getFileName(name).size() > 1) {
-			        original = Originals.getInstance().getOriginalWithVersions(fileName, name);
-		        } else {
-			        original = Originals.getInstance().getOriginal(fileName);
-		        }
-		        media = new Media(original);
-		        media.play();
-	        }
-        });
-	    thread.setDaemon(true);
-	    thread.start();
+	@FXML
+	public void playOriginal(ActionEvent actionEvent) {
+		String name = Practices.getInstance().getCurrentName();
+		String fileName = Mediator.getInstance().getSelectedFileName();
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				Original original;
+				Media media;
 
-        Mediator.getInstance().showProgress(originalProgressBar, "Original", fileName);
-    }
+				if (Originals.getInstance().getFileName(name).size() > 1) {
+					original = Originals.getInstance().getOriginalWithVersions(fileName, name);
+				} else {
+					original = Originals.getInstance().getOriginal(fileName);
+				}
+				media = new Media(original);
+				media.play();
+			}
+		});
+		thread.setDaemon(true);
+		thread.start();
 
-    @FXML
-    public void playPractice(ActionEvent actionEvent) {
-        String name = Practices.getInstance().getCurrentName();
-        String fileName = Practices.getInstance().getFileName();
-        Thread thread = new Thread(new Runnable() {
-	        @Override
-	        public void run() {
-		        Media media = new Media(Practices.getInstance().getPractice(name, fileName));
-		        media.play();
-	        }
-        });
-	    thread.setDaemon(true);
-        thread.start();
+		Mediator.getInstance().showProgress(originalProgressBar, "Original", fileName);
+	}
 
-        Mediator.getInstance().showProgress(practiceProgressBar, "Practices", fileName + ".wav");
-    }
+	@FXML
+	public void playPractice(ActionEvent actionEvent) {
+		String name = Practices.getInstance().getCurrentName();
+		String fileName = Practices.getInstance().getFileName();
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				Media media = new Media(Practices.getInstance().getPractice(name, fileName));
+				media.play();
+			}
+		});
+		thread.setDaemon(true);
+		thread.start();
+
+		Mediator.getInstance().showProgress(practiceProgressBar, "Practices", fileName + ".wav");
+	}
+
+	@Override
+	public void itemSelected() {
+		// Implementation not needed since the item will have already been selected.
+	}
+
+	@Override
+	public void originalSelected() {
+		// Even though it may have been selected earlier, there is no guarantee thus we must confirm selection.
+		playOriginalButton_5.setDisable(false);
+	}
 }
