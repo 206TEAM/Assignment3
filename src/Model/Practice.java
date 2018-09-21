@@ -42,14 +42,14 @@ public class Practice {
      * this deletes a practice
      */
     public void delete() {
-        deleteFile(getDirectory() +System.getProperty("file.separator")+ _fileName + ".mp3");
+        deleteFile(getDirectory() + System.getProperty("file.separator")+ _fileName + ".wav");
     }
 
     /**
      * this creates the audio component of the practice
      */
     public void justAudio() {
-        String command = "ffmpeg -f alsa -i default -t 5 \"" + _fileName + "\".wav";
+        String command = "ffmpeg -f alsa -i default -t 5 " + _fileName + ".wav";
         File directory = getDirectory();
         Media.process(command, directory);
     }
@@ -111,7 +111,7 @@ public class Practice {
      * Return the final .wav filepath
      */
     public File filePath() {
-        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".mp3");
+        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".wav");
     }
 
     public File getDirectory(){

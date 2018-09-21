@@ -1,5 +1,6 @@
 package Control;
 
+import Model.Media;
 import Model.Mediator;
 import Model.Practices;
 import javafx.concurrent.Task;
@@ -7,7 +8,6 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
 
 import java.util.Optional;
 
@@ -15,17 +15,14 @@ public class RecordController {
 
     @FXML
     public Button recordButton_4;
-
-    @FXML
-    public VBox rootVBox;
+    public ProgressIndicator recordProgress;
 
     /**
      * User prompted to record audio (generates creation which is added to the model)
      * user is then asked to review the audio through another pop up.
      */
     public void recordAudioPopUp() {
-            Alert a = recordingDialog();
-
+        Mediator.getInstance().showProgress(recordProgress, 5);
             Task<Void> task = new Task<Void>() {
                 @Override
                 protected Void call() throws Exception {
@@ -43,10 +40,8 @@ public class RecordController {
             //after creating the creation, user reviews the audio
             task.addEventHandler(WorkerStateEvent.WORKER_STATE_SUCCEEDED, e -> {
                 reviewAudioPopUp();
-                a.hide();
             });
 
-            a.show();
             Thread thread = new Thread(task);
             thread.setDaemon(true);
             thread.start();
@@ -88,9 +83,16 @@ public class RecordController {
             done();
 
             alert.close();
-        } else if (result.get() == listen) { //todo
-            // listenCreation(name);
-            alert.close();
+        } else if (result.get() == listen) {
+            Thread thread = new Thread(() -> {
+                String name = Practices.getInstance().getCurrentName();
+                String fileName = Practices.getInstance().getSelectFile();
+
+                Media media = new Media(Practices.getInstance().getPractice(name, fileName));
+                media.play();
+            });
+            thread.setDaemon(true);
+            thread.start();
         } else if (result.get() == record) {
             removeAudio();
             recordAudioPopUp();
@@ -125,6 +127,6 @@ public class RecordController {
 
     public void done() {
         Mediator.getInstance().setPage("Page6");
-        Mediator.getInstance().loadMainPane();
+        Mediator.getInstance().loadHeaderPane();
     }
 }

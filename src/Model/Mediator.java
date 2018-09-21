@@ -7,6 +7,7 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.util.Duration;
 
 import javax.sound.sampled.AudioFormat;
@@ -57,7 +58,7 @@ public class Mediator {
 
 	public void loadHeaderPane() { _header.loadPane(); }
 
-	public void showProgress(ProgressBar progressBar, String dir) {
+	public void showProgress(ProgressIndicator progress, String dir) {
 		double duration = 0;
 		try {
 			String name = Practices.getInstance().getCurrentName();
@@ -72,10 +73,15 @@ public class Mediator {
 			e.printStackTrace();
 		}
 
+		showProgress(progress, duration);
+	}
+
+	public void showProgress(ProgressIndicator progress, double duration) {
+
 		Timeline timeLine = new Timeline(
-				new KeyFrame(Duration.ZERO, new KeyValue(progressBar.progressProperty(), 0)),
+				new KeyFrame(Duration.ZERO, new KeyValue(progress.progressProperty(), 0)),
 				new KeyFrame(Duration.seconds(duration), Event::consume,
-						new KeyValue(progressBar.progressProperty(), 1)));
+						new KeyValue(progress.progressProperty(), 1)));
 		timeLine.setCycleCount(1);
 		timeLine.play();
 	}
