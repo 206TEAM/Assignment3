@@ -1,6 +1,5 @@
 package Control;
 
-import Model.Mediator;
 import Model.Originals;
 import Model.Practices;
 import Model.Media;
@@ -27,6 +26,9 @@ public class ListenController implements Initializable {
 
     public ListView<String> mainListView;
 
+    @FXML
+    public Label nameLabel_3;
+
 
     /**
      * fields
@@ -37,19 +39,25 @@ public class ListenController implements Initializable {
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("yes");
-        String name = Practices.getInstance().getCurrentName();
-
-        ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
-        ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
+        //ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
+        ///ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
         ObservableList<String> allNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
 
         mainListView.setItems(allNames);
-        practiceListView.setItems(practices);
-        originalListView.setItems(originals); //todo
+        //practiceListView.setItems(practices);
+        //originalListView.setItems(originals); //todo
 
-        originalListView.setItems(practices); //todo
+        //originalListView.setItems(practices); //todo
         mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        //originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    }
+
+    public void selectName(MouseEvent event){
+        String name = mainListView.getSelectionModel().getSelectedItem();
+        nameLabel_3.setText(name);
+       Practices.getInstance().setCurrentName(name);
+       // System.out.println(name);
+        populateSubLists();
     }
 
 
@@ -58,14 +66,28 @@ public class ListenController implements Initializable {
         //nameLabel_3.setText(name);
         _selected = name;
         _type = "practice";
-
     }
 
     public void selectNameOriginal(MouseEvent event){
+        System.out.println("selecting original name");
         String name = originalListView.getSelectionModel().getSelectedItem();
         //nameLabel_3.setText(name);
         _selected = name;
         _type = "original";
+    }
+
+    public void populateSubLists(){
+
+        String name = Practices.getInstance().getCurrentName();
+
+        ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
+        originalListView.setItems(originals); //todo
+        originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+        if (Practices.getInstance().listPractices(name) != null){
+            ObservableList<String> practices = FXCollections.observableArrayList();
+            practiceListView.setItems(practices);
+        }
     }
 
     /**
@@ -84,7 +106,9 @@ public class ListenController implements Initializable {
      * Plays the original .wav file when selecting a name, and pressing the play button
      */
     public void play(ActionEvent event){
-        Mediator.getInstance().play(_selected);
+        System.out.println("played");
+        String name = Practices.getInstance().getCurrentName();
+        Originals.getInstance().playOriginal(name);
     }
 
     /**
