@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -38,45 +39,38 @@ public class ListenController implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("yes");
-        //ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
-        ///ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
         ObservableList<String> allNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
 
         mainListView.setItems(allNames);
-        //practiceListView.setItems(practices);
-        //originalListView.setItems(originals); //todo
-
-        //originalListView.setItems(practices); //todo
         mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        //originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
-    public void selectName(MouseEvent event){
+    public void selectName(MouseEvent event) {
         String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
-       Practices.getInstance().setCurrentName(name);
-       // System.out.println(name);
+        Practices.getInstance().setCurrentName(name);
+        // System.out.println(name);
         populateSubLists();
     }
 
 
-    public void selectNamePractice(MouseEvent event){
+    public void selectNamePractice(MouseEvent event) {
         String name = practiceListView.getSelectionModel().getSelectedItem();
         //nameLabel_3.setText(name);
         _selected = name;
         _type = "practice";
     }
 
-    public void selectNameOriginal(MouseEvent event){
+    public void selectNameOriginal(MouseEvent event) {
         System.out.println("selecting original name");
         String name = originalListView.getSelectionModel().getSelectedItem();
         //nameLabel_3.setText(name);
         _selected = name;
+        System.out.println(name);
         _type = "original";
     }
 
-    public void populateSubLists(){
+    public void populateSubLists() {
 
         String name = Practices.getInstance().getCurrentName();
 
@@ -84,8 +78,9 @@ public class ListenController implements Initializable {
         originalListView.setItems(originals); //todo
         originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
-        if (Practices.getInstance().listPractices(name) != null){
-            ObservableList<String> practices = FXCollections.observableArrayList();
+        if (Practices.getInstance().listPractices(name) != null) {
+            System.out.println("not null");
+            ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
             practiceListView.setItems(practices);
         }
     }
@@ -94,7 +89,7 @@ public class ListenController implements Initializable {
      * gets rid of creation when user chooses to rerecord the audio.
      */
     public void deleteFile() {
-        if (_type == "practice"){
+        if (_type == "practice") {
             String name = Practices.getInstance().getCurrentName();
             Practices.getInstance().deletePractice(name, _selected);
         } else {
@@ -105,10 +100,19 @@ public class ListenController implements Initializable {
     /**
      * Plays the original .wav file when selecting a name, and pressing the play button
      */
-    public void play(ActionEvent event){
+    public void play(ActionEvent event) {
+        String name = Practices.getInstance().getCurrentName(); //getting the name
+        if (_type.equals("original")) { //if type is original
+            Originals.getInstance().playOriginal(name);
+
+        String name = Originals.getInstance().
+
+        } else { //type is practice
+            Media media = new Media(Practices.getInstance().getPractice(name, _selected));
+            media.play();
+        }
         System.out.println("played");
-        String name = Practices.getInstance().getCurrentName();
-        Originals.getInstance().playOriginal(name);
+
     }
 
     /**
