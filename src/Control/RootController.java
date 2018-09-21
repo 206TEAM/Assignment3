@@ -25,13 +25,14 @@ public class RootController {
 
 	@FXML
 	public void practice1(MouseEvent mouseEvent) {
-		switchTo("SelectPractices");
+		Mediator.getInstance().setPage("SelectPractices");
+		Mediator.getInstance().loadHeaderPane();
 	}
 
 	@FXML
 	public void listen1(MouseEvent mouseEvent) {
 		Mediator.getInstance().setPage("Page6");
-		switchTo("Main");
+		Mediator.getInstance().loadHeaderPane();
 	}
 
 	/**
