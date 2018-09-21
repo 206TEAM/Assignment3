@@ -38,6 +38,10 @@ public class Practices {
         return _practices;
     }
 
+    public void removePracticeName(String name){
+        _practiceNames.remove(name);
+    }
+
     public void clearCurrentNames() {
         _practiceNames = null;
     }

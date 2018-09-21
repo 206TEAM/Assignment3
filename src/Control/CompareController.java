@@ -3,14 +3,18 @@ package Control;
 import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class CompareController implements SubSceneController {
+
 
 	@FXML public Button doneButton_5;
 	@FXML public Button playOriginalButton_5;
@@ -25,7 +29,22 @@ public class CompareController implements SubSceneController {
 	}
 
 	@FXML
-	public void done(ActionEvent actionEvent) {
+	public void done(ActionEvent actionEvent) throws IOException {
+		String currentName = Practices.getInstance().getCurrentName();
+		System.out.println("curernt name fr done is " + currentName);
+		Practices.getInstance().removePracticeName(currentName); //removes current name from list.
+
+		//todo need to remove name from main list as well...
+
+		FXMLLoader loader = new FXMLLoader();
+		URL url = new File("src/GUI/Main.fxml").toURL();
+		loader.setLocation(url);
+		loader.load();
+		MainController mainController = loader.getController();
+		mainController.reload(); //accesses method: reload (should update the list
+		//todo needs to reload the main class. not sure how to do it
+
+
 		List<String> currentNames = Practices.getInstance().getPracticeNames();
 		if (currentNames.size() == 0) { //done
 			Mediator.getInstance().setPage("Page6");

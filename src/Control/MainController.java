@@ -63,7 +63,18 @@ public class MainController implements Initializable {
 	    ObservableList<String> practiceNames = FXCollections.observableArrayList(practiceNamesList);
         mainListView.setItems(practiceNames);
         mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-    }
+	}
+
+	@FXML
+	public void reload() {
+		List<String> practiceNamesList = Practices.getInstance().getPracticeNames();
+		System.out.println(practiceNamesList.size());
+		mainListView.getItems().clear();
+		originalListView.getItems().clear();
+		System.out.println("DONE");
+		//ObservableList<String> practiceNames = FXCollections.observableArrayList(practiceNamesList);
+		//mainListView.setItems(practiceNames);
+	}
 
 	/**
      * Changes what scene is being displayed in the {@code #mainPane}.

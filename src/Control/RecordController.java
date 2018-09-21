@@ -82,7 +82,6 @@ public class RecordController {
         Optional<ButtonType> result = alert.showAndWait(); //takes the selected button
 
         if (result.get() == done) { //todo
-            //list_creations.getItems().add(name);
             done();
 
             alert.close();
