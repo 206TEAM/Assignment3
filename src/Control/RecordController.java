@@ -32,8 +32,8 @@ public class RecordController {
                     //generates file which adds to creation list
                     String name = Practices.getInstance().getCurrentName();
                     System.out.println(name);
-                    String fileName = Practices.getInstance().addNewPractice(name); //todo change addnewpractice return value
-                    System.out.println("don1e");
+                    String fileName = Practices.getInstance().addNewPractice(name);
+                    System.out.println("added practice");
                     Practices.getInstance().setFileName(fileName);
                     System.out.println("done");
                     return null;
@@ -124,7 +124,7 @@ public class RecordController {
     }
 
     public void done() {
-        Mediator.getInstance().setPage("Page6");
-        Mediator.getInstance().loadMainPane();
+       // Mediator.getInstance().setPage("Page6");
+        //Mediator.getInstance().loadMainPane();
     }
 }

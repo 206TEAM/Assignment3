@@ -180,7 +180,8 @@ public class Practices {
      */
     public List<String> listPractices(String nameKey) {
 
-        System.out.println("hi");
+        System.out.println("about to list practices");
+
         if (_practices.get(nameKey) != null) {
             ArrayList<Practice> practiceList = _practices.get(nameKey);
             List<String> practiceNames = new ArrayList<String>();
