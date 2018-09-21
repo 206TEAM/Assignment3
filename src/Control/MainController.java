@@ -60,7 +60,7 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     	Mediator.getInstance().setMain(this);
     	loadPane();
-
+        System.out.println("initialised");
 	    List<String> practiceNamesList = Practices.getInstance().getPracticeNames();
 	    ObservableList<String> practiceNames = FXCollections.observableArrayList(practiceNamesList);
         mainListView.setItems(practiceNames);

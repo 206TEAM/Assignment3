@@ -126,7 +126,7 @@ public class RecordController {
     }
 
     public void done() {
-        Mediator.getInstance().setPage("Page6");
-        Mediator.getInstance().loadHeaderPane();
+        Mediator.getInstance().setPage("Page5");
+        Mediator.getInstance().loadMainPane();
     }
 }
