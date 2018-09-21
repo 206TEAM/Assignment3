@@ -26,8 +26,8 @@ public class Practices {
     protected String _currentFileName;
     protected String _currentFileNameSelect;
 
-    private Practices(){
-       _practices = new HashMap<String, ArrayList<Practice>>();
+    private Practices() {
+        _practices = new HashMap<String, ArrayList<Practice>>();
     }
 
     /**
@@ -139,9 +139,9 @@ public class Practices {
                 _practices.put(nameKey, practiceList);
             } else {
                 // add if item is not already in list
-               // if (!practiceList.contains(practice)) {
-                    practiceList.add(practice);
-             //   }
+                // if (!practiceList.contains(practice)) {
+                practiceList.add(practice);
+                //   }
             }
         } else {
             practiceList.add(practice);
@@ -150,14 +150,14 @@ public class Practices {
 
         System.out.println("success?");
         return practice.getFileName();
-        }
+    }
 
-        /**
-         * Populates the _practices with existing recording files in each folder.
-         * iterates through the names list from Original.java
-         * goes into each folder and adds to the list
-         */
-        public void updateModel () {
+    /**
+     * Populates the _practices with existing recording files in each folder.
+     * iterates through the names list from Original.java
+     * goes into each folder and adds to the list
+     */
+    public void updateModel() {
 //        List<String> names = new ArrayList<>();
 //
 //        File file = new File("Names/" + name + "/Practice");
@@ -173,12 +173,15 @@ public class Practices {
 //            Practice practice = new Practice(temp);
 //            _practices.add(practice);
 //        }
-        }
+    }
 
-        /**
-         * returns a list of the fileNames of the practices given the nameKey
-         */
-        public List<String> listPractices (String nameKey){
+    /**
+     * returns a list of the fileNames of the practices given the nameKey
+     */
+    public List<String> listPractices(String nameKey) {
+
+        System.out.println("hi");
+        if (_practices.get(nameKey) != null) {
             ArrayList<Practice> practiceList = _practices.get(nameKey);
             List<String> practiceNames = new ArrayList<String>();
 
@@ -186,73 +189,80 @@ public class Practices {
                 practiceNames.add(practice.getFileName());
             }
             return practiceNames;
-        }
 
-        /**
-         * returns the file of the practice, based on the fileName and nameKey
-         *
-         * @param fileName
-         * @return
-         */
-        public File getFile (String nameKey, String fileName){
-            Practice practice = getPractice(nameKey, fileName);
-            return practice.filePath();
-        }
-
-        /**
-         * deletes the practice from directory AND the practices list
-         * @param nameKey
-         * @param fileName
-         */
-        public void deletePractice (String nameKey, String fileName){
-            Practice practiceDelete = getPractice(nameKey, fileName);
-            practiceDelete.delete(); // delete the practice
-
-            _practices.get(nameKey).remove(practiceDelete); //not sure if this works yet (needs testing)
-        }
-
-
-        /**
-         * gets the practice from the filename of practice and the nameKey
-         *
-         * @param fileName
-         * @return
-         */
-        public Practice getPractice (String nameKey, String fileName){
-            ArrayList<Practice> practiceList = _practices.get(nameKey);
-
-            int index = 0;
-            for (int i = 0; i < practiceList.size(); i++) {
-                if (practiceList.get(i).getFileName().equals(fileName)) {
-                    index = i;
-                    break;
-                }
-            }
-            return practiceList.get(index);
-        }
-
-        /**
-         * this method generates a new recording based on the nameKey
-         * it then adds it to the _practices list
-         * @param nameKey
-         * @return practice
-         */
-        public String addNewPractice (String nameKey){
-            // Create a new practice of the given name
-            System.out.println("success1?");
-            Practice practice = new Practice(nameKey);
-            System.out.println("success2?");
-            practice.create();
-            System.out.println("success3?");
-            addPractice(nameKey, practice);
-            return practice.getFileName();
-        }
-
-
-        public static void main (String[]args){
+        } else {
+            return null;
         }
 
     }
+
+    /**
+     * returns the file of the practice, based on the fileName and nameKey
+     *
+     * @param fileName
+     * @return
+     */
+    public File getFile(String nameKey, String fileName) {
+        Practice practice = getPractice(nameKey, fileName);
+        return practice.filePath();
+    }
+
+    /**
+     * deletes the practice from directory AND the practices list
+     *
+     * @param nameKey
+     * @param fileName
+     */
+    public void deletePractice(String nameKey, String fileName) {
+        Practice practiceDelete = getPractice(nameKey, fileName);
+        practiceDelete.delete(); // delete the practice
+
+        _practices.get(nameKey).remove(practiceDelete); //not sure if this works yet (needs testing)
+    }
+
+
+    /**
+     * gets the practice from the filename of practice and the nameKey
+     *
+     * @param fileName
+     * @return
+     */
+    public Practice getPractice(String nameKey, String fileName) {
+        ArrayList<Practice> practiceList = _practices.get(nameKey);
+
+        int index = 0;
+        for (int i = 0; i < practiceList.size(); i++) {
+            if (practiceList.get(i).getFileName().equals(fileName)) {
+                index = i;
+                break;
+            }
+        }
+        return practiceList.get(index);
+    }
+
+    /**
+     * this method generates a new recording based on the nameKey
+     * it then adds it to the _practices list
+     *
+     * @param nameKey
+     * @return practice
+     */
+    public String addNewPractice(String nameKey) {
+        // Create a new practice of the given name
+        System.out.println("success1?");
+        Practice practice = new Practice(nameKey);
+        System.out.println("success2?");
+        practice.create();
+        System.out.println("success3?");
+        addPractice(nameKey, practice);
+        return practice.getFileName();
+    }
+
+
+    public static void main(String[] args) {
+    }
+
+}
 
 
 
