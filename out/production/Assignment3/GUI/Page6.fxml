@@ -85,7 +85,7 @@
                 </Pane></AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="194.0" prefWidth="416.0" style="-fx-background-color: #d3dbe8;">
                           <children>
-                              <Button fx:id="practiceButton_3" layoutX="213.0" layoutY="57.0" mnemonicParsing="false" onAction="#deleteFile" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Delete" textFill="WHITE">
+                              <Button fx:id="deleteButton_3" layoutX="213.0" layoutY="57.0" mnemonicParsing="false" onAction="#deleteFile" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #003063;" text="Delete" textFill="WHITE">
                                   <font>
                                       <Font size="20.0" />
                                   </font>

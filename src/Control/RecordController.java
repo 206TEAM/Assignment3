@@ -90,12 +90,12 @@ public class RecordController {
             Thread thread = new Thread(() -> {
                 String name = Practices.getInstance().getCurrentName();
                 String fileName = Practices.getInstance().getSelectFile();
-
                 Media media = new Media(Practices.getInstance().getPractice(name, fileName));
                 media.play();
             });
             thread.setDaemon(true);
             thread.start();
+            reviewAudioPopUp();
         } else if (result.get() == record) {
             removeAudio();
             recordAudioPopUp();

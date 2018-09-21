@@ -137,7 +137,7 @@ public class ListenController implements Initializable {
             String name = Practices.getInstance().getCurrentName();
             Practices.getInstance().deletePractice(name, _selected);
         } else {
-            //todo
+            //todo should be user restriction
         }
     }
 
