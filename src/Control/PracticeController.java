@@ -1,8 +1,6 @@
 package Control;
 
-import Model.Mediator;
-import Model.Originals;
-import Model.Practices;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,12 +24,23 @@ public class PracticeController {
 	public void playOriginal(ActionEvent event) {
 		System.out.println("played");
 		String name = Practices.getInstance().getCurrentName();
+		String fileName = Mediator.getInstance().getSelectedFileName();
+
 		Thread thread = new Thread(() -> {
-			Originals.getInstance().playOriginal(name);
+			Original original;
+
+			if (Originals.getInstance().getFileName(name).size() > 1) {
+				original = Originals.getInstance().getOriginalWithVersions(fileName, name);
+			} else {
+				original = Originals.getInstance().getOriginal(fileName);
+			}
+			Media media = new Media(original);
+			media.play();
 		});
 		thread.setDaemon(true);
 		thread.start();
-		Mediator.getInstance().showProgress(progressBar, "Original");
+
+		Mediator.getInstance().showProgress(progressBar, "Original", fileName);
 	}
 
 	/**

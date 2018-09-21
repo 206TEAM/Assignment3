@@ -1,8 +1,5 @@
 package Model;
 
-import Control.HeaderController;
-import javafx.concurrent.Task;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -29,7 +26,8 @@ public class Media {
 	}
 
 	public Media(Original original) {
-		_fileName = original.getFileName();
+		String fileName = original.getFileName();
+		_fileName = fileName.substring(0, fileName.lastIndexOf('.')) + original.getVersion() + ".wav";
 		_originalName = original.getName();
 		_directory = original.getDirectory();
 	}

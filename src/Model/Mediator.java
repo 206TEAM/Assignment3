@@ -31,6 +31,7 @@ public class Mediator {
 	private MainController _main;
 	private HeaderController _header;
 	private List<String> _practiceList;
+	private String _selectedFileName;
 
 	public void setPage(String page) {
 		_page = page;
@@ -52,17 +53,24 @@ public class Mediator {
 		_practiceList = practiceList;
 	}
 
+	public void setSelectedFileName(String fileName) {
+		_selectedFileName = fileName;
+	}
+
+	public String getSelectedFileName() {
+		return _selectedFileName;
+	}
+
 	public void loadMainPane() {
 		_main.loadPane();
 	}
 
 	public void loadHeaderPane() { _header.loadPane(); }
 
-	public void showProgress(ProgressIndicator progress, String dir) {
+	public void showProgress(ProgressIndicator progress, String dir, String fileName) {
 		double duration = 0;
 		try {
 			String name = Practices.getInstance().getCurrentName();
-			String fileName = Originals.getInstance().getFileName(name).get(0);
 			File file = new File("Names/" + name + "/" + dir +  "/" + fileName);
 			AudioInputStream ais = AudioSystem.getAudioInputStream(file);
 			AudioFormat format = ais.getFormat();
@@ -77,7 +85,6 @@ public class Mediator {
 	}
 
 	public void showProgress(ProgressIndicator progress, double duration) {
-
 		Timeline timeLine = new Timeline(
 				new KeyFrame(Duration.ZERO, new KeyValue(progress.progressProperty(), 0)),
 				new KeyFrame(Duration.seconds(duration), Event::consume,

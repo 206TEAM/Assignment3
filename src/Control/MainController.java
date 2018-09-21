@@ -110,6 +110,7 @@ public class MainController implements Initializable {
         Practices.getInstance().setCurrentName(name);
 
 	    String fileName = originalListView.getSelectionModel().getSelectedItem();
+		Mediator.getInstance().setSelectedFileName(fileName);
 
         if (fileName != null) {
 	        String labelName;
@@ -125,7 +126,6 @@ public class MainController implements Initializable {
 	        loadRatings(original);
         }
     }
-
 
 	public void addName(ActionEvent actionEvent) { //todo
     	Mediator.getInstance().setPage("SelectPractices");

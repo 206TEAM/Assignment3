@@ -320,19 +320,6 @@ public class Originals {
         return -1;
     }
 
-    public void playOriginal(String name) {
-        for (Original original : _originals) {
-            if (original.getName().equals(name)) {
-                Model.Media media = new Model.Media(original);
-                media.play();
-            }
-        }
-    }
-
-    public void playOriginal(Original original) {
-
-    }
-
     /**
      * Ensures that only one object of {@code Originals}
      * can be instantiated.

@@ -115,16 +115,34 @@ public class ListenController implements Initializable {
      */
     public void play(ActionEvent event) {
         String name = Practices.getInstance().getCurrentName(); //getting the name
-	    Media media;
-	    if (_type.equals("original")) { //if type is original
-            String fileName = originalListView.getSelectionModel().getSelectedItem();
-            Original original = Originals.getInstance().getOriginal(fileName);
-            Originals.getInstance().playOriginal(original);
-        } else { //type is practice
-	    	media = new Media(Practices.getInstance().getPractice(name, _selected));
-            media.play();
-        }
-        System.out.println("played");
+	    Thread thread = new Thread(new Runnable() {
+		    @Override
+		    public void run() {
+			    Media media;
+			    if (_type.equals("original")) { //if type is original
+
+				    Original original;
+
+				    if (Originals.getInstance().getFileName(name).size() > 1) {
+					    original = Originals.getInstance().getOriginalWithVersions(_selected, name);
+				    } else {
+					    original = Originals.getInstance().getOriginal(_selected);
+				    }
+
+				    media = new Media(original);
+			    } else { //type is practice
+				    media = new Media(Practices.getInstance().getPractice(name, _selected));
+			    }
+			    media.play();
+		    }
+	    });
+	    thread.setDaemon(true);
+	    thread.start();
+		if (_type.equals("original")) {
+            Mediator.getInstance().showProgress(progressBar, "Original", _selected);
+        } else {
+			Mediator.getInstance().showProgress(progressBar, "Practices", _selected);
+		}
 
     }
 

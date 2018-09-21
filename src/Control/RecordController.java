@@ -2,6 +2,7 @@ package Control;
 
 import Model.Media;
 import Model.Mediator;
+import Model.Practice;
 import Model.Practices;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
