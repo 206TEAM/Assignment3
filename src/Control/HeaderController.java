@@ -2,6 +2,7 @@ package Control;
 
 import Model.Media;
 import Model.Mediator;
+import Model.Practices;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.layout.VBox;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -41,6 +43,7 @@ public class HeaderController implements Initializable {
 
 	@FXML
 	public void home(ActionEvent actionEvent) {
+		Practices.getInstance().clearCurrentNames(); //clears the names
 		Mediator.getInstance().setPage("Root");
 		loadPane();
 	}

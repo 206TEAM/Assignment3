@@ -28,6 +28,7 @@ public class Practices {
 
     private Practices() {
         _practices = new HashMap<String, ArrayList<Practice>>();
+        updateModel();
     }
 
     /**
@@ -35,6 +36,10 @@ public class Practices {
      */
     public HashMap<String, ArrayList<Practice>> getPracticesMap() {
         return _practices;
+    }
+
+    public void clearCurrentNames() {
+        _practiceNames = null;
     }
 
     /**
@@ -106,14 +111,14 @@ public class Practices {
      * @param names
      */
     public void addNames(List<String> names) {
-        if (_practiceNames == null){
+        if (_practiceNames == null) {
             _practiceNames = new ArrayList();
             _practiceNames.addAll(names);
         } else {
 
             System.out.println("not null");
-            for (String name : names){
-                if (!_practiceNames.contains(name)){
+            for (String name : names) {
+                if (!_practiceNames.contains(name)) {
                     _practiceNames.add(name);
                 }
 
@@ -186,6 +191,27 @@ public class Practices {
 //            Practice practice = new Practice(temp);
 //            _practices.add(practice);
 //        }
+
+        List<String> names = Originals.getInstance().listNames();
+
+        for (String name : names) {
+            File file = new File("Names/" + name + "/Practices");
+            File[] fileList = file.listFiles();
+
+            for (File f : fileList) {
+                System.out.println("file");
+                String hi = f.getName();
+                System.out.println(hi);
+                String hmm = hi.substring(0, hi.lastIndexOf('.'));
+                System.out.println(hmm);
+                String fileName = hmm;
+                System.out.println(fileName);
+                Practice practice = new Practice(name, fileName);
+                addPractice(name, practice);
+            }
+        }
+
+
     }
 
     /**
@@ -230,7 +256,6 @@ public class Practices {
     public void deletePractice(String nameKey, String fileName) {
         Practice practiceDelete = getPractice(nameKey, fileName);
         practiceDelete.delete(); // delete the practice
-
         _practices.get(nameKey).remove(practiceDelete); //not sure if this works yet (needs testing)
     }
 

@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixed scene transitions and playOriginal().">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="populates the originalview list in practice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/CompareController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/CompareController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Names/Xuyun/Practices/XuyunPractices2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Names/Xuyun/Practices/XuyunPractices4.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/HeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/HeaderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/ListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/ListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/ListenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/ListenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/PracticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/PracticeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/RecordController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/RecordController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Control/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Control/RecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page6.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/GUI/Page6.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Model/Originals.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Model/Originals.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Assignment3/Model/Practices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment3/Model/Practices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/HeaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Practice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Practices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Practices.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -129,25 +121,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="7" />
-          <entry key="java" value="11" />
+          <entry key="java" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="15" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="910" />
-          <entry key="txt" value="54" />
+          <entry key="java" value="1677" />
+          <entry key="txt" value="109" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="910" />
-          <entry key="PLAIN_TEXT" value="54" />
+          <entry key="JAVA" value="1677" />
+          <entry key="PLAIN_TEXT" value="109" />
         </counts>
       </usages-collector>
     </session>
@@ -157,112 +149,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="106" column="53" lean-forward="true" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/ListenController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="80" column="84" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="80" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/ListController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="778">
-              <caret line="59" column="45" lean-forward="true" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Control/HeaderController.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/Practices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+            <state relative-caret-position="174">
+              <caret line="257" column="55" selection-start-line="257" selection-start-column="55" selection-end-line="257" selection-end-column="55" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1241#1242#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/PracticeController.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/Practice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/CompareController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/RootController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/RecordController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="129" selection-end-column="46" />
-              <folding>
-                <element signature="e#1720#1721#0" expanded="true" />
-                <element signature="e#1754#1755#0" expanded="true" />
-                <element signature="e#3884#3885#0" expanded="true" />
-                <element signature="e#3918#3919#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Page3.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Main.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="11" column="173" selection-start-line="11" selection-start-column="173" selection-end-line="11" selection-end-column="173" />
+            <state relative-caret-position="725">
+              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -288,6 +192,12 @@
       <find>getPractice</find>
       <find>_practiceNames</find>
       <find>label</find>
+      <find>addNew</find>
+      <find>addPract</find>
+      <find>addPractice</find>
+      <find>fileName</find>
+      <find>updateModel</find>
+      <find>remove</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -330,20 +240,20 @@
         <option value="$PROJECT_DIR$/src/GUI/Page5.fxml" />
         <option value="$PROJECT_DIR$/src/Model/Media.java" />
         <option value="$PROJECT_DIR$/src/Control/RootController.java" />
-        <option value="$PROJECT_DIR$/src/Model/Practice.java" />
         <option value="$PROJECT_DIR$/src/GUI/Page4.fxml" />
         <option value="$PROJECT_DIR$/src/Model/Mediator.java" />
         <option value="$PROJECT_DIR$/src/Model/Originals.java" />
         <option value="$PROJECT_DIR$/src/GUI/Page6.fxml" />
         <option value="$PROJECT_DIR$/src/Control/ListenController.java" />
         <option value="$PROJECT_DIR$/src/Control/ListController.java" />
-        <option value="$PROJECT_DIR$/src/Model/Practices.java" />
         <option value="$PROJECT_DIR$/src/Control/RecordController.java" />
         <option value="$PROJECT_DIR$/src/Control/CompareController.java" />
         <option value="$PROJECT_DIR$/src/GUI/Main.fxml" />
         <option value="$PROJECT_DIR$/src/Control/PracticeController.java" />
         <option value="$PROJECT_DIR$/src/Control/MainController.java" />
         <option value="$PROJECT_DIR$/src/Control/HeaderController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Practice.java" />
+        <option value="$PROJECT_DIR$/src/Model/Practices.java" />
       </list>
     </option>
   </component>
@@ -375,6 +285,31 @@
               <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
               <item name="Names" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
+              <item name="Names" type="462c0819:PsiDirectoryNode" />
+              <item name="Ahn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
+              <item name="Names" type="462c0819:PsiDirectoryNode" />
+              <item name="Ardern" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
+              <item name="Names" type="462c0819:PsiDirectoryNode" />
+              <item name="Ardern" type="462c0819:PsiDirectoryNode" />
+              <item name="Original" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment3" type="462c0819:PsiDirectoryNode" />
+              <item name="Names" type="462c0819:PsiDirectoryNode" />
+              <item name="wei" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
@@ -429,7 +364,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537500094538" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537502037813" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
@@ -834,7 +769,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537499622301</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="populates the originalview list in practice">
+      <created>1537500161420</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1537500161420</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -844,7 +786,7 @@
     <frame x="134" y="35" width="2746" height="1585" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19676448" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19676448" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -856,7 +798,7 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3754386" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.22095671" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.22095671" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.2" />
@@ -954,7 +896,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Page 4 and 5 colour change and sliders.&#10;&#10;Added sliders to page 5&#10;Added progress circle to page 4" />
     <MESSAGE value="Singletons should be private static final.&#10;To access them, please use the getInstance() method." />
     <MESSAGE value="Created Main.fxml" />
     <MESSAGE value="Changed page2.fxml" />
@@ -979,7 +920,8 @@
     <MESSAGE value="re-organised transitions from root" />
     <MESSAGE value="Recording progress and listen done." />
     <MESSAGE value="Added the plus button for selecting names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the plus button for selecting names" />
+    <MESSAGE value="populates the originalview list in practice" />
+    <option name="LAST_COMMIT_MESSAGE" value="populates the originalview list in practice" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1072,13 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Practice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/ProgressIndicator.java" />
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/ProgressBar.java" />
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_181/src.zip!/java/util/ArrayList.java" />
@@ -1105,17 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Practices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
-          <folding>
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,6 +1087,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/ListenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="80" column="84" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="80" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="106" column="53" lean-forward="true" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/HeaderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/ListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="59" column="45" lean-forward="true" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/PracticeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Control/RecordController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -1184,20 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/PracticeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/ListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="59" column="45" lean-forward="true" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
@@ -1206,29 +1157,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/ListenController.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Practice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="80" column="84" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="80" selection-end-column="84" />
+        <state relative-caret-position="725">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Practices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="106" column="53" lean-forward="true" selection-start-line="106" selection-start-column="53" selection-end-line="106" selection-end-column="53" />
+        <state relative-caret-position="174">
+          <caret line="257" column="55" selection-start-line="257" selection-start-column="55" selection-end-line="257" selection-end-column="55" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/HeaderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
           </folding>
         </state>
       </provider>
