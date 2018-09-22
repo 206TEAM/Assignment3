@@ -38,6 +38,11 @@ public class ListController implements Initializable {
 	@FXML public CheckBox shuffleCheckbox_2;
 	@FXML public Button goButton_2;
 
+    /**
+     * fields
+     */
+    private boolean _shuffle;
+
 	/**
      * sets the original names in the selectListView.
      * allows you to select multiple names at once.
@@ -46,9 +51,12 @@ public class ListController implements Initializable {
      */
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> practiceNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
+        List<String> names = Originals.getInstance().listNames();
+        java.util.Collections.sort(names);
+        ObservableList<String> practiceNames = FXCollections.observableArrayList(names);
         selectListView.setItems(practiceNames);
         selectListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        _shuffle = false;
     }
 
 	/**
@@ -59,9 +67,13 @@ public class ListController implements Initializable {
      */
     public void goAction(ActionEvent event) {
         List<String> list = selectListView.getSelectionModel().getSelectedItems();
-        System.out.println("got list");
-        Practices.getInstance().addNames(list);
-        System.out.println("sucess");
+        List<String> array = new ArrayList<String>();
+        array.addAll(list);
+        if (_shuffle){
+            Collections.shuffle(array);
+        }
+
+        Practices.getInstance().addNames(array);
         Mediator.getInstance().setPage("Page3");
         try {
             URL url = new File("src/GUI/Main.fxml").toURL();
@@ -76,6 +88,7 @@ public class ListController implements Initializable {
      * when the user clicks shuffle
      */
     public void shufflePracticeList(ActionEvent event){ //todo
+        _shuffle = true;
         //Practices.getInstance().addNames(Collections.shuffle(Practices.getInstance().getPracticeNames()));
     }
 
