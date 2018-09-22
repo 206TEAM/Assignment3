@@ -13,8 +13,6 @@ import java.util.ResourceBundle;
 /**
  * This class controls Page3 where the user can choose to play and/or practice a name
  *
- * @author Lucy Chen
- * @author Eric Pedrido
  */
 public class PracticeController implements SubSceneController {
 
@@ -33,7 +31,6 @@ public class PracticeController implements SubSceneController {
 	 * Plays the original .wav file when selecting a name, and pressing the play button
 	 */
 	public void playOriginal(ActionEvent event) {
-		System.out.println("played");
 		String name = Practices.getInstance().getCurrentName();
 		String fileName = Mediator.getInstance().getSelectedFileName();
 

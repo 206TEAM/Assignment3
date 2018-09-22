@@ -3,11 +3,8 @@ package Control;
 import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
-
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -31,7 +28,6 @@ public class CompareController implements SubSceneController {
 	@FXML
 	public void done(ActionEvent actionEvent) throws IOException {
 		String currentName = Practices.getInstance().getCurrentName();
-		System.out.println("curernt name fr done is " + currentName);
 		Practices.getInstance().removePracticeName(currentName); //removes current name from list.
 
 		//todo need to remove name from main list as well...

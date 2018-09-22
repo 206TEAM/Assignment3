@@ -14,8 +14,6 @@ import java.util.Map.Entry;
  * _practices is a hashmap that contains the Name as the key value, and practice list for each name as the value.
  * _practiceNames is a list of the names that the user is currently practicing (originally selected)
  * _currentName is the name that the user is currently working on
- *
- * @author Lucy Chen
  */
 public class Practices {
 
@@ -119,8 +117,6 @@ public class Practices {
             _practiceNames = new ArrayList();
             _practiceNames.addAll(names);
         } else {
-
-            System.out.println("not null");
             for (String name : names) {
                 if (!_practiceNames.contains(name)) {
                     _practiceNames.add(name);
@@ -149,7 +145,6 @@ public class Practices {
      */
     public String addPractice(String nameKey, Practice practice) {
         ArrayList<Practice> practiceList = new ArrayList<Practice>();
-        System.out.println("success1?");
 
         if (_practices.containsKey(nameKey)) { //if key already exists
             practiceList = _practices.get(nameKey); //todo add thing already.
@@ -170,7 +165,6 @@ public class Practices {
             _practices.put(nameKey, practiceList);
         }
 
-        System.out.println("success?");
         return practice.getFileName();
     }
 
@@ -203,13 +197,9 @@ public class Practices {
             File[] fileList = file.listFiles();
 
             for (File f : fileList) {
-                System.out.println("file");
                 String hi = f.getName();
-                System.out.println(hi);
                 String hmm = hi.substring(0, hi.lastIndexOf('.'));
-                System.out.println(hmm);
                 String fileName = hmm;
-                System.out.println(fileName);
                 Practice practice = new Practice(name, fileName);
                 addPractice(name, practice);
             }
@@ -222,8 +212,6 @@ public class Practices {
      * returns a list of the fileNames of the practices given the nameKey
      */
     public List<String> listPractices(String nameKey) {
-
-        System.out.println("about to list practices");
 
         if (_practices.get(nameKey) != null) {
             ArrayList<Practice> practiceList = _practices.get(nameKey);
@@ -292,11 +280,8 @@ public class Practices {
      */
     public String addNewPractice(String nameKey) {
         // Create a new practice of the given name
-        System.out.println("success1?");
         Practice practice = new Practice(nameKey);
-        System.out.println("success2?");
         practice.create();
-        System.out.println("success3?");
         addPractice(nameKey, practice);
         return practice.getFileName();
     }

@@ -31,11 +31,8 @@ public class RecordController {
                 protected Void call() throws Exception {
                     //generates file which adds to creation list
                     String name = Practices.getInstance().getCurrentName();
-                    System.out.println(name);
                     String fileName = Practices.getInstance().addNewPractice(name); //todo change addnewpractice return value
-                    System.out.println("don1e");
                     Practices.getInstance().setFileName(fileName);
-                    System.out.println("done");
                     return null;
                 }
             };
@@ -122,8 +119,6 @@ public class RecordController {
     public void removeAudio() {
         String name = Practices.getInstance().getCurrentName();
         String fileName = Practices.getInstance().getFileName();
-        System.out.println(name);
-        System.out.println("file to delete"+ fileName);
         Practices.getInstance().deletePractice(name, fileName);
     }
 

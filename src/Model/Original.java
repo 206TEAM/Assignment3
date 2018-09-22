@@ -23,7 +23,6 @@ import java.util.regex.Pattern;
  * <p> Behaviour of all the {@code Original} objects in a group is different.
  * This behaviour is implemented in {@link Originals}</p>
  *
- * @author Eric Pedrido
  */
 public class Original {
 
