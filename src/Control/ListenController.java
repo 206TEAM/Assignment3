@@ -51,10 +51,6 @@ public class ListenController implements Initializable {
 	    deleteButton_3.setDisable(true);
 
     	ratingHandler();
-
-        System.out.println("yes");
-        //ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
-        ///ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
         ObservableList<String> allNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
 
         mainListView.setItems(allNames);
@@ -136,8 +132,7 @@ public class ListenController implements Initializable {
         if (_type.equals("practice")){
             String name = Practices.getInstance().getCurrentName();
             Practices.getInstance().deletePractice(name, _selected);
-        } else {
-            //todo should be user restriction
+            practiceListView.getItems().remove(_selected);
         }
     }
 
