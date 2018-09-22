@@ -68,12 +68,10 @@ public class MainController implements Initializable {
 	@FXML
 	public void reload() {
 		List<String> practiceNamesList = Practices.getInstance().getPracticeNames();
-		System.out.println(practiceNamesList.size());
-		mainListView.getItems().clear();
+
+		ObservableList<String> practiceNames = FXCollections.observableArrayList(practiceNamesList);
+		mainListView.setItems(practiceNames);
 		originalListView.getItems().clear();
-		System.out.println("DONE");
-		//ObservableList<String> practiceNames = FXCollections.observableArrayList(practiceNamesList);
-		//mainListView.setItems(practiceNames);
 	}
 
 	/**
