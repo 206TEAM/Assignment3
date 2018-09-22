@@ -18,7 +18,6 @@ import java.util.regex.Pattern;
  * The one list generated from scanning the contents of <dir>Recordings</dir>
  * is in essence, the only true list of {@code Originals}.</p>
  *
- * @author Eric Pedrido
  */
 public class Originals {
 

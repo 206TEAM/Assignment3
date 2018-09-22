@@ -9,8 +9,6 @@ import java.nio.file.Files;
  * Responsible for handling various interactions with the media
  * files referenced as {@link Original} and {@link Practice}.
  * Also contains methods allowing for a microphone test.
- *
- * @author Eric Pedrido
  */
 public class Media {
 

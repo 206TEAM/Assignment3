@@ -26,7 +26,6 @@ import javafx.scene.layout.VBox;
 
 /**
  * This class gets the original names and allows the user to select which names they want to practice
- * @author Lucy Chen
  */
 public class ListController implements Initializable {
 
@@ -66,6 +65,7 @@ public class ListController implements Initializable {
      *
      */
     public void goAction(ActionEvent event) {
+        Mediator.getInstance().setState(false);
         List<String> list = selectListView.getSelectionModel().getSelectedItems();
         List<String> array = new ArrayList<String>();
         array.addAll(list);

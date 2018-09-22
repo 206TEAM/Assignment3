@@ -14,7 +14,6 @@ import java.util.ResourceBundle;
 
 /**
  * this class control Page6.fxml
- * @author: Lucy Chen
  */
 public class ListenController implements Initializable {
 
@@ -46,10 +45,6 @@ public class ListenController implements Initializable {
 	    deleteButton_3.setDisable(true);
 
     	ratingHandler();
-
-        System.out.println("yes");
-        //ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
-        ///ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
         ObservableList<String> allNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
 
         mainListView.setItems(allNames);
@@ -67,7 +62,6 @@ public class ListenController implements Initializable {
 	    String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
         Practices.getInstance().setCurrentName(name);
-        // System.out.println(name);
         populateSubLists();
     }
 
@@ -88,12 +82,9 @@ public class ListenController implements Initializable {
     	playButton_3.setDisable(false);
     	deleteButton_3.setDisable(true);
 
-        System.out.println("selecting original name");
         String fileName = originalListView.getSelectionModel().getSelectedItem();
         String name = mainListView.getSelectionModel().getSelectedItem();
-        //nameLabel_3.setText(name);
         _selected = fileName;
-        System.out.println(fileName);
         _type = "original";
 
         clearRatings();
@@ -116,11 +107,10 @@ public class ListenController implements Initializable {
         originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         if (Practices.getInstance().listPractices(name) != null) {
-            System.out.println("not null");
             ObservableList<String> practices = FXCollections.observableArrayList(Practices.getInstance().listPractices(name));
             practiceListView.setItems(practices);
         } else {
-        	practiceListView.getItems().clear(); //clears if no practices
+        	practiceListView.getItems().clear();
 		}
     }
 
@@ -131,8 +121,7 @@ public class ListenController implements Initializable {
         if (_type.equals("practice")){
             String name = Practices.getInstance().getCurrentName();
             Practices.getInstance().deletePractice(name, _selected);
-        } else {
-            //todo should be user restriction
+            practiceListView.getItems().remove(_selected);
         }
     }
 

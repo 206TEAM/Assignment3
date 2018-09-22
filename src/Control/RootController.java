@@ -15,8 +15,6 @@ import java.util.ResourceBundle;
 /**
  * Controls interactions on the <q>Root</q> scene which is
  * more easily identified as the home page.
- *
- * @author Eric Pedrido
  */
 public class RootController {
 
@@ -28,11 +26,13 @@ public class RootController {
 	public void practice1(MouseEvent mouseEvent) {
 		Mediator.getInstance().setPage("SelectPractices");
 		Mediator.getInstance().loadHeaderPane();
+		Mediator.getInstance().setState(false);
 	}
 
 	@FXML
 	public void listen1(MouseEvent mouseEvent) {
 		Mediator.getInstance().setPage("Page6");
 		Mediator.getInstance().loadHeaderPane();
+		Mediator.getInstance().setState(true);
 	}
 }

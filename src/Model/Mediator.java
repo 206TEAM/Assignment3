@@ -23,7 +23,6 @@ import java.util.List;
  * Acts as a mediator for which various controllers
  * can communicate with each other.
  *
- * @author Eric Pedrido
  */
 public class Mediator {
 
@@ -34,6 +33,11 @@ public class Mediator {
 	private List<String> _practiceList;
 	private String _selectedFileName;
 	private List<SubSceneController> _controllers = new ArrayList<>();
+	private boolean _safe;
+
+	public void setState(Boolean bool){ _safe = bool; }
+
+	public Boolean getState(){ return _safe; }
 
 	public void setPage(String page) {
 		_page = page;

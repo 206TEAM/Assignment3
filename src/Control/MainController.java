@@ -31,9 +31,6 @@ import java.util.ResourceBundle;
  *
  * <p> It also contains a side bar with a constantly updating sub-list {@code Practices}
  * selected by the user.</p>
- *
- * @author Lucy Chen
- * @author Eric Pedrido
  */
 public class MainController implements Initializable {
 

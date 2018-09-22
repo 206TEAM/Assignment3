@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
  * allows those Controllers to be able to detect when an item
  * in the parent scene has been selected and act accordingly.
  *
- * @author Eric Pedrido
  */
 public interface SubSceneController extends Initializable {
 

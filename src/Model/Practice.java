@@ -12,7 +12,6 @@ import java.util.List;
  * This file is saved as a .wav in the directory:
  * Names/(_nameKey)/Practices/(fileName).wav
  *
- * @author: Lucy Chen
  */
 
 
@@ -93,9 +92,7 @@ public class Practice {
         String name;
         File directory = getDirectory();
             for (File f : directory.listFiles()) {
-                System.out.println("it ok");
                 names.add(f.getName()); //adds the file names from directory into the list
-                System.out.println("it ok");
             }
 
             if (names.size()==0) {
@@ -104,8 +101,6 @@ public class Practice {
                 name = nameKey + "Practices" + Integer.toString(names.size() + 1);
 
             }
-
-        System.out.println(name);
         return name;
     }
 
