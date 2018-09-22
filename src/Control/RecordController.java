@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class RecordController {
+public class RecordController implements Initializable{
 
     @FXML public Button recordButton_4;
     @FXML public ProgressIndicator recordProgress;
@@ -49,6 +49,7 @@ public class RecordController {
     }
 
     public void record(ActionEvent event){
+    	recordButton_4.setDisable(true);
         recordAudioPopUp();
     }
 
@@ -131,4 +132,9 @@ public class RecordController {
         Mediator.getInstance().setPage("Page5");
         Mediator.getInstance().loadMainPane();
     }
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		recordButton_4.setDisable(false);
+	}
 }

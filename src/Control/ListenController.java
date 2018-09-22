@@ -67,23 +67,33 @@ public class ListenController implements Initializable {
 
 
     public void selectNamePractice(MouseEvent event) {
-    	showRatings(false);
-    	playButton_3.setDisable(false);
-    	deleteButton_3.setDisable(false);
+	    String name = practiceListView.getSelectionModel().getSelectedItem();
+    	if (name != null) {
+    	    showRatings(false);
+    	    playButton_3.setDisable(false);
+    	    deleteButton_3.setDisable(false);
+    	} else {
+    		playButton_3.setDisable(true);
+    		deleteButton_3.setDisable(true);
+	    }
 
-        String name = practiceListView.getSelectionModel().getSelectedItem();
         //nameLabel_3.setText(name);
         _selected = name;
         _type = "practice";
     }
 
     public void selectNameOriginal(MouseEvent event) {
-	    showRatings(true);
-    	playButton_3.setDisable(false);
-    	deleteButton_3.setDisable(true);
+	    String fileName = originalListView.getSelectionModel().getSelectedItem();
+	    String name = mainListView.getSelectionModel().getSelectedItem();
 
-        String fileName = originalListView.getSelectionModel().getSelectedItem();
-        String name = mainListView.getSelectionModel().getSelectedItem();
+	    if (fileName != null) {
+		    showRatings(true);
+		    playButton_3.setDisable(false);
+		    deleteButton_3.setDisable(true);
+	    } else {
+	    	playButton_3.setDisable(true);
+	    }
+
         _selected = fileName;
         _type = "original";
 
@@ -120,8 +130,13 @@ public class ListenController implements Initializable {
     public void deleteFile() {
         if (_type.equals("practice")){
             String name = Practices.getInstance().getCurrentName();
-            Practices.getInstance().deletePractice(name, _selected);
-            practiceListView.getItems().remove(_selected);
+            if (name != null) {
+	            Practices.getInstance().deletePractice(name, _selected);
+	            practiceListView.getItems().remove(_selected);
+	            if (practiceListView.getItems().size() < 1) {
+	            	deleteButton_3.setDisable(true);
+	            }
+            }
         }
     }
 

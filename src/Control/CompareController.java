@@ -44,7 +44,7 @@ public class CompareController implements SubSceneController {
 
 		List<String> currentNames = Practices.getInstance().getPracticeNames();
 		if (currentNames.size() == 0) { //done
-			mediator.setPage("Page6");
+			mediator.setPage("Root");
 			mediator.loadHeaderPane();
 		} else {
 			mediator.enableLists(true, true);
