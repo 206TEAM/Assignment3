@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -45,9 +46,11 @@ public class ListenController implements Initializable {
 	    deleteButton_3.setDisable(true);
 
     	ratingHandler();
-        ObservableList<String> allNames = FXCollections.observableArrayList(Originals.getInstance().listNames());
 
-        mainListView.setItems(allNames);
+		List<String> names = Originals.getInstance().listNames();
+		java.util.Collections.sort(names);
+		ObservableList<String> practiceNames = FXCollections.observableArrayList(names);
+		mainListView.setItems(practiceNames);
         mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
@@ -135,6 +138,7 @@ public class ListenController implements Initializable {
 	            practiceListView.getItems().remove(_selected);
 	            if (practiceListView.getItems().size() < 1) {
 	            	deleteButton_3.setDisable(true);
+	            	playButton_3.setDisable(true);
 	            }
             }
         }
