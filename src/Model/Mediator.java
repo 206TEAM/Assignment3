@@ -113,6 +113,10 @@ public class Mediator {
 		}
 	}
 
+	public void reloadMain() {
+		_main.reload();
+	}
+
 	public static Mediator getInstance() {
 		return MEDIATOR_SINGLETON;
 	}

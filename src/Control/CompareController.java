@@ -36,12 +36,12 @@ public class CompareController implements SubSceneController {
 
 		//todo need to remove name from main list as well...
 
-		FXMLLoader loader = new FXMLLoader();
-		URL url = new File("src/GUI/Main.fxml").toURL();
-		loader.setLocation(url);
-		loader.load();
-		MainController mainController = loader.getController();
-		mainController.reload(); //accesses method: reload (should update the list
+//		FXMLLoader loader = new FXMLLoader();
+//		URL url = new File("src/GUI/Main.fxml").toURL();
+//		loader.setLocation(url);
+//		loader.load();
+//		MainController mainController = loader.getController();
+		Mediator.getInstance().reloadMain(); //accesses method: reload (should update the list
 		//todo needs to reload the main class. not sure how to do it
 
 
