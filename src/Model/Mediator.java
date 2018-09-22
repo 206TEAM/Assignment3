@@ -113,6 +113,14 @@ public class Mediator {
 		}
 	}
 
+	public void enableLists(boolean original, boolean main) {
+		_main.enableLists(original, main);
+	}
+
+	public void disableLists(boolean original, boolean main) {
+		_main.disableLists(original, main);
+	}
+
 	public void reloadMain() {
 		_main.reload();
 	}

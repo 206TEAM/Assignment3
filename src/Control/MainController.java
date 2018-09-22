@@ -103,8 +103,10 @@ public class MainController implements Initializable {
      * @param event
      */
     public void selectName(MouseEvent event) {
-    	Mediator.getInstance().fireItemSelected();
         String name = mainListView.getSelectionModel().getSelectedItem();
+        if (name != null) {
+	        Mediator.getInstance().fireItemSelected();
+        }
         nameLabel_3.setText(name);
         ratingLabel.setText("Rating: --");
 
@@ -117,9 +119,13 @@ public class MainController implements Initializable {
     }
 
     public void selectOriginal(MouseEvent event) {
-    	Mediator.getInstance().fireOriginalSelected();
 	    String fileName = originalListView.getSelectionModel().getSelectedItem();
 	    String name = mainListView.getSelectionModel().getSelectedItem();
+
+	    if (name != null) {
+		    Mediator.getInstance().fireOriginalSelected();
+	    }
+
 	    Mediator.getInstance().setSelectedFileName(fileName);
 
 	    if (fileName != null) {
@@ -135,6 +141,19 @@ public class MainController implements Initializable {
 		    nameLabel_3.setText(labelName);
 		    loadRatings(original);
 	    }
+    }
+
+    public void disableLists(boolean original, boolean main) {
+    	originalListView.setDisable(original);
+    	mainListView.setDisable(main);
+    	addName.setDisable(main);
+    }
+
+    public void enableLists(boolean original, boolean main) {
+    	originalListView.setDisable(!original);
+    	mainListView.setDisable(!main);
+    	addName.setDisable(!main);
+
     }
 
 	public void addName(ActionEvent actionEvent) { //todo

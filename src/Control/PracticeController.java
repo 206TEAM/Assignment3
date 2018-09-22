@@ -60,8 +60,10 @@ public class PracticeController implements SubSceneController {
 	 * @param event
 	 */
 	public void practiceName(ActionEvent event) {
-		Mediator.getInstance().setPage("Page4");
-		Mediator.getInstance().loadMainPane();
+		Mediator mediator = Mediator.getInstance();
+		mediator.disableLists(true, true);
+		mediator.setPage("Page4");
+		mediator.loadMainPane();
 	}
 
 	public void addName(ActionEvent event){
@@ -71,6 +73,7 @@ public class PracticeController implements SubSceneController {
 
 	@Override
 	public void itemSelected() {
+		playButton_3.setDisable(true);
 		practiceButton_3.setDisable(false);
 	}
 

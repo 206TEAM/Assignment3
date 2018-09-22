@@ -101,6 +101,10 @@ public class RecordController {
             alert.close();
 
         } else {
+        	Mediator mediator = Mediator.getInstance();
+        	mediator.enableLists(true, true);
+        	mediator.setPage("Page3");
+        	mediator.loadMainPane();
             alert.close();
         }
 
@@ -128,6 +132,7 @@ public class RecordController {
     }
 
     public void done() {
+    	Mediator.getInstance().enableLists(true, false);
         Mediator.getInstance().setPage("Page5");
         Mediator.getInstance().loadMainPane();
     }

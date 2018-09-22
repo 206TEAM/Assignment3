@@ -31,7 +31,7 @@ public class CompareController implements SubSceneController {
 	@FXML
 	public void done(ActionEvent actionEvent) throws IOException {
 		String currentName = Practices.getInstance().getCurrentName();
-		System.out.println("curernt name fr done is " + currentName);
+		Mediator mediator = Mediator.getInstance();
 		Practices.getInstance().removePracticeName(currentName); //removes current name from list.
 
 		//todo need to remove name from main list as well...
@@ -41,18 +41,18 @@ public class CompareController implements SubSceneController {
 //		loader.setLocation(url);
 //		loader.load();
 //		MainController mainController = loader.getController();
-		Mediator.getInstance().reloadMain(); //accesses method: reload (should update the list
+		mediator.reloadMain(); //accesses method: reload (should update the list
 		//todo needs to reload the main class. not sure how to do it
 
 
 		List<String> currentNames = Practices.getInstance().getPracticeNames();
 		if (currentNames.size() == 0) { //done
-			Mediator.getInstance().setPage("Page6");
-			Mediator.getInstance().loadHeaderPane();
+			mediator.setPage("Page6");
+			mediator.loadHeaderPane();
 		} else {
-			//todo remove the currently selected name from the list.
-			Mediator.getInstance().setPage("Page4");
-			Mediator.getInstance().loadMainPane();
+			mediator.enableLists(true, true);
+			mediator.setPage("Page3");
+			mediator.loadMainPane();
 		}
 	}
 

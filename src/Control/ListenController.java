@@ -41,12 +41,7 @@ public class ListenController implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-    	rb1.setDisable(true);
-	    rb2.setDisable(true);
-	    rb3.setDisable(true);
-	    rb4.setDisable(true);
-	    rb5.setDisable(true);
-
+    	showRatings(false);
 	    playButton_3.setDisable(true);
 	    deleteButton_3.setDisable(true);
 
@@ -62,16 +57,14 @@ public class ListenController implements Initializable {
     }
 
     public void selectName(MouseEvent event) {
-    	rb1.setDisable(false);
-	    rb2.setDisable(false);
-	    rb3.setDisable(false);
-	    rb4.setDisable(false);
-	    rb5.setDisable(false);
+	    ratingLabel.setText("--");
+	    showRatings(false);
+	    clearRatings();
 
 	    playButton_3.setDisable(true);
 	    deleteButton_3.setDisable(true);
 
-        String name = mainListView.getSelectionModel().getSelectedItem();
+	    String name = mainListView.getSelectionModel().getSelectedItem();
         nameLabel_3.setText(name);
         Practices.getInstance().setCurrentName(name);
         // System.out.println(name);
@@ -80,6 +73,7 @@ public class ListenController implements Initializable {
 
 
     public void selectNamePractice(MouseEvent event) {
+    	showRatings(false);
     	playButton_3.setDisable(false);
     	deleteButton_3.setDisable(false);
 
@@ -90,6 +84,7 @@ public class ListenController implements Initializable {
     }
 
     public void selectNameOriginal(MouseEvent event) {
+	    showRatings(true);
     	playButton_3.setDisable(false);
     	deleteButton_3.setDisable(true);
 
@@ -172,7 +167,7 @@ public class ListenController implements Initializable {
 		if (_type.equals("original")) {
             Mediator.getInstance().showProgress(progressBar, "Original", _selected);
         } else {
-			Mediator.getInstance().showProgress(progressBar, "Practices", _selected);
+			Mediator.getInstance().showProgress(progressBar, "Practices", _selected + ".wav");
 		}
 
     }
@@ -228,6 +223,14 @@ public class ListenController implements Initializable {
 		rb3.setSelected(false);
 		rb4.setSelected(false);
 		rb5.setSelected(false);
+	}
+	private void showRatings(boolean show) {
+		show = !show;
+		rb1.setDisable(show);
+		rb2.setDisable(show);
+		rb3.setDisable(show);
+		rb4.setDisable(show);
+		rb5.setDisable(show);
 	}
 
 }
