@@ -10,3 +10,4 @@ Zhang2: 5
 Deepika: 3
 
 Wang: 4
+MacDonald: 4

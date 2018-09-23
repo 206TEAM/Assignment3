@@ -14,7 +14,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * this class control Page6.fxml
+ * this class allows the user to listen to the original recordings as well as the practice recordings
+ * the user can choose to delete recordings they've created.
+ * This class controls Page6.fxml
  */
 public class ListenController implements Initializable {
 
@@ -36,8 +38,8 @@ public class ListenController implements Initializable {
 	/**
      * fields
      */
-    String _selected;
-    String _type;
+    private String _selected;
+    private String _type;
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
@@ -68,7 +70,10 @@ public class ListenController implements Initializable {
         populateSubLists();
     }
 
-
+	/**
+	 * Method for when user selects a practice name.
+	 * @param event
+	 */
     public void selectNamePractice(MouseEvent event) {
 	    String name = practiceListView.getSelectionModel().getSelectedItem();
     	if (name != null) {
@@ -80,12 +85,15 @@ public class ListenController implements Initializable {
     		deleteButton_3.setDisable(true);
 	    }
 
-        //nameLabel_3.setText(name);
         _selected = name;
         _type = "practice";
     }
 
-    public void selectNameOriginal(MouseEvent event) {
+	/**
+	 * when user selects an original file name, they can play it
+	 * @param event
+	 */
+	public void selectNameOriginal(MouseEvent event) {
 	    String fileName = originalListView.getSelectionModel().getSelectedItem();
 	    String name = mainListView.getSelectionModel().getSelectedItem();
 
@@ -111,7 +119,10 @@ public class ListenController implements Initializable {
         loadRating(original);
     }
 
-    public void populateSubLists() {
+	/**
+	 * this method populates the original list and practice list with files from the model
+	 */
+	public void populateSubLists() {
 
         String name = Practices.getInstance().getCurrentName();
 

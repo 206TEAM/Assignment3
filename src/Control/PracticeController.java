@@ -63,6 +63,10 @@ public class PracticeController implements SubSceneController {
 		mediator.loadMainPane();
 	}
 
+	/**
+	 * when user clicks on + button to add a new practice
+	 * @param event
+	 */
 	public void addName(ActionEvent event){
 		Mediator.getInstance().setPage("SelectPractices");
 		Mediator.getInstance().loadHeaderPane();

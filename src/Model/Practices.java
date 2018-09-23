@@ -49,24 +49,6 @@ public class Practices {
      *
      * @return
      */
-    public String getSelectFile() {
-        return _currentFileNameSelect;
-    }
-
-    /**
-     * sets the current name being worked on
-     *
-     * @param name
-     */
-    public void setSelectFile(String name) {
-        _currentFileNameSelect = name;
-    }
-
-    /**
-     * gets the current name that is being worked on or selected
-     *
-     * @return
-     */
     public String getCurrentName() {
         return _currentName;
     }
@@ -121,11 +103,8 @@ public class Practices {
                 if (!_practiceNames.contains(name)) {
                     _practiceNames.add(name);
                 }
-
             }
         }
-
-
     }
 
     /**
@@ -174,22 +153,6 @@ public class Practices {
      * goes into each folder and adds to the list
      */
     public void updateModel() {
-//        List<String> names = new ArrayList<>();
-//
-//        File file = new File("Names/" + name + "/Practice");
-//
-//        File[] fileList = file.listFiles();
-//
-//        for (File f : fileList) {
-//            names.add(f.getName()); //adds the file names from directory into the list
-//        }
-//
-//        for (String temp : names) {
-//            temp = temp.substring(0, name.lastIndexOf('.'));
-//            Practice practice = new Practice(temp);
-//            _practices.add(practice);
-//        }
-
         List<String> names = Originals.getInstance().listNames();
 
         for (String name : names) {
@@ -197,22 +160,18 @@ public class Practices {
             File[] fileList = file.listFiles();
 
             for (File f : fileList) {
-                String hi = f.getName();
-                String hmm = hi.substring(0, hi.lastIndexOf('.'));
-                String fileName = hmm;
+                String fullName = f.getName();
+                String fileName = fullName.substring(0, fullName.lastIndexOf('.'));
                 Practice practice = new Practice(name, fileName);
                 addPractice(name, practice);
             }
         }
-
-
     }
 
     /**
      * returns a list of the fileNames of the practices given the nameKey
      */
     public List<String> listPractices(String nameKey) {
-
         if (_practices.get(nameKey) != null) {
             ArrayList<Practice> practiceList = _practices.get(nameKey);
             List<String> practiceNames = new ArrayList<String>();
@@ -225,18 +184,6 @@ public class Practices {
         } else {
             return null;
         }
-
-    }
-
-    /**
-     * returns the file of the practice, based on the fileName and nameKey
-     *
-     * @param fileName
-     * @return
-     */
-    public File getFile(String nameKey, String fileName) {
-        Practice practice = getPractice(nameKey, fileName);
-        return practice.filePath();
     }
 
     /**
@@ -250,7 +197,6 @@ public class Practices {
         practiceDelete.delete(); // delete the practice
         _practices.get(nameKey).remove(practiceDelete); //not sure if this works yet (needs testing)
     }
-
 
     /**
      * gets the practice from the filename of practice and the nameKey
@@ -284,10 +230,6 @@ public class Practices {
         practice.create();
         addPractice(nameKey, practice);
         return practice.getFileName();
-    }
-
-
-    public static void main(String[] args) {
     }
 
 }

@@ -122,5 +122,4 @@ public class Practice {
         return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices");
     }
 
-
 }

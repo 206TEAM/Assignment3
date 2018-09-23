@@ -25,7 +25,10 @@ import javafx.scene.layout.VBox;
 
 
 /**
- * This class gets the original names and allows the user to select which names they want to practice
+ * This class gets all of the original names and allows the user
+ * to select which names they want to practice.
+ * It has a go button which takes them to the next page.
+ * The shuffle button shuffles the currently selected practices. 
  */
 public class ListController implements Initializable {
 

@@ -48,22 +48,19 @@ public class RecordController implements Initializable{
             
     }
 
+    /**
+     * When user presses the record button.
+     * @param event
+     */
     public void record(ActionEvent event){
     	recordButton_4.setDisable(true);
         recordAudioPopUp();
     }
 
-    public Alert recordingDialog() {
-        // show recording dialog
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Recording");
-        alert.setHeaderText("Recording dialog");
-        ButtonType dismissButton = new ButtonType("Ok", ButtonBar.ButtonData.CANCEL_CLOSE);
-        alert.getButtonTypes().setAll(dismissButton);
-
-        return alert;
-    }
-
+    /**
+     * Alert that pops up when user clicks on record button. user can re record, cancel or listen and save their recording
+     * @return
+     */
     public Alert reviewAudioPopUp() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION); //type of alert is a CONFIRMATION
         alert.setTitle("Review"); //sets the title of alert
@@ -86,7 +83,7 @@ public class RecordController implements Initializable{
         } else if (result.get() == listen) {
             Thread thread = new Thread(() -> {
                 String name = Practices.getInstance().getCurrentName();
-                String fileName = Practices.getInstance().getSelectFile();
+                String fileName = Practices.getInstance().getFileName();
                 Media media = new Media(Practices.getInstance().getPractice(name, fileName));
                 media.play();
             });
@@ -107,15 +104,6 @@ public class RecordController implements Initializable{
         }
 
         return alert;
-
-    }
-
-    /**
-     * when user clicks on practice button
-     * @param event
-     */
-    public void practiceName(ActionEvent event){
-        recordAudioPopUp();
     }
 
     /**
@@ -127,6 +115,9 @@ public class RecordController implements Initializable{
         Practices.getInstance().deletePractice(name, fileName);
     }
 
+    /**
+     * when user presses done, it changes the page
+     */
     public void done() {
     	Mediator.getInstance().enableLists(true, false);
         Mediator.getInstance().setPage("Page5");
