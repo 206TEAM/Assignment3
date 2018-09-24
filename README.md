@@ -8,7 +8,7 @@ Bash shell<br />
 Linux<br />
 
 ### Installation:
-1) Place .jar file in desire location
+1) Place .jar file in the desired location
 2) Create a folder called "Recordings"
 3) Place names database in "Recordings" folder
 4) Open terminal and set the working directory to where the .jar is located
