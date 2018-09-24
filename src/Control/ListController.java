@@ -15,10 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -39,10 +36,8 @@ public class ListController implements Initializable {
     @FXML public VBox rootVBox;
 	@FXML public CheckBox shuffleCheckbox_2;
 	@FXML public Button goButton_2;
+	@FXML public Label emptyRecordingsLabel;
 
-    /**
-     * fields
-     */
     private boolean _shuffle;
 
 	/**
@@ -53,12 +48,21 @@ public class ListController implements Initializable {
      */
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+    	goButton_2.setDisable(true);
+    	shuffleCheckbox_2.setDisable(true);
+	    _shuffle = false;
+
         List<String> names = Originals.getInstance().listNames();
-        java.util.Collections.sort(names);
-        ObservableList<String> practiceNames = FXCollections.observableArrayList(names);
-        selectListView.setItems(practiceNames);
-        selectListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        _shuffle = false;
+
+        if (names.size() == 0) {
+        	emptyRecordingsLabel.setVisible(true);
+        } else {
+        	emptyRecordingsLabel.setVisible(false);
+	        java.util.Collections.sort(names);
+	        ObservableList<String> practiceNames = FXCollections.observableArrayList(names);
+	        selectListView.setItems(practiceNames);
+	        selectListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        }
     }
 
 	/**
@@ -89,16 +93,18 @@ public class ListController implements Initializable {
     }
 
     /**
-     * when the user clicks shuffle
+     * Shuffles {@link MainController#mainListView} if
+     * the checkbox is selected.
      */
-    public void shufflePracticeList(ActionEvent event){ //todo
-        _shuffle = true;
-        //Practices.getInstance().addNames(Collections.shuffle(Practices.getInstance().getPracticeNames()));
+    public void shufflePracticeList(ActionEvent event){
+	    _shuffle = shuffleCheckbox_2.isSelected();
     }
 
 	@FXML
 	public void enableButtons(MouseEvent mouseEvent) {
-    	goButton_2.setDisable(false);
-    	shuffleCheckbox_2.setDisable(false);
+    	if (selectListView.getItems().size() > 0) {
+		    goButton_2.setDisable(false);
+		    shuffleCheckbox_2.setDisable(false);
+	    }
 	}
 }

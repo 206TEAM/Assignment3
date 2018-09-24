@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootVBox" prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ListController">
+<VBox fx:id="rootVBox" prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: #48D1CC;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ListController">
     <children>
         <SplitPane dividerPositions="0.2976588628762542" prefHeight="351.0" prefWidth="600.0">
             <items>
@@ -26,6 +26,7 @@
                         <Font name="System Italic" size="10.0" />
                      </font>
                   </Label>
+                  <Label fx:id="emptyRecordingsLabel" layoutX="7.0" layoutY="130.0" text="Empty Recordings folder" textAlignment="CENTER" textFill="#7c7c7c" visible="false" />
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="387.0" style="-fx-background-color: #d3dbe8;">

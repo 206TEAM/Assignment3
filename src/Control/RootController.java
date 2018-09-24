@@ -18,7 +18,6 @@ public class RootController {
 
 	/**
 	 * when user clicks on practice, it takes them to to practice page
-	 * @param mouseEvent
 	 */
 	@FXML
 	public void practice1(MouseEvent mouseEvent) {
@@ -29,7 +28,6 @@ public class RootController {
 
 	/**
 	 * when user clicks on listen, it takes them to the listen page
-	 * @param mouseEvent
 	 */
 	@FXML
 	public void listen1(MouseEvent mouseEvent) {

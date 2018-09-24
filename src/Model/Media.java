@@ -30,13 +30,6 @@ public class Media {
 		_directory = original.getDirectory();
 	}
 
-	public Media(String filename, File directory){
-		_fileName = filename;
-		_originalName = null;
-		_directory = directory;
-
-	}
-
 	/**
 	 * Plays the {@code Practice} or {@code Original}
 	 * depending on which constructor is called.
@@ -44,23 +37,6 @@ public class Media {
 	public void play() {
 		String command = "ffplay -autoexit -nodisp -i " + _fileName;
 		process(command, _directory);
-	}
-
-	/**
-	 * Records a new {@code Practice} of the {@code Original}.
-	 * This method can only be used when the constructor called
-	 * is {@link #Media(Original)} because you cannot record
-	 * a practice of a {@code Practice}.
-	 */
-	public void record()  {
-		if (_originalName != null) {
-			Practice practice = new Practice(_originalName);
-
-			String command = "ffmpeg -f alsa -i default -t 5 " + practice.filePath();
-			process(command, CURRENT_DIRECTORY);
-
-			Practices.getInstance().addPractice(_originalName, practice);
-		}
 	}
 
 	/**

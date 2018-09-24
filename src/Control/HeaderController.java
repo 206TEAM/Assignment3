@@ -13,10 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -122,9 +120,6 @@ public class HeaderController implements Initializable {
 
 		VBox vBox = null;
 		try {
-
-			//FXMLLoader.load(getClass().getResource(Mediator.getInstance().getPage() + ".fxml"));
-			//URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();
 			vBox = FXMLLoader.load(getClass().getResource("/"+ Mediator.getInstance().getPage() + ".fxml"));
 			mainPane.getChildren().addAll(vBox);
 		} catch (IOException e) {

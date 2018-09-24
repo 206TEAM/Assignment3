@@ -34,10 +34,8 @@ public class ListenController implements Initializable {
 	@FXML public RadioButton rb5;
 	@FXML public ProgressBar progressBar;
 	@FXML public Label ratingLabel;
+	@FXML public Label emptyRecordingsLabel;
 
-	/**
-     * fields
-     */
     private String _selected;
     private String _type;
 
@@ -50,10 +48,16 @@ public class ListenController implements Initializable {
     	ratingHandler();
 
 		List<String> names = Originals.getInstance().listNames();
-		java.util.Collections.sort(names);
-		ObservableList<String> practiceNames = FXCollections.observableArrayList(names);
-		mainListView.setItems(practiceNames);
-        mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+		if (names.size() == 0) {
+			emptyRecordingsLabel.setVisible(true);
+		} else {
+			emptyRecordingsLabel.setVisible(false);
+			java.util.Collections.sort(names);
+			ObservableList<String> practiceNames = FXCollections.observableArrayList(names);
+			mainListView.setItems(practiceNames);
+			mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+		}
     }
 
     public void selectName(MouseEvent event) {
@@ -139,7 +143,8 @@ public class ListenController implements Initializable {
     }
 
     /**
-     * gets rid of creation when user chooses to rerecord the audio.
+     * gets rid of creation when user chooses to rerecord the audio
+     * or if the user presses delete.
      */
     public void deleteFile() {
         if (_type.equals("practice")){
@@ -191,14 +196,6 @@ public class ListenController implements Initializable {
 
     }
 
-    /**
-     * gets rid of creation when user chooses to rerecord the audio.
-     */
-    public void removeAudio() {
-        Practices.getInstance().deletePractice(Practices.getInstance().getCurrentName(), Practices.getInstance().getFileName());
-    }
-
-
 	/**
 	 * Writes to <dir>Ratings.txt</dir> the desired rating of the user.
 	 *
@@ -243,6 +240,7 @@ public class ListenController implements Initializable {
 		rb4.setSelected(false);
 		rb5.setSelected(false);
 	}
+
 	private void showRatings(boolean show) {
 		show = !show;
 		rb1.setDisable(show);

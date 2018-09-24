@@ -31,16 +31,7 @@ public class CompareController implements SubSceneController {
 		Mediator mediator = Mediator.getInstance();
 		Practices.getInstance().removePracticeName(currentName); //removes current name from list.
 
-		//todo need to remove name from main list as well...
-
-//		FXMLLoader loader = new FXMLLoader();
-//		URL url = new File("src/GUI/Main.fxml").toURL();
-//		loader.setLocation(url);
-//		loader.load();
-//		MainController mainController = loader.getController();
-		mediator.reloadMain(); //accesses method: reload (should update the list
-		//todo needs to reload the main class. not sure how to do it
-
+		mediator.reloadMain();
 
 		List<String> currentNames = Practices.getInstance().getPracticeNames();
 		if (currentNames.size() == 0) { //done

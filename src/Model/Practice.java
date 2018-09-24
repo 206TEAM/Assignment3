@@ -11,7 +11,6 @@ import java.util.List;
  * This class represents a single recording for a particular name.
  * This file is saved as a .wav in the directory:
  * Names/(_nameKey)/Practices/(fileName).wav
- *
  */
 
 
@@ -20,24 +19,15 @@ public class Practice {
     private String _fileName;
     private String _nameKey;
 
-    /**
-     * Constructor for the class
-     * @param nameKey
-     */
     public Practice(String nameKey) {
         _nameKey = nameKey;
         _fileName = generateFileName(nameKey);
     }
 
-    /**
-     * Constructor for the class
-     * @param nameKey
-     */
     public Practice(String nameKey, String fileName) {
         _nameKey = nameKey;
         _fileName = fileName;
     }
-
 
     /**
      * creates a practice
@@ -81,11 +71,10 @@ public class Practice {
     }
 
     /**
-     * generates file name based on other recordings...
-     * todo bad method, find a better way
+     * generates file name based on other recordings.
      *
-     * @param nameKey
-     * @return
+     * @param nameKey name that the {@code Practice} is linked to
+     * @return a fileName in the format <q>(nameKey)Practices(version)</q>
      */
     private String generateFileName(String nameKey){
         List<String> names = new ArrayList<String>();
@@ -109,13 +98,6 @@ public class Practice {
      */
     public String getFileName(){
         return _fileName;
-    }
-
-    /**
-     * Return the final .wav filepath
-     */
-    public File filePath() {
-        return new File("Names" + System.getProperty("file.separator") + _nameKey + System.getProperty("file.separator") + "Practices" + System.getProperty("file.separator") +_fileName + ".wav");
     }
 
     public File getDirectory(){

@@ -79,6 +79,15 @@ public class Mediator {
 		_header.loadPane();
 	}
 
+	/**
+	 * Sets the duration of which the progress bar goes from
+	 * 0 to 100 to be the length that the audio file it is
+	 * playing plays for.
+	 *
+	 * @param progress the {@code ProgressIndicator} being displayed
+	 * @param dir whether it is an {@code Original} or a {@code Practice}
+	 * @param fileName name of the file being played
+	 */
 	public void showProgress(ProgressIndicator progress, String dir, String fileName) {
 		double duration = 0;
 		try {
@@ -96,6 +105,13 @@ public class Mediator {
 		showProgress(progress, duration);
 	}
 
+	/**
+	 * Sets the duration of which the progress bar goes
+	 * from 0 to 100 to be the duration entered.
+	 *
+	 * @param progress the {@code ProgressIndicator} being displayed
+	 * @param duration the duration (in seconds)
+	 */
 	public void showProgress(ProgressIndicator progress, double duration) {
 		Timeline timeLine = new Timeline(
 				new KeyFrame(Duration.ZERO, new KeyValue(progress.progressProperty(), 0)),
@@ -105,22 +121,47 @@ public class Mediator {
 		timeLine.play();
 	}
 
+	/**
+	 * Notify all {@code SubSceneController} classes that an item
+	 * in {@link MainController#mainListView} has been selected
+	 */
 	public void fireItemSelected() {
 		for (SubSceneController controller : _controllers) {
 			controller.itemSelected();
 		}
 	}
 
+	/**
+	 * Notify all {@code SubSceneController} classes that an item
+	 * in {@link MainController#originalListView} has been selected
+	 */
 	public void fireOriginalSelected() {
 		for (SubSceneController controller : _controllers) {
 			controller.originalSelected();
 		}
 	}
 
+	/**
+	 * Allows the user to select items on the list
+	 *
+	 * @param original if the user should be able to select
+	 *                 items on {@link MainController#originalListView}
+	 * @param main if the user should be able to select items on
+	 *             {@link MainController#mainListView}
+	 */
 	public void enableLists(boolean original, boolean main) {
 		_main.enableLists(original, main);
 	}
 
+	/**
+	 * Similar to {@link #enableLists(boolean, boolean)} except
+	 * it disables users from selecting items on the lists.
+	 *
+	 * @param original if the user should not be able to
+	 *                 select items on {@link MainController#originalListView}
+	 * @param main if the user should not be able to
+	 *             select items on {@link MainController#mainListView}
+	 */
 	public void disableLists(boolean original, boolean main) {
 		_main.disableLists(original, main);
 	}

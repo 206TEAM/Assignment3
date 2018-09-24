@@ -18,7 +18,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -48,9 +47,6 @@ public class MainController implements Initializable {
      *
      * <p> Also populates {@code mainListView} with the sub-list of {@code Practices}
      * selected by the user.</p>
-     *
-     * @param location
-     * @param resources
      */
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
@@ -62,6 +58,9 @@ public class MainController implements Initializable {
         mainListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 	}
 
+	/**
+	 * Reloads the items displayed on {@code #mainListView}
+	 */
 	@FXML
 	public void reload() {
 		List<String> practiceNamesList = Practices.getInstance().getPracticeNames();
@@ -77,11 +76,10 @@ public class MainController implements Initializable {
     public void loadPane() {
         VBox vBox = null;
         try {
-            //URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();
             vBox = FXMLLoader.load(getClass().getResource("/"+ Mediator.getInstance().getPage() + ".fxml"));
             mainPane.getChildren().add(vBox);
         } catch (IOException e) {
-            e.printStackTrace(); //todo GUI popup
+            e.printStackTrace();
         }
     }
 
@@ -94,10 +92,7 @@ public class MainController implements Initializable {
 
     /**
      * when the user selects on a name they want to practice, it updates the name label
-     * and sets the currently practicing name in the Practice class (package: Model)
-     * to the selected name.
-     *
-     * @param event
+     * and sets {@link Model.Practices#_currentName} to the selected name.
      */
     public void selectName(MouseEvent event) {
         String name = mainListView.getSelectionModel().getSelectedItem();
@@ -109,13 +104,19 @@ public class MainController implements Initializable {
 
         //gets filenames of names selected
         ObservableList<String> originals = FXCollections.observableArrayList(Originals.getInstance().getFileName(name));
-        originalListView.setItems(originals); //todo
+        originalListView.setItems(originals);
         originalListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         Practices.getInstance().setCurrentName(name);
     }
 
-    public void selectOriginal(MouseEvent event) {
+	/**
+	 * Sets the label to the selected {@code Original} and
+	 * notifies {@link Mediator} to notify all
+	 * {@link SubSceneController} classes that an item was
+	 * selected. This lifts user restrictions.
+	 */
+	public void selectOriginal(MouseEvent event) {
 	    String fileName = originalListView.getSelectionModel().getSelectedItem();
 	    String name = mainListView.getSelectionModel().getSelectedItem();
 
@@ -128,6 +129,7 @@ public class MainController implements Initializable {
 	    if (fileName != null) {
 		    String labelName;
 		    Original original;
+		    // Check if multiple versions of this Original exists
 		    if (Originals.getInstance().getFileName(name).size() > 1) {
 			    labelName = name + Originals.getInstance().extractVersion(fileName);
 			    original = Originals.getInstance().getOriginalWithVersions(fileName, name);
@@ -153,7 +155,7 @@ public class MainController implements Initializable {
 
     }
 
-	public void addName(ActionEvent actionEvent) { //todo
+	public void addName(ActionEvent actionEvent) {
     	Mediator.getInstance().setPage("SelectPractices");
     	Mediator.getInstance().setPracticeList(Practices.getInstance().getPracticeNames());
     	Mediator.getInstance().loadHeaderPane();

@@ -20,18 +20,24 @@ public class RecordController implements Initializable{
     @FXML public Button recordButton_4;
     @FXML public ProgressIndicator recordProgress;
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        recordButton_4.setDisable(false);
+    }
+
     /**
      * User prompted to record audio (generates creation which is added to the model)
      * user is then asked to review the audio through another pop up.
      */
-    public void recordAudioPopUp() {
+    private void recordAudio() {
         Mediator.getInstance().showProgress(recordProgress, 5);
             Task<Void> task = new Task<Void>() {
                 @Override
                 protected Void call() throws Exception {
                     //generates file which adds to creation list
                     String name = Practices.getInstance().getCurrentName();
-                    String fileName = Practices.getInstance().addNewPractice(name); //todo change addnewpractice return value
+                    String fileName = Practices.getInstance().addNewPractice(name);
                     Practices.getInstance().setFileName(fileName);
                     return null;
                 }
@@ -50,16 +56,15 @@ public class RecordController implements Initializable{
 
     /**
      * When user presses the record button.
-     * @param event
      */
     public void record(ActionEvent event){
     	recordButton_4.setDisable(true);
-        recordAudioPopUp();
+        recordAudio();
     }
 
     /**
-     * Alert that pops up when user clicks on record button. user can re record, cancel or listen and save their recording
-     * @return
+     * Alert that pops up when user clicks on record button. user can re record,
+     * cancel or listen and save their recording.
      */
     public Alert reviewAudioPopUp() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION); //type of alert is a CONFIRMATION
@@ -76,7 +81,7 @@ public class RecordController implements Initializable{
 
         Optional<ButtonType> result = alert.showAndWait(); //takes the selected button
 
-        if (result.get() == done) { //todo
+        if (result.get() == done) {
             done();
 
             alert.close();
@@ -92,7 +97,7 @@ public class RecordController implements Initializable{
             reviewAudioPopUp();
         } else if (result.get() == record) {
             removeAudio();
-            recordAudioPopUp();
+            recordAudio();
             alert.close();
 
         } else {
@@ -123,9 +128,4 @@ public class RecordController implements Initializable{
         Mediator.getInstance().setPage("Page5");
         Mediator.getInstance().loadMainPane();
     }
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		recordButton_4.setDisable(false);
-	}
 }

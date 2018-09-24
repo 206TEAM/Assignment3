@@ -8,6 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Main extends Application {
 
     /**
@@ -15,6 +20,13 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
+        if (Files.notExists(Paths.get("Recordings"))) {
+            Files.createDirectory(Paths.get("Recordings"));
+        }
+        if (Files.notExists(Paths.get("Names"))) {
+            Files.createDirectory(Paths.get("Names"));
+        }
+
 	    Originals.getInstance().populateFolders();
 	    Mediator.getInstance().setPage("Root");
         try {
@@ -27,7 +39,6 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-
 
     public static void main(String[] args) {
         launch(args);

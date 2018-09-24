@@ -203,7 +203,7 @@ public class Originals {
 	    return null;
     }
 
-	public Original getOriginal(String name, String version) {
+	private Original getOriginal(String name, String version) {
 		for (Original original : _originals) {
 			if (original.getName().equals(name) && original.getVersion().equals(version)) {
 				return original;
@@ -304,7 +304,14 @@ public class Originals {
         return output;
     }
 
-    private int getLineNumber(String name) {
+	/**
+	 * Finds the line in <dir>Ratings.txt</dir> that the entered
+	 * name is on.
+	 *
+	 * @param name the name to match in <dir>Ratings.txt</dir>
+	 * @return the line number
+	 */
+	private int getLineNumber(String name) {
         try {
             List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get("Ratings.txt")));
 

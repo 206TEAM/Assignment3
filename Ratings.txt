@@ -1,6 +1,6 @@
 
 Nicholas: 4
-Lee1: 2
+Lee1: 1
 
 Xuyun: 2
 hywel: 4
@@ -11,3 +11,8 @@ Deepika: 3
 
 Wang: 4
 MacDonald: 4
+Catherine: 5
+Li3: 3
+Li1: 1
+Li2: 2
+Lee2: 4
