@@ -79,8 +79,9 @@ public class ListController implements Initializable {
         Practices.getInstance().addNames(array);
         Mediator.getInstance().setPage("Page3");
         try {
-            URL url = new File("src/GUI/Main.fxml").toURL();
-            VBox root = FXMLLoader.load(url);
+
+            //URL url = new File("src/GUI/Main.fxml").toURL();
+            VBox root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
             rootVBox.getChildren().setAll(root);
         } catch (IOException e) {
             e.printStackTrace();

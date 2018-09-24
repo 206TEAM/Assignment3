@@ -18,7 +18,7 @@ public class Main extends Application {
 	    Originals.getInstance().populateFolders();
 	    Mediator.getInstance().setPage("Root");
         try {
-            VBox root = (VBox) FXMLLoader.load(getClass().getResource("GUI/Header.fxml"));
+            VBox root = (VBox) FXMLLoader.load(getClass().getResource("/Header.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setResizable(false);

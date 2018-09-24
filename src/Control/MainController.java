@@ -77,8 +77,8 @@ public class MainController implements Initializable {
     public void loadPane() {
         VBox vBox = null;
         try {
-            URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();
-            vBox = FXMLLoader.load(url);
+            //URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();
+            vBox = FXMLLoader.load(getClass().getResource("/"+ Mediator.getInstance().getPage() + ".fxml"));
             mainPane.getChildren().add(vBox);
         } catch (IOException e) {
             e.printStackTrace(); //todo GUI popup

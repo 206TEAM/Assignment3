@@ -122,8 +122,10 @@ public class HeaderController implements Initializable {
 
 		VBox vBox = null;
 		try {
-			URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();
-			vBox = FXMLLoader.load(url);
+
+			//FXMLLoader.load(getClass().getResource(Mediator.getInstance().getPage() + ".fxml"));
+			//URL url = new File("src/GUI/" + Mediator.getInstance().getPage() + ".fxml").toURL();
+			vBox = FXMLLoader.load(getClass().getResource("/"+ Mediator.getInstance().getPage() + ".fxml"));
 			mainPane.getChildren().addAll(vBox);
 		} catch (IOException e) {
 			e.printStackTrace();
